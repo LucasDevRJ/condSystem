@@ -29,5 +29,12 @@ public class Administrador extends Colaborador implements CondSystem {
 		System.out.println(ed.getNumero());
 		System.out.println(ed.getCep());
 		System.out.println(ed.getPontoReferencia());
+		
+		Administrador adm = new Administrador();
+		adm.setCargo("56556!!!&&&&&&734´´,,,@admini          strador");
+		adm.setTurno("4598908not!!!@@##urno");
+		
+		System.out.println(adm.getCargo());
+		System.out.println(adm.getTurno());
 	}
 }
