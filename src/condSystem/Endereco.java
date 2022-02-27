@@ -13,7 +13,17 @@ public class Endereco {
 	}
 	
 	public void setRua(String rua) {
-		this.rua = rua;
+		rua = rua.replaceAll("[^A-Za-z ]", "");
+		
+		while (rua.indexOf(" ") != rua.lastIndexOf(" ")) {
+			rua = rua.replace("  ", " ");
+		}
+		
+		if (rua.length() == 0) {
+			System.out.println("Digite a rua!");
+		} else {
+			this.rua = rua;
+		}
 	}
 	
 	public String getNumero() {
@@ -21,7 +31,12 @@ public class Endereco {
 	}
 	
 	public void setNumero(String numero) {
-		this.numero = numero;
+		numero = numero.replaceAll("[^0-9]", "");
+		if (numero.length() == 0) {
+			System.out.println("Digite a Rua!");
+		} else {
+			this.numero = numero;
+		}
 	}
 	
 	public String getCep() {
@@ -29,7 +44,13 @@ public class Endereco {
 	}
 	
 	public void setCep(String cep) {
-		this.cep = cep;
+		cep = cep.replaceAll("[^0-9]", "");
+		cep = cep.substring(0,5) + "-" + cep.substring(5,8);
+		if (cep.length() == 0) {
+			System.out.println("Digite o CEP!");
+		} else {
+			this.cep = cep;
+		}
 	}
 	
 	public String getPontoReferencia() {
@@ -37,7 +58,11 @@ public class Endereco {
 	}
 	
 	public void setPontoReferencia(String pontoReferencia) {
-		this.pontoReferencia = pontoReferencia;
+		if (pontoReferencia.length() >= 10) {
+			System.out.println("Digite pelo menos 10 caracteres!");
+		} else {
+			this.pontoReferencia = pontoReferencia;
+		}
 	}
 	
 	public String getComplemento() {
@@ -45,6 +70,10 @@ public class Endereco {
 	}
 	
 	public void setComplemento(String complemento) {
-		this.complemento = complemento;
+		if (complemento.length() >= 10) {
+			System.out.println("Digite pelo menos 10 caracteres!");
+		} else {
+			this.complemento = complemento;
+		}
 	}
 }
