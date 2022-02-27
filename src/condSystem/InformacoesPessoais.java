@@ -16,7 +16,13 @@ public class InformacoesPessoais {
 	}
 	
 	public void setNome(String nome) {
-		this.nome = nome;
+		nome = nome.replaceAll("[^A-Za-z]", "");
+		
+		if (nome.length() > 0) {
+			this.nome = nome;
+		} else {
+			System.out.println("Digite o nome!");
+		}
 	}
 	
 	public String getSobrenome() {
@@ -24,7 +30,13 @@ public class InformacoesPessoais {
 	}
 	
 	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
+		sobrenome = sobrenome.replaceAll("[^A-Za-z]", "");
+		
+		if (sobrenome.length() > 0) {
+			this.sobrenome = sobrenome;
+		} else {
+			System.out.println("Digite o sobrenome!");
+		}
 	}
 	
 	public String getDataNascimento() {
