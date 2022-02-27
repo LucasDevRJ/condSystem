@@ -16,7 +16,12 @@ public class Apartamento {
 	}
 	
 	public void setBloco(String bloco) {
-		this.bloco = bloco;
+		bloco = bloco.replaceAll("[^a-zA-Z0-9]", "");
+		if (bloco.length() == 0) {
+			System.out.println("Digite o bloco!");
+		} else {
+			this.bloco = bloco;
+		}
 	}
 	
 	public String getNumero() {
@@ -24,7 +29,12 @@ public class Apartamento {
 	}
 	
 	public void setNumero(String numero) {
-		this.numero = numero;
+		numero = numero.replaceAll("[^a-zA-Z0-9]", "");
+		if (numero.length() == 0) {
+			System.out.println("Digite o bloco!");
+		} else {
+			this.numero = numero;
+		}
 	}
 	
 	public int getTamanho() {
@@ -32,7 +42,11 @@ public class Apartamento {
 	}
 	
 	public void setTamanho(int tamanho) {
-		this.tamanho = tamanho;
+		if (tamanho < 0) {
+			System.out.println("Valor inválido!");
+		} else {
+			this.tamanho = tamanho;
+		}
 	}
 	
 	public int getNumeroQuartos() {
@@ -40,7 +54,11 @@ public class Apartamento {
 	}
 	
 	public void setNumeroQuartos(int numeroQuartos) {
-		this.numeroQuartos = numeroQuartos;
+		if (numeroQuartos < 0) {
+			System.out.println("Valor inválido!");
+		} else {
+			this.numeroQuartos = numeroQuartos;
+		}
 	}
 	
 	public int getNumeroBanheiros() {
@@ -48,14 +66,23 @@ public class Apartamento {
 	}
 	
 	public void setNumeroBanheiros(int numeroBanheiros) {
-		this.numeroBanheiros = numeroBanheiros;
+		if (numeroBanheiros < 0) {
+			System.out.println("Valor inválido!");
+		} else {
+			this.numeroBanheiros = numeroBanheiros;
+		}
 	}
+	
 	public int getNumeroVagasCarro() {
 		return numeroVagasCarro;
 	}
 	
 	public void setNumeroVagasCarro(int numeroVagasCarro) {
-		this.numeroVagasCarro = numeroVagasCarro;
+		if (numeroVagasCarro < 0) {
+			System.out.println("Valor inválido!");
+		} else {
+			this.numeroVagasCarro = numeroVagasCarro;
+		}
 	}
 	
 	public String getDescricao() {
@@ -63,7 +90,11 @@ public class Apartamento {
 	}
 	
 	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+		if (descricao.length() == 0) {
+			System.out.println("Digite a descrição!");
+		} else {
+			this.descricao = descricao;
+		}
 	}
 
 	public Endereco getEndereco() {

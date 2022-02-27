@@ -36,5 +36,14 @@ public class Administrador extends Colaborador implements CondSystem {
 		
 		System.out.println(adm.getCargo());
 		System.out.println(adm.getTurno());
+		
+		Apartamento apt = new Apartamento();
+		apt.setBloco("$$$$%%%иии$$$dfdf5656");
+		apt.setTamanho(-90);
+		apt.setNumeroQuartos(-60);
+		
+		System.out.println(apt.getBloco());
+		System.out.println(apt.getTamanho());
+		System.out.println(apt.getNumeroQuartos());
 	}
 }
