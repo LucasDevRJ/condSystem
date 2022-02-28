@@ -2,5 +2,5 @@ package condSystem;
 
 public interface CondSystem {
 
-	public abstract void cadastrarMorador();
+	public abstract void acessarInformacoesColaborador(Colaborador colaborador);
 }

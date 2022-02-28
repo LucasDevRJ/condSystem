@@ -2,11 +2,68 @@ package condSystem;
 
 public class Endereco {
 
+	private String pais;
+	private String cidade;
+	private String estado;
 	private String rua;
 	private String numero;
 	private String cep;
 	private String pontoReferencia;
 	private String complemento;
+	
+	public String getPais() {
+		return pais;
+	}
+
+	public void setPais(String pais) {
+		pais = pais.replaceAll("[^A-Za-z ]", "");
+		
+		while (pais.indexOf(" ") != pais.lastIndexOf(" ")) {
+			pais = pais.replace("  ", " ");
+		}
+		
+		if (pais.length() == 0) {
+			System.out.println("Digite o País!");
+		} else {
+			this.pais = pais;
+		}
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		cidade = cidade.replaceAll("[^A-Za-z ]", "");
+		
+		while (cidade.indexOf(" ") != cidade.lastIndexOf(" ")) {
+			cidade = cidade.replace("  ", " ");
+		}
+		
+		if (cidade.length() == 0) {
+			System.out.println("Digite a cidade!");
+		} else {
+			this.cidade = cidade;
+		}
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		estado = estado.replaceAll("[^A-Za-z ]", "");
+		
+		while (estado.indexOf(" ") != estado.lastIndexOf(" ")) {
+			estado = estado.replace("  ", " ");
+		}
+		
+		if (estado.length() == 0) {
+			System.out.println("Digite o Estado!");
+		} else {
+			this.estado = estado;
+		}
+	}
 	
 	public String getRua() {
 		return rua;
