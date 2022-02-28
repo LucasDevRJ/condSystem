@@ -22,8 +22,7 @@ public class Condominio {
 	}
 	
 	public void setNome(String nome) {
-		nome = nome.replaceAll("[^A-Za-z-0-9 ]", "");
-		nome = nome.trim();
+		nome = nome.replaceAll("[^A-Za-z-0-9]", "");
 		
 		if (nome.length() > 0) {
 			this.nome = nome;

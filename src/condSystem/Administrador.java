@@ -49,9 +49,11 @@ public class Administrador extends Colaborador implements CondSystem {
 		System.out.println(apt.getNumeroQuartos());
 		
 		Condominio cd = new Condominio();
-		cd.setNome("dfd f44545¨99$$$$###@#$$          $$$%%%");
+		cd.setNome("dfd        f44545¨99$$$$###@#$$          $$$%%%");
+		cd.setNumeroAcademia(-9);
 		
 		System.out.println(cd.getNome());
+		System.out.println(cd.getNumeroAcademia());
 	}
 	
 }
