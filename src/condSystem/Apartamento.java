@@ -10,6 +10,7 @@ public class Apartamento {
 	private int numeroBanheiros;
 	private int numeroVagasCarro;
 	private String descricao;
+	private float precoAlguel;
 	
 	public String getBloco() {
 		return bloco;
@@ -103,5 +104,13 @@ public class Apartamento {
 
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
+	}
+
+	public float getPrecoAlguel() {
+		return precoAlguel;
+	}
+
+	public void setPrecoAlguel(float precoAlguel) {
+		this.precoAlguel = precoAlguel;
 	}
 }

@@ -24,6 +24,7 @@ public class Administrador extends Colaborador implements CondSystem {
 		System.out.println("CEP: " + colaborador.getEndereco().getCep());
 		System.out.println("Ponto de Referência: " + colaborador.getEndereco().getPontoReferencia());
 		System.out.println("Complemento: " + colaborador.getEndereco().getComplemento());
+		System.out.println();
 		System.out.println("Emprego:");
 		System.out.println("Cargo: " + colaborador.getCargo());
 		System.out.println("Salário: " + colaborador.getSalario());
