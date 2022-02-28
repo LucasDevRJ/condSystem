@@ -26,7 +26,11 @@ public abstract class Colaborador {
 	}
 
 	public void setSalario(float salario) {
-		this.salario = salario;
+		if (salario < 0) {
+			System.out.println("Valor inválido!");
+		} else {
+			this.salario = salario;
+		}
 	}
 
 	public String getTurno() {

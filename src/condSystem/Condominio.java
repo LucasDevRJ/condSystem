@@ -22,7 +22,14 @@ public class Condominio {
 	}
 	
 	public void setNome(String nome) {
-		this.nome = nome;
+		nome = nome.replaceAll("[^A-Za-z-0-9 ]", "");
+		nome = nome.trim();
+		
+		if (nome.length() > 0) {
+			this.nome = nome;
+		} else {
+			System.out.println("Digite o nome!");
+		}
 	}
 	
 	public int getTamanho() {
@@ -30,7 +37,11 @@ public class Condominio {
 	}
 	
 	public void setTamanho(int tamanho) {
-		this.tamanho = tamanho;
+		if (tamanho < 0) {
+			System.out.println("Valor inválido!");
+		} else {
+			this.tamanho = tamanho;
+		}
 	}
 	
 	public int getNumeroPiscinas() {
@@ -38,7 +49,11 @@ public class Condominio {
 	}
 	
 	public void setNumeroPiscinas(int numeroPiscinas) {
-		this.numeroPiscinas = numeroPiscinas;
+		if (numeroPiscinas < 0) {
+			System.out.println("Valor inválido!");
+		} else {
+			this.numeroPiscinas = numeroPiscinas;
+		}
 	}
 	
 	public int getNumeroQuadras() {
@@ -46,7 +61,11 @@ public class Condominio {
 	}
 	
 	public void setNumeroQuadras(int numeroQuadras) {
-		this.numeroQuadras = numeroQuadras;
+		if (numeroQuadras < 0) {
+			System.out.println("Valor inválido!");
+		} else {
+			this.numeroQuadras = numeroQuadras;
+		}
 	}
 	
 	public int getNumeroAcademia() {
@@ -54,6 +73,10 @@ public class Condominio {
 	}
 	
 	public void setNumeroAcademia(int numeroAcademia) {
-		this.numeroAcademia = numeroAcademia;
+		if (numeroAcademia < 0) {
+			System.out.println("Valor inválido!");
+		} else {
+			this.numeroAcademia = numeroAcademia;
+		}
 	}
 }

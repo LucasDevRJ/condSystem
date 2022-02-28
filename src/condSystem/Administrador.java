@@ -33,9 +33,11 @@ public class Administrador extends Colaborador implements CondSystem {
 		Administrador adm = new Administrador();
 		adm.setCargo("56556!!!&&&&&&734´´,,,@admini          strador");
 		adm.setTurno("4598908not!!!@@##urno");
+		adm.setSalario(-5000.0f);
 		
 		System.out.println(adm.getCargo());
 		System.out.println(adm.getTurno());
+		System.out.println(adm.getSalario());
 		
 		Apartamento apt = new Apartamento();
 		apt.setBloco("$$$$%%%¨¨¨$$$dfdf5656");
@@ -45,5 +47,11 @@ public class Administrador extends Colaborador implements CondSystem {
 		System.out.println(apt.getBloco());
 		System.out.println(apt.getTamanho());
 		System.out.println(apt.getNumeroQuartos());
+		
+		Condominio cd = new Condominio();
+		cd.setNome("dfd f44545¨99$$$$###@#$$          $$$%%%");
+		
+		System.out.println(cd.getNome());
 	}
+	
 }
