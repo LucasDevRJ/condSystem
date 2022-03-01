@@ -21,24 +21,33 @@ public class Main {
 		apt3.setPrecoAlguel(900.0f);
 		
 		Receita rt = new Receita();
-		rt.setAluguel(apt);
-		rt.setAluguel(apt);
-		rt.setAluguel(apt);
-		
-		System.out.println(rt.getTotal());
-		System.out.println(rt.getTotal());
-		System.out.println(rt.getTotal());
-		System.out.println(rt.getTotal());
+		rt.receitaTotal(apt);
+		rt.receitaTotal(apt2);
+		rt.receitaTotal(apt3);
 		
 		Despesa dp = new Despesa();
 		dp.setAgua(300);
-		dp.setEletricidade(400);
-		dp.setGas(600);
-		dp.setImposto(1000);
+		//dp.setEletricidade(400);
+		//dp.setGas(400);
+		//dp.setImposto(200);
+		dp.totalDespesa();
 		
 		System.out.println("Despesas totais: " + dp.getTotal());
 		
+		Custo ct = new Custo();
+		//ct.setConsertos(206);
+		ct.setConstrucao(500);
+		//ct.setMaterialConstrucao(800);
+		ct.custoTotal();
+		
+		System.out.println("Custos Totais = " + ct.getTotal());
+		
 		Financeiro fn = new Financeiro();
+		fn.setReceita(rt);
+		fn.setDespesa(dp);
+		fn.setCusto(ct);
+		fn.lucroTotal();
+		System.out.println("Lucro total = " + fn.getLucro());
 		
 		Administrador adm = new Administrador();
 		//adm.acessarInformacoesColaborador(pt);

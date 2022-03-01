@@ -9,8 +9,16 @@ public class Custo {
 	private float consertos;
 	private float total;
 	
-	public float getSalario(Colaborador colaborador) {
-		return this.salario += colaborador.getSalario();
+	public void custoTotal() {
+		this.setTotal(this.getConsertos() + this.getConstrucao() + this.getMaterialConstrucao() + this.getMaterialLimpeza() + this.getSalario());
+	}
+	
+	public float getSalario() {
+		return salario;
+	}
+	
+	public void setSalario(float salario) {
+		this.salario = salario;
 	}
 	
 	public float getMaterialConstrucao() {
@@ -36,6 +44,7 @@ public class Custo {
 	public void setMaterialLimpeza(float materialLimpeza) {
 		this.materialLimpeza = materialLimpeza;
 	}
+	
 	public float getConsertos() {
 		return consertos;
 	}
@@ -43,8 +52,12 @@ public class Custo {
 	public void setConsertos(float consertos) {
 		this.consertos = consertos;
 	}
-
+	
 	public float getTotal() {
-		return total = this.salario + this.materialConstrucao + this.construcao + this.materialLimpeza + this.consertos;
+		return total;
+	}
+	
+	public void setTotal(float total) {
+		this.total = total;
 	}
 }

@@ -2,18 +2,17 @@ package condSystem;
 
 public class Receita {
 
-	private Apartamento aluguel;
 	private float total;
 	
-	public Apartamento getAluguel() {
-		return aluguel;
-	}
-	
-	public void setAluguel(Apartamento aluguel) {
-		this.aluguel = aluguel;
+	public void receitaTotal(Apartamento aluguel) {
+		this.total += aluguel.getPrecoAlguel();
 	}
 	
 	public float getTotal() {
-		return this.total += aluguel.getPrecoAlguel();
+		return total;
+	}
+	
+	public void setTotal(float total) {
+		this.total = total;
 	}
 }

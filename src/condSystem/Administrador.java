@@ -30,4 +30,9 @@ public class Administrador extends Colaborador implements CondSystem {
 		System.out.println("Salário: " + colaborador.getSalario());
 		System.out.println("Turno: " + colaborador.getTurno());
 	}
+
+	@Override
+	public void acessarFinanceiro(Financeiro financeiro) {
+		
+	}
 }
