@@ -39,4 +39,33 @@ public class Administrador extends Colaborador implements CondSystem {
 		System.out.println("Total de Receita: R$ " + financeiro.getReceita().getTotal());
 		System.out.println("Lucro Total: R$ " + financeiro.getLucro());
 	}
+
+	@Override
+	public void acessarInformacoesMorador(Morador morador) {
+		System.out.println("Informações do " + morador);
+		System.out.println("Informações Pessoais:");
+		System.out.println("Nome: " + morador.getInformacoesPessoais().getNome());
+		System.out.println("Sobrenome: " + morador.getInformacoesPessoais().getSobrenome());
+		System.out.println("Data de Nascimento: " + morador.getInformacoesPessoais().getDataNascimento());
+		System.out.println("Naturalidade: " + morador.getInformacoesPessoais().getNaturalidade());
+		System.out.println("Cidade Natal: " + morador.getInformacoesPessoais().getCidadeNatal());
+		System.out.println("Profissão: " + morador.getInformacoesPessoais().getProfissao());
+		System.out.println("RG: " + morador.getInformacoesPessoais().getRg());
+		System.out.println("CPF: " + morador.getInformacoesPessoais().getCpf());
+		System.out.println();
+		System.out.println("Apartamento:");
+		System.out.println("Bloco: " + morador.getApartamento().getBloco());
+		System.out.println("Número: " + morador.getApartamento().getNumero());
+		System.out.println("Tamanho: " + morador.getApartamento().getTamanho());
+		System.out.println("Número de Quartos: " + morador.getApartamento().getNumeroQuartos());
+		System.out.println("Número de Banheiros: " + morador.getApartamento().getNumeroBanheiros());
+		System.out.println("Número de Vagas para Carro: " + morador.getApartamento().getNumeroVagasCarro());
+		System.out.println("Descrição: " + morador.getApartamento().getDescricao());
+		System.out.println("Preço Aluguel: " + morador.getApartamento().getPrecoAlguel());
+		if (morador.isEhProprietario() == true) {
+			System.out.println("É Proprietário: Sim");
+		} else {
+			System.out.println("É Proprietário: Não");
+		}
+	}
 }
