@@ -48,7 +48,6 @@ public class Main {
 		fn.setCusto(ct);
 		fn.lucroTotal();
 		
-		
 		Administrador adm = new Administrador();
 		//adm.acessarInformacoesColaborador(pt);
 		adm.acessarFinanceiro(fn);
