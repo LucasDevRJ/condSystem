@@ -47,10 +47,10 @@ public class Main {
 		fn.setDespesa(dp);
 		fn.setCusto(ct);
 		fn.lucroTotal();
-		System.out.println("Lucro total = " + fn.getLucro());
+		
 		
 		Administrador adm = new Administrador();
 		//adm.acessarInformacoesColaborador(pt);
-	
+		adm.acessarFinanceiro(fn);
 	}
 }

@@ -33,6 +33,10 @@ public class Administrador extends Colaborador implements CondSystem {
 
 	@Override
 	public void acessarFinanceiro(Financeiro financeiro) {
-		
+		System.out.println("Situação Financeira do Condomínio");
+		System.out.println("Total de Despesa: R$ " + financeiro.getDespesa().getTotal());
+		System.out.println("Total de Custo: R$ " + financeiro.getCusto().getTotal());
+		System.out.println("Total de Receita: R$ " + financeiro.getReceita().getTotal());
+		System.out.println("Lucro Total: R$ " + financeiro.getLucro());
 	}
 }
