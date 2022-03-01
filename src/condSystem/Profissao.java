@@ -60,7 +60,11 @@ public class Profissao {
 	}
 
 	public void setDescricaoAtividades(String descricaoAtividades) {
-		this.descricaoAtividades = descricaoAtividades;
+		if (descricaoAtividades.length() > 0) {
+			this.descricaoAtividades = descricaoAtividades;
+		} else {
+			System.out.println("Digite as descrições!");
+		}
 	}
 
 }

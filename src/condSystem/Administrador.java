@@ -26,9 +26,9 @@ public class Administrador extends Colaborador implements CondSystem {
 		System.out.println("Complemento: " + colaborador.getEndereco().getComplemento());
 		System.out.println();
 		System.out.println("Emprego:");
-		System.out.println("Cargo: " + colaborador.getCargo());
-		System.out.println("Salário: " + colaborador.getSalario());
-		System.out.println("Turno: " + colaborador.getTurno());
+		System.out.println("Cargo: " + colaborador.getProfissao().getCargo());
+		System.out.println("Salário: " + colaborador.getProfissao().getSalario());
+		System.out.println("Turno: " + colaborador.getProfissao().getTurno());
 	}
 
 	@Override
@@ -52,6 +52,11 @@ public class Administrador extends Colaborador implements CondSystem {
 		System.out.println("Profissão: " + morador.getInformacoesPessoais().getProfissao());
 		System.out.println("RG: " + morador.getInformacoesPessoais().getRg());
 		System.out.println("CPF: " + morador.getInformacoesPessoais().getCpf());
+		System.out.println();
+		System.out.println("Emprego:");
+		System.out.println("Cargo: " + morador.getProfissao().getCargo());
+		System.out.println("Salário: " + morador.getProfissao().getSalario());
+		System.out.println("Turno: " + morador.getProfissao().getTurno());
 		System.out.println();
 		System.out.println("Apartamento:");
 		System.out.println("Bloco: " + morador.getApartamento().getBloco());
