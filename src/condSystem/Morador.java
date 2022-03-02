@@ -9,7 +9,6 @@ public class Morador {
 	private float saldoBancario;
 	
 	
-	
 	public void reformarApartamento(int opcaoEscolhida) {
 		int opcaoReforma = opcaoEscolhida;
 		float reformaPreco = 1000.0f;
@@ -18,12 +17,35 @@ public class Morador {
 			case 1:
 				if (profissao.getSalario() >= reformaPreco) {
 					System.out.println("Reforma paga com sucesso!\nA reforma será no:\nQuarto\nBanheiro");
+					this.setSaldoBancario(this.getSaldoBancario() - reformaPreco);
 				} else {
 					System.out.println("Infelizmente não possui renda suficiente para a reforma de R$ 1.000,00");
 				}
 			break;
 			
+			case 2:
+				reformaPreco = 2000.0f;
+				if (profissao.getSalario() >= reformaPreco) {
+					System.out.println("Reforma paga com sucesso!\nA reforma será no:\nDois Quartos\nBanheiro\nSala\n");
+					this.setSaldoBancario(this.getSaldoBancario() - reformaPreco);
+				} else {
+					System.out.println("Infelizmente não possui renda suficiente para a reforma de R$ 2.000,00");
+				}
+			break;
 			
+			case 3:
+				reformaPreco = 3000.0f;
+				if (profissao.getSalario() >= reformaPreco) {
+					System.out.println("Reforma paga com sucesso!\nA reforma será no:\nTrês Quartos\n Dois Banheiro\nSala\nCozinha\nSotão");
+					this.setSaldoBancario(this.getSaldoBancario() - reformaPreco);
+				} else {
+					System.out.println("Infelizmente não possui renda suficiente para a reforma de R$ 3.000,00");
+				}
+			break;
+			
+			default:
+				System.out.println("Opção inválida!\nDigite as opções:\n1 - Quarto e Banheiro\n2 - 2 Quartos, Banheiro e Sala\n3 - Três Quartos, Dois Banheiros, Sala, Cozinha e Sotão");
+			break;
 		}
 	}
 
