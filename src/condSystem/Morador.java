@@ -6,6 +6,26 @@ public class Morador {
 	private Apartamento apartamento;
 	private Profissao profissao;
 	private boolean ehProprietario;
+	private float saldoBancario;
+	
+	
+	
+	public void reformarApartamento(int opcaoEscolhida) {
+		int opcaoReforma = opcaoEscolhida;
+		float reformaPreco = 1000.0f;
+		
+		switch (opcaoReforma) {
+			case 1:
+				if (profissao.getSalario() >= reformaPreco) {
+					System.out.println("Reforma paga com sucesso!\nA reforma será no:\nQuarto\nBanheiro");
+				} else {
+					System.out.println("Infelizmente não possui renda suficiente para a reforma de R$ 1.000,00");
+				}
+			break;
+			
+			
+		}
+	}
 
 	public InformacoesPessoais getInformacoesPessoais() {
 		return informacoesPessoais;
@@ -37,6 +57,19 @@ public class Morador {
 
 	public void setProfissao(Profissao profissao) {
 		this.profissao = profissao;
+	}
+
+	public float getSaldoBancario() {
+		return saldoBancario;
+	}
+
+	public void setSaldoBancario(float saldoBancario) {
+		if (profissao.getSalario() >= saldoBancario) {
+			saldoBancario += profissao.getSalario();
+			this.saldoBancario = saldoBancario;
+		} else {
+			System.out.println("Salário não compativel com o valor que deseja depositar!");
+		}
 	}
 
 }
