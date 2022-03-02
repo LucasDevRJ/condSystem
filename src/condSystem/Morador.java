@@ -8,6 +8,17 @@ public class Morador {
 	private boolean ehProprietario;
 	private float saldoBancario;
 	
+	public void depositar(float valor) {
+		float saldo = this.getSaldoBancario();
+		
+		if (valor <= profissao.getSalario()) {
+			saldo += valor;
+			this.setSaldoBancario(saldo);
+		} else {
+			System.out.println("Não possui o valor que deseja sacar na sua conta!");
+		}
+	}
+	
 	
 	public void reformarApartamento(int opcaoEscolhida) {
 		int opcaoReforma = opcaoEscolhida;
@@ -86,12 +97,7 @@ public class Morador {
 	}
 
 	public void setSaldoBancario(float saldoBancario) {
-		if (profissao.getSalario() >= saldoBancario) {
-			saldoBancario += profissao.getSalario();
-			this.saldoBancario = saldoBancario;
-		} else {
-			System.out.println("Salário não compativel com o valor que deseja depositar!");
-		}
+		this.saldoBancario = saldoBancario;
 	}
 
 }

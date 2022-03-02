@@ -9,7 +9,7 @@ public class Main {
 		
 		Porteiro pt = new Porteiro();
 		pt.setInformacoesPessoais(ipp);
-		pt.setSalario(2000.0f);
+		//pt.setSalario(2000.0f);
 		
 		Apartamento apt = new Apartamento();
 		apt.setPrecoAlguel(700.0f);
@@ -51,5 +51,19 @@ public class Main {
 		Administrador adm = new Administrador();
 		//adm.acessarInformacoesColaborador(pt);
 		adm.acessarFinanceiro(fn);
+		
+		Profissao profissao1 = new Profissao();
+		profissao1.setSalario(4000.0f);
+		
+		Morador morador1 = new Morador();
+		morador1.setProfissao(profissao1);
+		
+		morador1.depositar(1200.0f);
+		
+		System.out.println(morador1.getSaldoBancario());
+		
+		morador1.reformarApartamento(1);
+		
+		System.out.println(morador1.getSaldoBancario());
 	}
 }
