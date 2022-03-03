@@ -7,4 +7,6 @@ public interface CondSystem {
 	public abstract void acessarInformacoesMorador(Morador morador);
 	
 	public abstract void acessarFinanceiro(Financeiro financeiro);
+	
+	public abstract void agendarReuniao(String data);
 }
