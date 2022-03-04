@@ -8,13 +8,17 @@ public class Morador extends Colaborador { //pode não ser colaborador do condomí
 	private boolean ehProprietario;
 	private Conta titular;
 	
-	public void receberAluguel(float valor) {
+	public void alugarApartamento(Inquilino inquilino) {
 		if (this.isEhProprietario() == true) {
-			titular.setSaldo(titular.getSaldo() + valor);
-			System.out.println("Aluguel Recebido com Sucesso!");
-			System.out.println("Valor: R$ " + valor);
+			System.out.println("Imóvel Alugado com Sucesso!");
+			System.out.println("Nome do Inquilino: " + inquilino.getInformacoesPessoais().getNome());
+			System.out.println("Sobrenome do Inquilino: " + inquilino.getInformacoesPessoais().getSobrenome());
+			System.out.println("CPF do Inquilino: " + inquilino.getInformacoesPessoais().getCpf());
+			System.out.println("RG do Inquilino: " + inquilino.getInformacoesPessoais().getRg());
+			System.out.println("Profissão do Inquilino: " + inquilino.getProfissao().getCargo());
+			System.out.println("Salário do Inquilino: " + inquilino.getProfissao().getSalario());
 		} else {
-			System.out.println("Tem que ser proprietário para receber aluguel!");
+			System.out.println("Para alugar um imóvel precisa ser proprietário!");
 		}
 	}
 	
