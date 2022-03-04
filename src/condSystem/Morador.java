@@ -6,6 +6,7 @@ public class Morador extends Colaborador { //pode não ser colaborador do condomí
 	private Apartamento apartamento;
 	private Profissao profissao;
 	private boolean ehProprietario;
+	private float valorAluguel;
 	private Conta titular;
 	
 	public void alugarApartamento(Inquilino inquilino) {
@@ -19,6 +20,20 @@ public class Morador extends Colaborador { //pode não ser colaborador do condomí
 			System.out.println("Salário do Inquilino: " + inquilino.getProfissao().getSalario());
 		} else {
 			System.out.println("Para alugar um imóvel precisa ser proprietário!");
+		}
+	}
+	
+	public void receberAluguel(Inquilino inquilino) {
+		if (this.isEhProprietario() == true) {
+			if (inquilino.getTitular().getSaldo() >= this.getValorAluguel()) {
+				System.out.println("Aluguel Recebido com Sucessso!");
+				System.out.println("Nome Completo do Inquilino: " + inquilino.getInformacoesPessoais().getNome() + " " + inquilino.getInformacoesPessoais().getSobrenome());
+				System.out.println("CPF do Inquilino: " + inquilino.getInformacoesPessoais().getCpf());
+				System.out.println("Valor do Aluguel: R$ " + this.getValorAluguel());
+				float saldoInquilino = inquilino.getTitular().getSaldo();
+				saldoInquilino -= this.getValorAluguel();
+				inquilino.getTitular().setSaldo(saldoInquilino);
+			}
 		}
 	}
 	
@@ -100,6 +115,22 @@ public class Morador extends Colaborador { //pode não ser colaborador do condomí
 
 	public void setTitular(Conta titular) {
 		this.titular = titular;
+	}
+
+	public float getValorAluguel() {
+		return valorAluguel;
+	}
+
+	public void setValorAluguel(float valorAluguel) {
+		if (this.isEhProprietario() == true) {
+			if (valorAluguel > 0) {
+				this.valorAluguel = valorAluguel;
+			} else {
+				System.out.println("Valor menor que 0!");
+			}
+		} else {
+			System.out.println("Precisa ser proprietário do imóvel para definir um preço de alguel nele!");
+		}
 	}
 
 }
