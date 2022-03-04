@@ -8,18 +8,6 @@ public class Morador {
 	private boolean ehProprietario;
 	private float saldoBancario;
 	
-	public void depositar(float valor) {
-		float saldo = this.getSaldoBancario();
-		
-		if (valor <= profissao.getSalario()) {
-			saldo += valor;
-			this.setSaldoBancario(saldo);
-		} else {
-			System.out.println("Não possui o valor que deseja sacar na sua conta!");
-		}
-	}
-	
-	
 	public void reformarApartamento(int opcaoEscolhida) {
 		int opcaoReforma = opcaoEscolhida;
 		float reformaPreco = 1000.0f;
