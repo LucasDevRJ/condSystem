@@ -8,6 +8,16 @@ public class Morador extends Colaborador { //pode não ser colaborador do condomí
 	private boolean ehProprietario;
 	private Conta titular;
 	
+	public void receberAluguel(float valor) {
+		if (this.isEhProprietario() == true) {
+			titular.setSaldo(titular.getSaldo() + valor);
+			System.out.println("Aluguel Recebido com Sucesso!");
+			System.out.println("Valor: R$ " + valor);
+		} else {
+			System.out.println("Tem que ser proprietário para receber aluguel!");
+		}
+	}
+	
 	public void reformarApartamento(int opcaoEscolhida) {
 		int opcaoReforma = opcaoEscolhida;
 		float reformaPreco = 1000.0f;
