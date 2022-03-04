@@ -54,16 +54,40 @@ public class Main {
 		
 		Profissao profissao1 = new Profissao();
 		profissao1.setSalario(4000.0f);
+		profissao1.setCargo("Administrador");
+		
+		Conta conta = new Conta();
 		
 		Morador morador1 = new Morador();
 		morador1.setProfissao(profissao1);
+		morador1.setTitular(conta);
 		
-		morador1.depositar(1200.0f);
+		conta.depositar(2000.0f, morador1);
 		
-		System.out.println(morador1.getSaldoBancario());
-		
+		morador1.setTitular(conta);
 		morador1.reformarApartamento(1);
 		
-		System.out.println(morador1.getSaldoBancario());
+		System.out.println(conta.getSaldo());
+		
+		System.out.println(morador1.getProfissao());
+		
+		//morador1.receberSalario();
+		
+		System.out.println(conta.getSaldo());
+		
+		Profissao pfSeguranca = new Profissao();
+		pfSeguranca.setSalario(2650.0f);
+		
+		Conta ctSeguranca = new Conta();
+		
+		Seguranca seguranca = new Seguranca();
+		seguranca.setProfissao(pfSeguranca);
+		seguranca.setTitular(ctSeguranca);
+		
+		System.out.println(seguranca.getTitular().getSaldo());
+		seguranca.receberSalario();
+		System.out.println(seguranca.getTitular().getSaldo());
+		seguranca.receberSalario();
+		System.out.println(seguranca.getTitular().getSaldo());
 	}
 }

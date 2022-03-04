@@ -1,6 +1,6 @@
 package condSystem;
 
-public class Morador {
+public class Morador extends Colaborador { //pode não ser colaborador do condomínio em si, mas é de alguma empresa
 
 	private InformacoesPessoais informacoesPessoais;
 	private Apartamento apartamento;

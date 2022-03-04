@@ -7,7 +7,7 @@ public class Conta {
 	private float saldo;
 	private int senha;
 	
-	public void depositar(float valor, Morador titular) {
+	public void depositar(float valor, Colaborador titular) {
 		if (valor <= titular.getProfissao().getSalario()) {
 			this.setSaldo(valor + this.getSaldo());
 			System.out.println("Deposito Realizado com Sucesso!");

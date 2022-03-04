@@ -5,6 +5,11 @@ public abstract class Colaborador {
 	private InformacoesPessoais informacoesPessoais;
 	private Endereco endereco;
 	private Profissao profissao;
+	private Conta titular;
+	
+	public void receberSalario() {
+		titular.setSaldo(titular.getSaldo() + profissao.getSalario());
+	}
 
 	public InformacoesPessoais getInformacoesPessoais() {
 		return informacoesPessoais;
@@ -28,5 +33,13 @@ public abstract class Colaborador {
 
 	public void setProfissao(Profissao profissao) {
 		this.profissao = profissao;
+	}
+
+	public Conta getTitular() {
+		return titular;
+	}
+
+	public void setTitular(Conta titular) {
+		this.titular = titular;
 	}
 }
