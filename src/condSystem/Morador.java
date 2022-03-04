@@ -6,7 +6,7 @@ public class Morador {
 	private Apartamento apartamento;
 	private Profissao profissao;
 	private boolean ehProprietario;
-	private float saldoBancario;
+	private Conta titular;
 	
 	public void reformarApartamento(int opcaoEscolhida) {
 		int opcaoReforma = opcaoEscolhida;
@@ -16,7 +16,7 @@ public class Morador {
 			case 1:
 				if (profissao.getSalario() >= reformaPreco) {
 					System.out.println("Reforma paga com sucesso!\nA reforma será no:\nQuarto\nBanheiro");
-					this.setSaldoBancario(this.getSaldoBancario() - reformaPreco);
+					titular.setSaldo(titular.getSaldo() - reformaPreco);
 				} else {
 					System.out.println("Infelizmente não possui renda suficiente para a reforma de R$ 1.000,00");
 				}
@@ -26,7 +26,7 @@ public class Morador {
 				reformaPreco = 2000.0f;
 				if (profissao.getSalario() >= reformaPreco) {
 					System.out.println("Reforma paga com sucesso!\nA reforma será no:\nDois Quartos\nBanheiro\nSala\n");
-					this.setSaldoBancario(this.getSaldoBancario() - reformaPreco);
+					titular.setSaldo(titular.getSaldo() - reformaPreco);
 				} else {
 					System.out.println("Infelizmente não possui renda suficiente para a reforma de R$ 2.000,00");
 				}
@@ -36,7 +36,7 @@ public class Morador {
 				reformaPreco = 3000.0f;
 				if (profissao.getSalario() >= reformaPreco) {
 					System.out.println("Reforma paga com sucesso!\nA reforma será no:\nTrês Quartos\n Dois Banheiro\nSala\nCozinha\nSotão");
-					this.setSaldoBancario(this.getSaldoBancario() - reformaPreco);
+					titular.setSaldo(titular.getSaldo() - reformaPreco);
 				} else {
 					System.out.println("Infelizmente não possui renda suficiente para a reforma de R$ 3.000,00");
 				}
@@ -80,12 +80,12 @@ public class Morador {
 		this.profissao = profissao;
 	}
 
-	public float getSaldoBancario() {
-		return saldoBancario;
+	public Conta getTitular() {
+		return titular;
 	}
 
-	public void setSaldoBancario(float saldoBancario) {
-		this.saldoBancario = saldoBancario;
+	public void setTitular(Conta titular) {
+		this.titular = titular;
 	}
 
 }

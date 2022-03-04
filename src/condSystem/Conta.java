@@ -10,6 +10,20 @@ public class Conta {
 	public void depositar(float valor, Morador titular) {
 		if (valor <= titular.getProfissao().getSalario()) {
 			this.setSaldo(valor + this.getSaldo());
+			System.out.println("Deposito Realizado com Sucesso!");
+			System.out.println("Valor do Deposito: R$ " + valor);
+			System.out.println("Valor do Saldo Bancário: R$ " + this.getSaldo());
+		} else {
+			System.out.println("Valor Insuficiênte!");
+		}
+	}
+	
+	public void sacar(float valor) {
+		if (valor <= this.getSaldo()) {
+			this.setSaldo(valor - this.getSaldo());
+			System.out.println("Saque Realizado com Sucesso!");
+			System.out.println("Valor do Saque: R$ " + valor);
+			System.out.println("Valor do Saldo Bancário: R$ " + this.getSaldo());
 		} else {
 			System.out.println("Valor Insuficiênte!");
 		}
