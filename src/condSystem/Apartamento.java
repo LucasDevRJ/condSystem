@@ -10,7 +10,7 @@ public class Apartamento {
 	private int numeroBanheiros;
 	private int numeroVagasCarro;
 	private String descricao;
-	private float precoAlguel;
+	private float precoAluguel;
 	
 	public String getBloco() {
 		return bloco;
@@ -106,11 +106,19 @@ public class Apartamento {
 		this.endereco = endereco;
 	}
 
-	public float getPrecoAlguel() {
-		return precoAlguel;
+	public float getPrecoAluguel() {
+		return precoAluguel;
 	}
 
-	public void setPrecoAlguel(float precoAlguel) {
-		this.precoAlguel = precoAlguel;
+	public void setPrecoAluguel(float precoAluguel, Morador proprietario) {
+		if (proprietario.isEhProprietario() == true) {
+			if (precoAluguel > 0) {
+				this.precoAluguel = precoAluguel;;
+			} else {
+				System.out.println("O valor do aluguel precisa ser maior que 0!");
+			}
+		} else {
+			System.out.println("Para precificar o apartamento como aluguel é preciso ser proprietário!");
+		}
 	}
 }

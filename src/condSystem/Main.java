@@ -21,5 +21,13 @@ public class Main {
 		condominio.setNumeroQuadras(2);
 		condominio.setTamanho(1500);
 		
+		Apartamento apartamento = new Apartamento();
+		apartamento.setBloco("Bloco A");
+		apartamento.setNumero("305");
+		apartamento.setEndereco(enderecoCondominio);
+		apartamento.setNumeroBanheiros(1);
+		apartamento.setNumeroQuartos(2);
+		apartamento.setNumeroVagasCarro(1);
+		//apartamento.setPrecoAlguel(300, null);
 	}
 }
