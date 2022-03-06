@@ -28,7 +28,6 @@ public class Main {
 		apartamento.setNumeroBanheiros(1);
 		apartamento.setNumeroQuartos(2);
 		apartamento.setNumeroVagasCarro(1);
-		//apartamento.setPrecoAlguel(300, null);
 		
 		InformacoesPessoais informacoesPessoaisMorador = new InformacoesPessoais();
 		informacoesPessoaisMorador.setNome("Marcus");
@@ -39,12 +38,28 @@ public class Main {
 		informacoesPessoaisMorador.setNaturalidade("brasileiro");
 		informacoesPessoaisMorador.setCidadeNatal("Rio de Janeiro");
 		
+		InformacoesPessoais informacoesPessoaisInquilino = new InformacoesPessoais();
+		informacoesPessoaisInquilino.setNome("Dominic");
+		informacoesPessoaisInquilino.setSobrenome("Santhiago");
+		informacoesPessoaisInquilino.setDataNascimento("14/06/2003");
+		informacoesPessoaisInquilino.setCpf("221.434.543-12");
+		informacoesPessoaisInquilino.setRg("23.434.454-3");
+		informacoesPessoaisInquilino.setNaturalidade("brasileiro");
+		informacoesPessoaisInquilino.setCidadeNatal("Rio de Janeiro");
+		
 		Profissao profissaoMorador = new Profissao();
 		profissaoMorador.setCargo("Contador");
 		profissaoMorador.setDataIngresso("10/06/2013");
 		profissaoMorador.setSalario(4240.0f);
 		profissaoMorador.setTurno("Vespertino");
 		profissaoMorador.setDescricaoAtividades("Realização das atividades contabéis.");
+		
+		Profissao profissaoInquilino = new Profissao();
+		profissaoInquilino.setCargo("Gerente");
+		profissaoInquilino.setDataIngresso("15/02/2006");
+		profissaoInquilino.setSalario(3650.0f);
+		profissaoInquilino.setTurno("Vespertino");
+		profissaoInquilino.setDescricaoAtividades("Realização das atividades gerenciais.");
 		
 		Conta contaMorador = new Conta();
 		contaMorador.setAgencia(32);
@@ -59,5 +74,14 @@ public class Main {
 		morador.setEhProprietario(true);
 		morador.setProfissao(profissaoMorador);
 		morador.setTitular(contaMorador);
+		
+		apartamento.setPrecoAluguel(800.0f, morador);
+		
+		Inquilino inquilino = new Inquilino();
+		inquilino.setEndereco(enderecoCondominio);
+		inquilino.setInformacoesPessoais(informacoesPessoaisInquilino);
+		inquilino.setProfissao(profissaoInquilino);
+		inquilino.setTitular(contaMorador);
+		
 	}
 }

@@ -113,7 +113,7 @@ public class Apartamento {
 	public void setPrecoAluguel(float precoAluguel, Morador proprietario) {
 		if (proprietario.isEhProprietario() == true) {
 			if (precoAluguel > 0) {
-				this.precoAluguel = precoAluguel;;
+				this.precoAluguel = precoAluguel;
 			} else {
 				System.out.println("O valor do aluguel precisa ser maior que 0!");
 			}
