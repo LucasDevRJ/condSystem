@@ -2,7 +2,7 @@ package condSystem;
 
 public class Conta {
 
-	private String numero;
+	private int numero;
 	private int agencia;
 	private float saldo;
 	private int senha;
@@ -29,11 +29,11 @@ public class Conta {
 		}
 	}
 	
-	public String getNumero() {
+	public int getNumero() {
 		return numero;
 	}
 
-	public void setNumero(String numero) {
+	public void setNumero(int numero) {
 		this.numero = numero;
 	}
 	

@@ -5,7 +5,7 @@ public class Receita {
 	private float total;
 	
 	public void receitaTotal(Apartamento aluguel) {
-		this.total += aluguel.getPrecoAlguel();
+		this.total += aluguel.getPrecoAluguel();
 	}
 	
 	public float getTotal() {

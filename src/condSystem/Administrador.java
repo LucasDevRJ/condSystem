@@ -66,7 +66,7 @@ public class Administrador extends Colaborador implements CondSystem {
 		System.out.println("Número de Banheiros: " + morador.getApartamento().getNumeroBanheiros());
 		System.out.println("Número de Vagas para Carro: " + morador.getApartamento().getNumeroVagasCarro());
 		System.out.println("Descrição: " + morador.getApartamento().getDescricao());
-		System.out.println("Preço Aluguel: " + morador.getApartamento().getPrecoAlguel());
+		System.out.println("Preço Aluguel: " + morador.getApartamento().getPrecoAluguel());
 		if (morador.isEhProprietario() == true) {
 			System.out.println("É Proprietário: Sim");
 		} else {
