@@ -274,5 +274,42 @@ public class Main {
 		professorAcademia.setInformacoesPessoais(informacoesPessoaisProfessorAcademia);
 		professorAcademia.setProfissao(profissaoProfessorAcademia);
 		professorAcademia.setTitular(contaProfessorAcademia);
+		
+		Endereco enderecoSeguranca = new Endereco();
+		enderecoSeguranca.setPais("Brasil");
+		enderecoSeguranca.setCep("73843432");
+		enderecoSeguranca.setEstado("Rio de Janeiro");
+		enderecoSeguranca.setCidade("Rio de Janeiro");
+		enderecoSeguranca.setRua("Rua dos Arautos");
+		enderecoSeguranca.setNumero("1230");
+		enderecoSeguranca.setPontoReferencia("Próximo ao Barra Shooping");
+		
+		InformacoesPessoais informacoesPessoaisSeguranca = new InformacoesPessoais();
+		informacoesPessoaisSeguranca.setNome("Júlio");
+		informacoesPessoaisSeguranca.setSobrenome("Ribas");
+		informacoesPessoaisSeguranca.setDataNascimento("24/04/1998");
+		informacoesPessoaisSeguranca.setCpf("311.465.342-11");
+		informacoesPessoaisSeguranca.setRg("45.233.112-3");
+		informacoesPessoaisSeguranca.setNaturalidade("brasileiro");
+		informacoesPessoaisSeguranca.setCidadeNatal("Rio de Janeiro");
+		
+		Profissao profissaoSeguranca = new Profissao();
+		profissaoSeguranca.setCargo("Segurança");
+		profissaoSeguranca.setDataIngresso("11/06/2010");
+		profissaoSeguranca.setSalario(3830.50f);
+		profissaoSeguranca.setTurno("Vespertino");
+		profissaoSeguranca.setDescricaoAtividades("Realização das atividades de professor de segurança.");
+		
+		Conta contaSeguranca = new Conta();
+		contaSeguranca.setAgencia(23);
+		contaSeguranca.setNumero(44323432);
+		contaSeguranca.setSaldo(4230.00f);
+		contaSeguranca.setSenha(44343);
+		
+		Seguranca seguranca = new Seguranca();
+		seguranca.setEndereco(enderecoSeguranca);
+		seguranca.setInformacoesPessoais(informacoesPessoaisSeguranca);
+		seguranca.setProfissao(profissaoSeguranca);
+		seguranca.setTitular(contaSeguranca);
 	}
 }
