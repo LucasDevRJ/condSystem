@@ -237,5 +237,42 @@ public class Main {
 		pedreiro.setInformacoesPessoais(informacoesPessoaisPedreiro);
 		pedreiro.setProfissao(profissaoPedreiro);
 		pedreiro.setTitular(contaPedreiro);
+		
+		Endereco enderecoProfessorAcademia = new Endereco();
+		enderecoProfessorAcademia.setPais("Brasil");
+		enderecoProfessorAcademia.setCep("44354432");
+		enderecoProfessorAcademia.setEstado("Rio de Janeiro");
+		enderecoProfessorAcademia.setCidade("Rio de Janeiro");
+		enderecoProfessorAcademia.setRua("Rua dos Gafonhotos");
+		enderecoProfessorAcademia.setNumero("3200");
+		enderecoProfessorAcademia.setPontoReferencia("Proximo a shopping Guanabara");
+		
+		InformacoesPessoais informacoesPessoaisProfessorAcademia = new InformacoesPessoais();
+		informacoesPessoaisProfessorAcademia.setNome("Rodolfo");
+		informacoesPessoaisProfessorAcademia.setSobrenome("Gomes");
+		informacoesPessoaisProfessorAcademia.setDataNascimento("21/02/2002");
+		informacoesPessoaisProfessorAcademia.setCpf("101.322.876-23");
+		informacoesPessoaisProfessorAcademia.setRg("22.432.113-2");
+		informacoesPessoaisProfessorAcademia.setNaturalidade("brasileiro");
+		informacoesPessoaisProfessorAcademia.setCidadeNatal("Paraíba");
+		
+		Profissao profissaoProfessorAcademia = new Profissao();
+		profissaoProfessorAcademia.setCargo("Professor de Academia");
+		profissaoProfessorAcademia.setDataIngresso("23/03/1997");
+		profissaoProfessorAcademia.setSalario(4640.0f);
+		profissaoProfessorAcademia.setTurno("Vespertino");
+		profissaoProfessorAcademia.setDescricaoAtividades("Realização das atividades de professor de academia.");
+		
+		Conta contaProfessorAcademia = new Conta();
+		contaProfessorAcademia.setAgencia(19);
+		contaProfessorAcademia.setNumero(44355432);
+		contaProfessorAcademia.setSaldo(2870.60f);
+		contaProfessorAcademia.setSenha(44432);
+		
+		Porteiro professorAcademia = new Porteiro();
+		professorAcademia.setEndereco(enderecoProfessorAcademia);
+		professorAcademia.setInformacoesPessoais(informacoesPessoaisProfessorAcademia);
+		professorAcademia.setProfissao(profissaoProfessorAcademia);
+		professorAcademia.setTitular(contaProfessorAcademia);
 	}
 }
