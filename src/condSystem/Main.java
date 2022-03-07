@@ -163,5 +163,42 @@ public class Main {
 		jardineiro.setJardinagemEstaGrande(true);
 		jardineiro.setProfissao(profissaoJardineiro);
 		jardineiro.setTitular(contaJardineiro);
+		
+		Endereco enderecoPorteiro = new Endereco();
+		enderecoPorteiro.setPais("Brasil");
+		enderecoPorteiro.setCep("43334543");
+		enderecoPorteiro.setEstado("Rio de Janeiro");
+		enderecoPorteiro.setCidade("Rio de Janeiro");
+		enderecoPorteiro.setRua("Rua dos Asfaltos");
+		enderecoPorteiro.setNumero("312");
+		enderecoPorteiro.setPontoReferencia("Avenida Wilson");
+		
+		InformacoesPessoais informacoesPessoaisPorteiro = new InformacoesPessoais();
+		informacoesPessoaisPorteiro.setNome("Carl");
+		informacoesPessoaisPorteiro.setSobrenome("Jhoson");
+		informacoesPessoaisPorteiro.setDataNascimento("16/04/1992");
+		informacoesPessoaisPorteiro.setCpf("112.321.554-12");
+		informacoesPessoaisPorteiro.setRg("22.432.112-1");
+		informacoesPessoaisPorteiro.setNaturalidade("brasileiro");
+		informacoesPessoaisPorteiro.setCidadeNatal("Rio de Janeiro");
+		
+		Profissao profissaoPorteiro = new Profissao();
+		profissaoPorteiro.setCargo("Porteiro");
+		profissaoPorteiro.setDataIngresso("21/03/2007");
+		profissaoPorteiro.setSalario(2630.0f);
+		profissaoPorteiro.setTurno("Vespertino");
+		profissaoPorteiro.setDescricaoAtividades("Realização das atividades de porteiro.");
+		
+		Conta contaPorteiro = new Conta();
+		contaPorteiro.setAgencia(21);
+		contaPorteiro.setNumero(34423432);
+		contaPorteiro.setSaldo(3420.60f);
+		contaPorteiro.setSenha(33321);
+		
+		Porteiro porteiro = new Porteiro();
+		porteiro.setEndereco(enderecoPorteiro);
+		porteiro.setInformacoesPessoais(informacoesPessoaisPorteiro);
+		porteiro.setProfissao(profissaoPorteiro);
+		porteiro.setTitular(contaPorteiro);
 	}
 }
