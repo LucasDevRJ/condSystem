@@ -200,5 +200,42 @@ public class Main {
 		porteiro.setInformacoesPessoais(informacoesPessoaisPorteiro);
 		porteiro.setProfissao(profissaoPorteiro);
 		porteiro.setTitular(contaPorteiro);
+		
+		Endereco enderecoPedreiro = new Endereco();
+		enderecoPedreiro.setPais("Brasil");
+		enderecoPedreiro.setCep("34234332");
+		enderecoPedreiro.setEstado("Rio de Janeiro");
+		enderecoPedreiro.setCidade("Rio de Janeiro");
+		enderecoPedreiro.setRua("Rua dos Gatinhos");
+		enderecoPedreiro.setNumero("4010");
+		enderecoPedreiro.setPontoReferencia("Proximo a faculdade Fisk");
+		
+		InformacoesPessoais informacoesPessoaisPedreiro = new InformacoesPessoais();
+		informacoesPessoaisPedreiro.setNome("Luciano");
+		informacoesPessoaisPedreiro.setSobrenome("Pereira");
+		informacoesPessoaisPedreiro.setDataNascimento("12/09/1999");
+		informacoesPessoaisPedreiro.setCpf("115.344.221-19");
+		informacoesPessoaisPedreiro.setRg("11.321.654-3");
+		informacoesPessoaisPedreiro.setNaturalidade("brasileiro");
+		informacoesPessoaisPedreiro.setCidadeNatal("Rio de Janeiro");
+		
+		Profissao profissaoPedreiro = new Profissao();
+		profissaoPedreiro.setCargo("Porteiro");
+		profissaoPedreiro.setDataIngresso("19/07/2002");
+		profissaoPedreiro.setSalario(3420.50f);
+		profissaoPedreiro.setTurno("Vespertino");
+		profissaoPedreiro.setDescricaoAtividades("Realização das atividades de pedreiro.");
+		
+		Conta contaPedreiro = new Conta();
+		contaPedreiro.setAgencia(21);
+		contaPedreiro.setNumero(34423432);
+		contaPedreiro.setSaldo(3420.60f);
+		contaPedreiro.setSenha(33321);
+		
+		Porteiro pedreiro = new Porteiro();
+		pedreiro.setEndereco(enderecoPedreiro);
+		pedreiro.setInformacoesPessoais(informacoesPessoaisPedreiro);
+		pedreiro.setProfissao(profissaoPedreiro);
+		pedreiro.setTitular(contaPedreiro);
 	}
 }
