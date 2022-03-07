@@ -311,5 +311,42 @@ public class Main {
 		seguranca.setInformacoesPessoais(informacoesPessoaisSeguranca);
 		seguranca.setProfissao(profissaoSeguranca);
 		seguranca.setTitular(contaSeguranca);
+		
+		Endereco enderecoAdministrador = new Endereco();
+		enderecoAdministrador.setPais("Brasil");
+		enderecoAdministrador.setCep("34343343");
+		enderecoAdministrador.setEstado("Rio de Janeiro");
+		enderecoAdministrador.setCidade("Rio de Janeiro");
+		enderecoAdministrador.setRua("Rua dos Mouras");
+		enderecoAdministrador.setNumero("1950");
+		enderecoAdministrador.setPontoReferencia("Próximo a feira");
+		
+		InformacoesPessoais informacoesPessoaisAdministrador = new InformacoesPessoais();
+		informacoesPessoaisAdministrador.setNome("Rafael");
+		informacoesPessoaisAdministrador.setSobrenome("Gonzales");
+		informacoesPessoaisAdministrador.setDataNascimento("04/06/2001");
+		informacoesPessoaisAdministrador.setCpf("234.654.211-33");
+		informacoesPessoaisAdministrador.setRg("32.443.120-5");
+		informacoesPessoaisAdministrador.setNaturalidade("brasileiro");
+		informacoesPessoaisAdministrador.setCidadeNatal("Rio de Janeiro");
+		
+		Profissao profissaoAdministrador = new Profissao();
+		profissaoAdministrador.setCargo("Administrador");
+		profissaoAdministrador.setDataIngresso("03/09/2005");
+		profissaoAdministrador.setSalario(5230.00f);
+		profissaoAdministrador.setTurno("Vespertino");
+		profissaoAdministrador.setDescricaoAtividades("Realização das atividades de administrador.");
+		
+		Conta contaAdministrador = new Conta();
+		contaAdministrador.setAgencia(17);
+		contaAdministrador.setNumero(54534541);
+		contaAdministrador.setSaldo(9430.50f);
+		contaAdministrador.setSenha(33234);
+		
+		Administrador administrador = new Administrador();
+		administrador.setEndereco(enderecoAdministrador);
+		administrador.setInformacoesPessoais(informacoesPessoaisAdministrador);
+		administrador.setProfissao(profissaoAdministrador);
+		administrador.setTitular(contaAdministrador);
 	}
 }
