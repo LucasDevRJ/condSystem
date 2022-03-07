@@ -20,7 +20,7 @@ public class Main {
 		condominio.setNumeroPiscinas(1);
 		condominio.setNumeroQuadras(2);
 		condominio.setTamanho(1500);
-		
+
 		Apartamento apartamento = new Apartamento();
 		apartamento.setBloco("Bloco A");
 		apartamento.setNumero("305");
@@ -232,7 +232,7 @@ public class Main {
 		contaPedreiro.setSaldo(3420.60f);
 		contaPedreiro.setSenha(33321);
 		
-		Porteiro pedreiro = new Porteiro();
+		Pedreiro pedreiro = new Pedreiro();
 		pedreiro.setEndereco(enderecoPedreiro);
 		pedreiro.setInformacoesPessoais(informacoesPessoaisPedreiro);
 		pedreiro.setProfissao(profissaoPedreiro);
@@ -269,7 +269,7 @@ public class Main {
 		contaProfessorAcademia.setSaldo(2870.60f);
 		contaProfessorAcademia.setSenha(44432);
 		
-		Porteiro professorAcademia = new Porteiro();
+		ProfessorAcademia professorAcademia = new ProfessorAcademia();
 		professorAcademia.setEndereco(enderecoProfessorAcademia);
 		professorAcademia.setInformacoesPessoais(informacoesPessoaisProfessorAcademia);
 		professorAcademia.setProfissao(profissaoProfessorAcademia);
@@ -348,5 +348,13 @@ public class Main {
 		administrador.setInformacoesPessoais(informacoesPessoaisAdministrador);
 		administrador.setProfissao(profissaoAdministrador);
 		administrador.setTitular(contaAdministrador);
+		
+		Custo custoCondominio = new Custo();
+		custoCondominio.setConsertos(635.30f);
+		custoCondominio.setConstrucao(1234.50f);
+		custoCondominio.setMaterialConstrucao(3160.0f);
+		custoCondominio.setMaterialLimpeza(213.40f);
+		custoCondominio.setSalarioTotal(administrador);
+		custoCondominio.setSalarioTotal(porteiro);
 	}
 }

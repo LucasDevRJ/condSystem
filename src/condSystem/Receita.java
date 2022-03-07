@@ -9,7 +9,7 @@ public class Receita {
 	}
 	
 	public float getTotal() {
-		return total;
+		return this.total += aluguel.getPrecoAluguel();
 	}
 	
 	public void setTotal(float total) {
