@@ -359,5 +359,10 @@ public class Main {
 		
 		System.out.println(custoCondominio.getSalarioTotal());
 		System.out.println(custoCondominio.getTotal());
+		
+		Receita receita = new Receita();
+		receita.setTotal(apartamento);
+		
+		System.out.println(receita.getTotal());
 	}
 }
