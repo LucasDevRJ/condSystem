@@ -89,8 +89,79 @@ public class Main {
 		inquilino.setProfissao(profissaoInquilino);
 		inquilino.setTitular(contaInquilino);
 		
-		morador.receberAluguel(inquilino, apartamento);
+		Endereco enderecoEletricista = new Endereco();
+		enderecoEletricista.setPais("Brasil");
+		enderecoEletricista.setCep("44344324");
+		enderecoEletricista.setEstado("Rio de Janeiro");
+		enderecoEletricista.setCidade("Rio de Janeiro");
+		enderecoEletricista.setRua("Rua do JavaScript");
+		enderecoEletricista.setNumero("804");
+		enderecoEletricista.setPontoReferencia("Avenida das Américas");
 		
-		System.out.println(inquilino.getTitular().getSaldo());
+		InformacoesPessoais informacoesPessoaisEletricista = new InformacoesPessoais();
+		informacoesPessoaisEletricista.setNome("Dominic");
+		informacoesPessoaisEletricista.setSobrenome("Santhiago");
+		informacoesPessoaisEletricista.setDataNascimento("14/06/2003");
+		informacoesPessoaisEletricista.setCpf("221.434.543-12");
+		informacoesPessoaisEletricista.setRg("23.434.454-3");
+		informacoesPessoaisEletricista.setNaturalidade("brasileiro");
+		informacoesPessoaisEletricista.setCidadeNatal("Rio de Janeiro");
+		
+		Profissao profissaoEletricista = new Profissao();
+		profissaoEletricista.setCargo("Eletricista");
+		profissaoEletricista.setDataIngresso("20/05/2020");
+		profissaoEletricista.setSalario(2810.0f);
+		profissaoEletricista.setTurno("Vespertino");
+		profissaoEletricista.setDescricaoAtividades("Realização das atividades de eletricista.");
+		
+		Conta contaEletricista = new Conta();
+		contaEletricista.setAgencia(19);
+		contaEletricista.setNumero(34325654);
+		contaEletricista.setSaldo(5234.60f);
+		contaEletricista.setSenha(21211);
+		
+		Eletricista eletricista = new Eletricista();
+		eletricista.setEndereco(enderecoEletricista);
+		eletricista.setInformacoesPessoais(informacoesPessoaisEletricista);
+		eletricista.setProfissao(profissaoEletricista);
+		eletricista.setTitular(contaEletricista);
+		
+		Endereco enderecoJardineiro = new Endereco();
+		enderecoJardineiro.setPais("Brasil");
+		enderecoJardineiro.setCep("44354334");
+		enderecoJardineiro.setEstado("Rio de Janeiro");
+		enderecoJardineiro.setCidade("Rio de Janeiro");
+		enderecoJardineiro.setRua("Rua das Bananadas");
+		enderecoJardineiro.setNumero("302");
+		enderecoJardineiro.setPontoReferencia("Avenida Goiaba");
+		
+		InformacoesPessoais informacoesPessoaisJardineiro = new InformacoesPessoais();
+		informacoesPessoaisJardineiro.setNome("Niko");
+		informacoesPessoaisJardineiro.setSobrenome("Bellic");
+		informacoesPessoaisJardineiro.setDataNascimento("10/02/1994");
+		informacoesPessoaisJardineiro.setCpf("332.112.554-14");
+		informacoesPessoaisJardineiro.setRg("11.232.113-4");
+		informacoesPessoaisJardineiro.setNaturalidade("brasileiro");
+		informacoesPessoaisJardineiro.setCidadeNatal("Rio de Janeiro");
+		
+		Profissao profissaoJardineiro = new Profissao();
+		profissaoJardineiro.setCargo("Eletricista");
+		profissaoJardineiro.setDataIngresso("12/01/2018");
+		profissaoJardineiro.setSalario(2810.0f);
+		profissaoJardineiro.setTurno("Vespertino");
+		profissaoJardineiro.setDescricaoAtividades("Realização das atividades de jardinagens.");
+		
+		Conta contaJardineiro = new Conta();
+		contaJardineiro.setAgencia(11);
+		contaJardineiro.setNumero(33234543);
+		contaJardineiro.setSaldo(2312.30f);
+		contaJardineiro.setSenha(11122);
+		
+		Jardineiro jardineiro = new Jardineiro();
+		jardineiro.setEndereco(enderecoJardineiro);
+		jardineiro.setInformacoesPessoais(informacoesPessoaisJardineiro);
+		jardineiro.setJardinagemEstaGrande(true);
+		jardineiro.setProfissao(profissaoJardineiro);
+		jardineiro.setTitular(contaJardineiro);
 	}
 }
