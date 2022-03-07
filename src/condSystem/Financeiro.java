@@ -31,7 +31,11 @@ public class Financeiro {
 		this.receita = receita;
 	}
 	
-	public float getLucro(Administrador administrador, Jardineiro jardineiro, Seguranca seguranca, Pedreiro pedreiro, Porteiro porteiro, Eletricista eletricista, ProfessorAcademia professorAcademia) {
-		return receita.getTotal() - (despesa.getTotal() + custo.getTotal(administrador, jardineiro, seguranca, pedreiro, porteiro, eletricista, professorAcademia));
+	public float getLucro() {
+		return lucro;
+	}
+	
+	public void setLucro(Colaborador colaborador, Apartamento apartamento) {
+		this.lucro = receita.getTotal(apartamento) - (despesa.getTotal() + custo.getTotal());
 	}
 }

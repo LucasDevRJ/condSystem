@@ -41,10 +41,11 @@ public class Custo {
 		this.consertos = consertos;
 	}
 	
-	public float getTotal(Colaborador colaborador) {
-		return this.getConsertos() + this.getConstrucao() + this.getMaterialConstrucao() + this.getMaterialLimpeza() + this.getSalarioTotal();
+	public float getTotal() {
+		 total = this.getConsertos() + this.getConstrucao() + this.getMaterialConstrucao() + this.getMaterialLimpeza() + this.getSalarioTotal();
+		 return Math.round(total);
 	}
-
+	
 	public float getSalarioTotal() {
 		return salarioTotal;
 	}

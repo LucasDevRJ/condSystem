@@ -356,5 +356,8 @@ public class Main {
 		custoCondominio.setMaterialLimpeza(213.40f);
 		custoCondominio.setSalarioTotal(administrador);
 		custoCondominio.setSalarioTotal(porteiro);
+		
+		System.out.println(custoCondominio.getSalarioTotal());
+		System.out.println(custoCondominio.getTotal());
 	}
 }
