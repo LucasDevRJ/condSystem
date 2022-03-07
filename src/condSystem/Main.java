@@ -67,6 +67,12 @@ public class Main {
 		contaMorador.setSaldo(2370.40f);
 		contaMorador.setSenha(33424);
 		
+		Conta contaInquilino = new Conta();
+		contaInquilino.setAgencia(12);
+		contaInquilino.setNumero(45434435);
+		contaInquilino.setSaldo(3850.80f);
+		contaInquilino.setSenha(23432);
+		
 		Morador morador = new Morador();
 		morador.setApartamento(apartamento);
 		morador.setInformacoesPessoais(informacoesPessoaisMorador);
@@ -75,13 +81,16 @@ public class Main {
 		morador.setProfissao(profissaoMorador);
 		morador.setTitular(contaMorador);
 		
-		apartamento.setPrecoAluguel(800.0f, morador);
+		apartamento.setPrecoAluguel(800.0f);
 		
 		Inquilino inquilino = new Inquilino();
 		inquilino.setEndereco(enderecoCondominio);
 		inquilino.setInformacoesPessoais(informacoesPessoaisInquilino);
 		inquilino.setProfissao(profissaoInquilino);
-		inquilino.setTitular(contaMorador);
+		inquilino.setTitular(contaInquilino);
 		
+		morador.receberAluguel(inquilino, apartamento);
+		
+		System.out.println(inquilino.getTitular().getSaldo());
 	}
 }

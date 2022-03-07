@@ -12,17 +12,20 @@ public class Apartamento {
 	private String descricao;
 	private float precoAluguel;
 	
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+	
 	public String getBloco() {
 		return bloco;
 	}
 	
 	public void setBloco(String bloco) {
-		bloco = bloco.replaceAll("[^a-zA-Z0-9]", "");
-		if (bloco.length() == 0) {
-			System.out.println("Digite o bloco!");
-		} else {
-			this.bloco = bloco;
-		}
+		this.bloco = bloco;
 	}
 	
 	public String getNumero() {
@@ -30,12 +33,7 @@ public class Apartamento {
 	}
 	
 	public void setNumero(String numero) {
-		numero = numero.replaceAll("[^a-zA-Z0-9]", "");
-		if (numero.length() == 0) {
-			System.out.println("Digite o bloco!");
-		} else {
-			this.numero = numero;
-		}
+		this.numero = numero;
 	}
 	
 	public int getTamanho() {
@@ -43,11 +41,7 @@ public class Apartamento {
 	}
 	
 	public void setTamanho(int tamanho) {
-		if (tamanho < 0) {
-			System.out.println("Valor inválido!");
-		} else {
-			this.tamanho = tamanho;
-		}
+		this.tamanho = tamanho;
 	}
 	
 	public int getNumeroQuartos() {
@@ -55,11 +49,7 @@ public class Apartamento {
 	}
 	
 	public void setNumeroQuartos(int numeroQuartos) {
-		if (numeroQuartos < 0) {
-			System.out.println("Valor inválido!");
-		} else {
-			this.numeroQuartos = numeroQuartos;
-		}
+		this.numeroQuartos = numeroQuartos;
 	}
 	
 	public int getNumeroBanheiros() {
@@ -67,11 +57,7 @@ public class Apartamento {
 	}
 	
 	public void setNumeroBanheiros(int numeroBanheiros) {
-		if (numeroBanheiros < 0) {
-			System.out.println("Valor inválido!");
-		} else {
-			this.numeroBanheiros = numeroBanheiros;
-		}
+		this.numeroBanheiros = numeroBanheiros;
 	}
 	
 	public int getNumeroVagasCarro() {
@@ -79,11 +65,7 @@ public class Apartamento {
 	}
 	
 	public void setNumeroVagasCarro(int numeroVagasCarro) {
-		if (numeroVagasCarro < 0) {
-			System.out.println("Valor inválido!");
-		} else {
-			this.numeroVagasCarro = numeroVagasCarro;
-		}
+		this.numeroVagasCarro = numeroVagasCarro;
 	}
 	
 	public String getDescricao() {
@@ -91,34 +73,14 @@ public class Apartamento {
 	}
 	
 	public void setDescricao(String descricao) {
-		if (descricao.length() == 0) {
-			System.out.println("Digite a descrição!");
-		} else {
-			this.descricao = descricao;
-		}
+		this.descricao = descricao;
 	}
-
-	public Endereco getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
-
+	
 	public float getPrecoAluguel() {
 		return precoAluguel;
 	}
-
-	public void setPrecoAluguel(float precoAluguel, Morador proprietario) {
-		if (proprietario.isEhProprietario() == true) {
-			if (precoAluguel > 0) {
-				this.precoAluguel = precoAluguel;
-			} else {
-				System.out.println("O valor do aluguel precisa ser maior que 0!");
-			}
-		} else {
-			System.out.println("Para precificar o apartamento como aluguel é preciso ser proprietário!");
-		}
+	
+	public void setPrecoAluguel(float precoAluguel) {
+		this.precoAluguel = precoAluguel;
 	}
 }

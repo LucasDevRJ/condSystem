@@ -16,13 +16,7 @@ public class InformacoesPessoais {
 	}
 	
 	public void setNome(String nome) {
-		nome = nome.replaceAll("[^A-Za-z]", "");
-		
-		if (nome.length() > 0) {
-			this.nome = nome;
-		} else {
-			System.out.println("Digite o nome!");
-		}
+		this.nome = nome;
 	}
 	
 	public String getSobrenome() {
@@ -30,13 +24,7 @@ public class InformacoesPessoais {
 	}
 	
 	public void setSobrenome(String sobrenome) {
-		sobrenome = sobrenome.replaceAll("[^A-Za-z]", "");
-		
-		if (sobrenome.length() > 0) {
-			this.sobrenome = sobrenome;
-		} else {
-			System.out.println("Digite o sobrenome!");
-		}
+		this.sobrenome = sobrenome;
 	}
 
 	public String getNaturalidade() {
@@ -44,13 +32,7 @@ public class InformacoesPessoais {
 	}
 	
 	public void setNaturalidade(String naturalidade) {
-		naturalidade = naturalidade.replaceAll("[^A-Za-z]", "");
-		
-		if (naturalidade.length() > 0) {
-			this.naturalidade = naturalidade;
-		} else {
-			System.out.println("Digite a naturalidade!");
-		}
+		this.naturalidade = naturalidade;
 	}
 	
 	public String getCidadeNatal() {
@@ -58,13 +40,7 @@ public class InformacoesPessoais {
 	}
 	
 	public void setCidadeNatal(String cidadeNatal) {
-		cidadeNatal = cidadeNatal.replaceAll("[^A-Za-z]", "");
-		
-		if (cidadeNatal.length() > 0) {
-			this.cidadeNatal = cidadeNatal;
-		} else {
-			System.out.println("Digite a cidade natal!");
-		}
+		this.cidadeNatal = cidadeNatal;
 	}
 	
 	public String getProfissao() {
@@ -72,13 +48,7 @@ public class InformacoesPessoais {
 	}
 	
 	public void setProfissao(String profissao) {
-		profissao = profissao.replaceAll("[^A-Za-z]", "");
-		
-		if (profissao.length() > 0) {
-			this.profissao = profissao;
-		} else {
-			System.out.println("Digite a profissão!");
-		}
+		this.profissao = profissao;
 	}
 	
 	public String getRg() {
@@ -86,8 +56,6 @@ public class InformacoesPessoais {
 	}
 	
 	public void setRg(String rg) {
-		rg = rg.replaceAll("[^0-9]", "");
-		rg = rg.substring(0,2) + "." + rg.substring(2,5) + "." + rg.substring(5,8) + "-" + rg.substring(8,9);
 		this.rg = rg;
 	}
 	
@@ -96,8 +64,6 @@ public class InformacoesPessoais {
 	}
 	
 	public void setCpf(String cpf) {
-		cpf = cpf.replaceAll("[^0-9]", "");
-		cpf = cpf.substring(0,3) + "." + cpf.substring(3,6) + "." + cpf.substring(6,9) + "-" + cpf.substring(9,11);
 		this.cpf = cpf;
 	}
 
@@ -106,8 +72,6 @@ public class InformacoesPessoais {
 	}
 
 	public void setDataNascimento(String dataNascimento) {
-		dataNascimento = dataNascimento.replaceAll("[^0-9]", "");
-		dataNascimento = dataNascimento.substring(0,2) + "/" + dataNascimento.substring(2,4) + "/" + dataNascimento.substring(4,8);
 		this.dataNascimento = dataNascimento;
 	}
 }
