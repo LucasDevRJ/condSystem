@@ -81,7 +81,7 @@ public class Main {
 		morador.setProfissao(profissaoMorador);
 		morador.setTitular(contaMorador);
 		
-		apartamento.setPrecoAluguel(800.0f);
+		apartamento.setPrecoAluguel(1500.0f);
 		
 		Inquilino inquilino = new Inquilino();
 		inquilino.setEndereco(enderecoCondominio);
@@ -363,11 +363,15 @@ public class Main {
 		custoCondominio.setSalarioTotal(professorAcademia);
 		
 		Despesa despesa = new Despesa();
-		despesa.setAgua(43567.30f);
-		despesa.setEletricidade(38945.50f);
-		despesa.setGas(4356.20f);
-		despesa.setImposto(1943.30f);
+		despesa.setAgua(8340.30f);
+		despesa.setEletricidade(1560.50f);
+		despesa.setGas(563.20f);
+		despesa.setImposto(320.30f);
 		
-		System.out.println(despesa.getTotal());
+		Receita receita = new Receita();
+		receita.setTotal(apartamento);
+		
+		
+		
 	}
 }
