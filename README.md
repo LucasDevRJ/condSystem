@@ -20,7 +20,7 @@ O CondSystem funciona com os Setters de informações e os Getters para pegar as
 
 ## :open_file_folder: Acesso ao projeto
 
-**Para baixar o <a href="https://github.com/LucasDevRJ/condSystem/archive/refs/heads/master.zip" >projeto<a/> ou somente ter acesso aos <a href="https://github.com/LucasDevRJ/frewGames">diretorios<a/> , basta clicar nos links azuis.**
+**Para baixar o <a href="https://github.com/LucasDevRJ/condSystem/archive/refs/heads/master.zip" >projeto<a/> ou somente ter acesso aos <a href="https://github.com/LucasDevRJ/condSystem">diretorios<a/> , basta clicar nos links azuis.**
 
 ## :bulb: Abrir e rodar o projeto
 
