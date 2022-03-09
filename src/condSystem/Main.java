@@ -377,6 +377,7 @@ public class Main {
 		financeiro.setReceita(receita);
 		
 		//Chamadas de métodos
-		
+		pedreiro.consertar("piso do condomínio");
+		pedreiro.construir("parquinho");
 	}
 }
