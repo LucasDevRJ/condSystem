@@ -13,7 +13,7 @@ public class ProfessorAcademia extends Colaborador {
 	}
 	 
 	public void demonstrarExercicio() {
-		System.out.println("Professor de Educação Física " + super.getInformacoesPessoais().getNome() + super.getInformacoesPessoais().getSobrenome() + " esta demonstrando o exercício para o aluno.");
+		System.out.println("Professor de Educação Física " + super.getInformacoesPessoais().getNome() + " " + super.getInformacoesPessoais().getSobrenome() + " esta demonstrando o exercício para o aluno.");
 	}
 
 	public boolean isEstaMontandoSerie() {

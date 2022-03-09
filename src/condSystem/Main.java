@@ -387,5 +387,9 @@ public class Main {
 		
 		eletricista.consertaFiacao();
 		eletricista.trocaFiacao();
+		
+		jardineiro.jardinar();
+		
+		professorAcademia.demonstrarExercicio();
 	}
 }
