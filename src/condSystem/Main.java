@@ -379,5 +379,13 @@ public class Main {
 		//Chamadas de métodos
 		pedreiro.consertar("piso do condomínio");
 		pedreiro.construir("parquinho");
+		
+		porteiro.abrirPorta();
+		porteiro.abrirPortao();
+		
+		seguranca.vigiar("condomínio");
+		
+		eletricista.consertaFiacao();
+		eletricista.trocaFiacao();
 	}
 }
