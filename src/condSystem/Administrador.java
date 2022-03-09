@@ -76,9 +76,6 @@ public class Administrador extends Colaborador implements CondSystem {
 
 	@Override
 	public void agendarReuniao(String data) {
-		data = data.replaceAll("[^0-9]", "");
-		data = data.substring(0,2) + "/" + data.substring(2,4) + "/" + data.substring(4,8);
-		
 		System.out.println("A reunião do condomínio foi agendada para a data: " + data + "\nPor favor todos compareçam!");
 	}
 }

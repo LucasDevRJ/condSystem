@@ -9,6 +9,9 @@ public abstract class Colaborador {
 	
 	public void receberSalario() {
 		titular.setSaldo(titular.getSaldo() + profissao.getSalario());
+		System.out.println("Salário Depositado com Sucesso!");
+		System.out.println("Valor Depositado: R$ " + profissao.getSalario());
+		System.out.println("Saldo Total: R$ " + titular.getSaldo());
 	}
 
 	public InformacoesPessoais getInformacoesPessoais() {

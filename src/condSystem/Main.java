@@ -349,18 +349,18 @@ public class Main {
 		administrador.setProfissao(profissaoAdministrador);
 		administrador.setTitular(contaAdministrador);
 		
-		Custo custoCondominio = new Custo();
-		custoCondominio.setConsertos(635.30f);
-		custoCondominio.setConstrucao(1234.50f);
-		custoCondominio.setMaterialConstrucao(3160.0f);
-		custoCondominio.setMaterialLimpeza(213.40f);
-		custoCondominio.setSalarioTotal(administrador);
-		custoCondominio.setSalarioTotal(porteiro);
-		custoCondominio.setSalarioTotal(seguranca);
-		custoCondominio.setSalarioTotal(eletricista);
-		custoCondominio.setSalarioTotal(jardineiro);
-		custoCondominio.setSalarioTotal(pedreiro);
-		custoCondominio.setSalarioTotal(professorAcademia);
+		Custo custo = new Custo();
+		custo.setConsertos(635.30f);
+		custo.setConstrucao(1234.50f);
+		custo.setMaterialConstrucao(3160.0f);
+		custo.setMaterialLimpeza(213.40f);
+		custo.setSalarioTotal(administrador);
+		custo.setSalarioTotal(porteiro);
+		custo.setSalarioTotal(seguranca);
+		custo.setSalarioTotal(eletricista);
+		custo.setSalarioTotal(jardineiro);
+		custo.setSalarioTotal(pedreiro);
+		custo.setSalarioTotal(professorAcademia);
 		
 		Despesa despesa = new Despesa();
 		despesa.setAgua(8340.30f);
@@ -371,7 +371,12 @@ public class Main {
 		Receita receita = new Receita();
 		receita.setTotal(apartamento);
 		
+		Financeiro financeiro = new Financeiro();
+		financeiro.setCusto(custo);
+		financeiro.setDespesa(despesa);
+		financeiro.setReceita(receita);
 		
+		//Chamadas de métodos
 		
 	}
 }
