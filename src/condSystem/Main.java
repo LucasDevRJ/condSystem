@@ -380,16 +380,34 @@ public class Main {
 		pedreiro.consertar("piso do condomínio");
 		pedreiro.construir("parquinho");
 		
+		System.out.println();
+		
 		porteiro.abrirPorta();
 		porteiro.abrirPortao();
 		
+		System.out.println();
+		
 		seguranca.vigiar("condomínio");
+		
+		System.out.println();
 		
 		eletricista.consertaFiacao();
 		eletricista.trocaFiacao();
 		
+		System.out.println();
+		
 		jardineiro.jardinar();
 		
+		System.out.println();
+		
 		professorAcademia.demonstrarExercicio();
+		professorAcademia.montarSerie();
+		
+		System.out.println();
+		
+		administrador.acessarFinanceiro(financeiro);
+		administrador.acessarInformacoesColaborador(porteiro);
+		administrador.acessarInformacoesMorador(morador);
+		administrador.agendarReuniao("23/04/2022");
 	}
 }

@@ -4,7 +4,7 @@ public class Administrador extends Colaborador implements CondSystem {
 
 	@Override
 	public void acessarInformacoesColaborador(Colaborador colaborador) {
-		System.out.println("Informações do " + colaborador);
+		System.out.println("Informações do Colaborador");
 		System.out.println("Informações Pessoais:");
 		System.out.println("Nome: " + colaborador.getInformacoesPessoais().getNome());
 		System.out.println("Sobrenome: " + colaborador.getInformacoesPessoais().getSobrenome());
@@ -42,7 +42,7 @@ public class Administrador extends Colaborador implements CondSystem {
 
 	@Override
 	public void acessarInformacoesMorador(Morador morador) {
-		System.out.println("Informações do " + morador);
+		System.out.println("Informações do Morador");
 		System.out.println("Informações Pessoais:");
 		System.out.println("Nome: " + morador.getInformacoesPessoais().getNome());
 		System.out.println("Sobrenome: " + morador.getInformacoesPessoais().getSobrenome());
