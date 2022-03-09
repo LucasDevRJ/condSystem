@@ -356,13 +356,18 @@ public class Main {
 		custoCondominio.setMaterialLimpeza(213.40f);
 		custoCondominio.setSalarioTotal(administrador);
 		custoCondominio.setSalarioTotal(porteiro);
+		custoCondominio.setSalarioTotal(seguranca);
+		custoCondominio.setSalarioTotal(eletricista);
+		custoCondominio.setSalarioTotal(jardineiro);
+		custoCondominio.setSalarioTotal(pedreiro);
+		custoCondominio.setSalarioTotal(professorAcademia);
 		
-		System.out.println(custoCondominio.getSalarioTotal());
-		System.out.println(custoCondominio.getTotal());
+		Despesa despesa = new Despesa();
+		despesa.setAgua(43567.30f);
+		despesa.setEletricidade(38945.50f);
+		despesa.setGas(4356.20f);
+		despesa.setImposto(1943.30f);
 		
-		Receita receita = new Receita();
-		receita.setTotal(apartamento);
-		
-		System.out.println(receita.getTotal());
+		System.out.println(despesa.getTotal());
 	}
 }

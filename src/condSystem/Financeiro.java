@@ -36,6 +36,6 @@ public class Financeiro {
 	}
 	
 	public void setLucro(Colaborador colaborador, Apartamento apartamento) {
-		this.lucro = receita.getTotal(apartamento) - (despesa.getTotal() + custo.getTotal());
+		this.lucro = receita.getTotal() - (despesa.getTotal() + custo.getTotal());
 	}
 }

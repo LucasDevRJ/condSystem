@@ -7,11 +7,7 @@ public class Despesa {
 	private float gas;
 	private float imposto;
 	private float total;
-	
-	public void totalDespesa() {
-		this.setTotal(this.getEletricidade() + this.getAgua() + this.getGas() + this.getImposto());
-	}
-	
+
 	public float getEletricidade() {
 		return eletricidade;
 	}
@@ -45,10 +41,6 @@ public class Despesa {
 	}
 	
 	public float getTotal() {
-		return total;
-	}
-	
-	public void setTotal(float total) {
-		this.total = total;
+		return total = this.getAgua() + this.getEletricidade() + this.getGas() + this.getImposto();
 	}
 }
