@@ -69,14 +69,54 @@ public class Main {
 		contaMorador2.setSenha(23232);
 
 		Morador morador2 = new Morador();
-		morador2.setApartamento(apartamento);
-		morador2.setInformacoesPessoais(informacoesPessoaisMorador);
+		morador2.setApartamento(apartamento2);
+		morador2.setInformacoesPessoais(informacoesPessoaisMorador2);
 		morador2.setEndereco(enderecoCondominio);
 		morador2.setEhProprietario(true);
 		morador2.setProfissao(profissaoMorador2);
 		morador2.setTitular(contaMorador2);
 		
 		apartamento2.setPrecoAluguel(1700.0f);
+		
+		Apartamento apartamento3 = new Apartamento();
+		apartamento3.setBloco("Bloco C");
+		apartamento3.setNumero("504");
+		apartamento3.setEndereco(enderecoCondominio);
+		apartamento3.setNumeroBanheiros(2);
+		apartamento3.setNumeroQuartos(3);
+		apartamento3.setNumeroVagasCarro(2);
+		
+		InformacoesPessoais informacoesPessoaisMorador3 = new InformacoesPessoais();
+		informacoesPessoaisMorador3.setNome("Lúcio");
+		informacoesPessoaisMorador3.setSobrenome("Adalberto");
+		informacoesPessoaisMorador3.setDataNascimento("15/08/1992");
+		informacoesPessoaisMorador3.setCpf("344.231.667-23");
+		informacoesPessoaisMorador3.setRg("21.543.876-4");
+		informacoesPessoaisMorador3.setNaturalidade("brasileiro");
+		informacoesPessoaisMorador3.setCidadeNatal("São Paulo");
+		
+		Profissao profissaoMorador3 = new Profissao();
+		profissaoMorador3.setCargo("Médico");
+		profissaoMorador3.setDataIngresso("21/04/2000");
+		profissaoMorador3.setSalario(12340.00f);
+		profissaoMorador3.setTurno("Integral");
+		profissaoMorador3.setDescricaoAtividades("Realização das atividades de médico.");
+		
+		Conta contaMorador3 = new Conta();
+		contaMorador3.setAgencia(33);
+		contaMorador3.setNumero(54356765);
+		contaMorador3.setSaldo(32560.00f);
+		contaMorador3.setSenha(88767);
+
+		Morador morador3 = new Morador();
+		morador3.setApartamento(apartamento3);
+		morador3.setInformacoesPessoais(informacoesPessoaisMorador3);
+		morador3.setEndereco(enderecoCondominio);
+		morador3.setEhProprietario(true);
+		morador3.setProfissao(profissaoMorador3);
+		morador3.setTitular(contaMorador3);
+		
+		apartamento3.setPrecoAluguel(2400.0f);
 		
 		InformacoesPessoais informacoesPessoaisInquilino = new InformacoesPessoais();
 		informacoesPessoaisInquilino.setNome("Dominic");
@@ -411,6 +451,7 @@ public class Main {
 		Receita receita = new Receita();
 		receita.setTotal(apartamento);
 		receita.setTotal(apartamento2);
+		receita.setTotal(apartamento3);
 		
 		Financeiro financeiro = new Financeiro();
 		financeiro.setCusto(custo);
