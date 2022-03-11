@@ -118,6 +118,46 @@ public class Main {
 		
 		apartamento3.setPrecoAluguel(2400.0f);
 		
+		Apartamento apartamento4 = new Apartamento();
+		apartamento4.setBloco("Bloco C");
+		apartamento4.setNumero("308");
+		apartamento4.setEndereco(enderecoCondominio);
+		apartamento4.setNumeroBanheiros(2);
+		apartamento4.setNumeroQuartos(3);
+		apartamento4.setNumeroVagasCarro(2);
+		
+		InformacoesPessoais informacoesPessoaisMorador4 = new InformacoesPessoais();
+		informacoesPessoaisMorador4.setNome("Gabriel");
+		informacoesPessoaisMorador4.setSobrenome("Saldoso");
+		informacoesPessoaisMorador4.setDataNascimento("11/05/1999");
+		informacoesPessoaisMorador4.setCpf("233.432.112-21");
+		informacoesPessoaisMorador4.setRg("54.332.543-2");
+		informacoesPessoaisMorador4.setNaturalidade("brasileiro");
+		informacoesPessoaisMorador4.setCidadeNatal("Rio de Janeiro");
+		
+		Profissao profissaoMorador4 = new Profissao();
+		profissaoMorador4.setCargo("Empresário");
+		profissaoMorador4.setDataIngresso("13/03/2005");
+		profissaoMorador4.setSalario(8210.00f);
+		profissaoMorador4.setTurno("Integral");
+		profissaoMorador4.setDescricaoAtividades("Realização das atividades de empresário.");
+		
+		Conta contaMorador4 = new Conta();
+		contaMorador4.setAgencia(43);
+		contaMorador4.setNumero(11343454);
+		contaMorador4.setSaldo(23450.40f);
+		contaMorador4.setSenha(43323);
+
+		Morador morador4 = new Morador();
+		morador4.setApartamento(apartamento4);
+		morador4.setInformacoesPessoais(informacoesPessoaisMorador4);
+		morador4.setEndereco(enderecoCondominio);
+		morador4.setEhProprietario(true);
+		morador4.setProfissao(profissaoMorador4);
+		morador4.setTitular(contaMorador4);
+		
+		apartamento4.setPrecoAluguel(2400.0f);
+		
 		InformacoesPessoais informacoesPessoaisInquilino = new InformacoesPessoais();
 		informacoesPessoaisInquilino.setNome("Dominic");
 		informacoesPessoaisInquilino.setSobrenome("Santhiago");
@@ -452,6 +492,7 @@ public class Main {
 		receita.setTotal(apartamento);
 		receita.setTotal(apartamento2);
 		receita.setTotal(apartamento3);
+		receita.setTotal(apartamento4);
 		
 		Financeiro financeiro = new Financeiro();
 		financeiro.setCusto(custo);
