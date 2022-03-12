@@ -11,6 +11,7 @@ public class Apartamento {
 	private int numeroVagasCarro;
 	private String descricao;
 	private float precoAluguel;
+	private float precoApartamento;
 	
 	public Endereco getEndereco() {
 		return endereco;
@@ -82,5 +83,13 @@ public class Apartamento {
 	
 	public void setPrecoAluguel(float precoAluguel) {
 		this.precoAluguel = precoAluguel;
+	}
+
+	public float getPrecoApartamento() {
+		return precoApartamento;
+	}
+
+	public void setPrecoApartamento(float precoApartamento) {
+		this.precoApartamento = precoApartamento;
 	}
 }
