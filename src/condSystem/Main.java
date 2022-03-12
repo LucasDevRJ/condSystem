@@ -490,10 +490,6 @@ public class Main {
 		despesa.setImposto(320.30f);
 		
 		Receita receita = new Receita();
-		receita.setTotal(apartamento);
-		receita.setTotal(apartamento2);
-		receita.setTotal(apartamento3);
-		receita.setTotal(apartamento4);
 		
 		Financeiro financeiro = new Financeiro();
 		financeiro.setCusto(custo);

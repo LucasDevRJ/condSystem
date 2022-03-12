@@ -33,9 +33,15 @@ public class Morador extends Colaborador { //pode não ser colaborador do condomí
 		}
 	}
 	
-	public void alugarApartamento(Inquilino inquilino) {
+	public void alugarApartamento(Inquilino inquilino, Morador proprietario) {
 		if (this.isEhProprietario() == true) {
 			System.out.println("Imóvel Alugado com Sucesso!");
+			System.out.println("Informações do Proprietário");
+			System.out.println("Nome do Proprietário: " + proprietario.getInformacoesPessoais().getNome());
+			System.out.println("Sobrenome do Proprietário: " + proprietario.getInformacoesPessoais().getSobrenome());
+			System.out.println("CPF do Proprietário: " + inquilino.getInformacoesPessoais().getCpf());
+			System.out.println("RG do Proprietário: " + inquilino.getInformacoesPessoais().getRg());
+			System.out.println("Informações do Inquilino");
 			System.out.println("Nome do Inquilino: " + inquilino.getInformacoesPessoais().getNome());
 			System.out.println("Sobrenome do Inquilino: " + inquilino.getInformacoesPessoais().getSobrenome());
 			System.out.println("CPF do Inquilino: " + inquilino.getInformacoesPessoais().getCpf());
@@ -54,9 +60,7 @@ public class Morador extends Colaborador { //pode não ser colaborador do condomí
 				System.out.println("Nome Completo do Inquilino: " + inquilino.getInformacoesPessoais().getNome() + " " + inquilino.getInformacoesPessoais().getSobrenome());
 				System.out.println("CPF do Inquilino: " + inquilino.getInformacoesPessoais().getCpf());
 				System.out.println("Valor do Aluguel: R$ " + apartamento.getPrecoAluguel());
-				float saldoInquilino = inquilino.getTitular().getSaldo();
-				saldoInquilino -= apartamento.getPrecoAluguel();
-				inquilino.getTitular().setSaldo(saldoInquilino);
+				
 			}
 		}
 	}
