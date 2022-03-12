@@ -8,6 +8,7 @@ public class Condominio {
 	private int numeroPiscinas;
 	private int numeroQuadras;
 	private int numeroAcademia;
+	private float valorAluguel;
 	
 	public Endereco getEndereco() {
 		return endereco;
@@ -55,5 +56,13 @@ public class Condominio {
 	
 	public void setNumeroAcademia(int numeroAcademia) {
 		this.numeroAcademia = numeroAcademia;
+	}
+
+	public float getValorAluguel() {
+		return valorAluguel;
+	}
+
+	public void setValorAluguel(float valorAluguel) {
+		this.valorAluguel = valorAluguel;
 	}
 }

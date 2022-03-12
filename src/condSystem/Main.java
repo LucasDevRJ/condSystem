@@ -20,6 +20,7 @@ public class Main {
 		condominio.setNumeroPiscinas(1);
 		condominio.setNumeroQuadras(2);
 		condominio.setTamanho(1500);
+		condominio.setValorAluguel(900.0f);
 
 		Apartamento apartamento = new Apartamento();
 		apartamento.setBloco("Bloco A");
@@ -525,6 +526,10 @@ public class Main {
 		
 		professorAcademia.demonstrarExercicio();
 		professorAcademia.montarSerie();
+		
+		System.out.println();
+		
+		morador.pagarAluguelCondominio(receita, condominio);
 		
 		System.out.println();
 		

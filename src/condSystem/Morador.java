@@ -8,6 +8,22 @@ public class Morador extends Colaborador { //pode não ser colaborador do condomí
 	private boolean ehProprietario;
 	private Conta titular;
 	
+	public void pagarAluguelCondominio(Receita financias, Condominio condominio) {
+		if (this.isEhProprietario() == true) {
+			if (this.titular.getSaldo() >= condominio.getValorAluguel()) {
+				this.titular.setSaldo(this.titular.getSaldo() - condominio.getValorAluguel());
+				financias.setTotal(condominio);
+				System.out.println("Aluguel Pago com Sucesso!");
+				System.out.println("Nome Completo: " + this.getInformacoesPessoais().getNome() + " " + this.getInformacoesPessoais().getSobrenome());
+				System.out.println("CPF: " + this.getInformacoesPessoais().getCpf());
+				System.out.println("RG: " + this.getInformacoesPessoais().getRg());
+				System.out.println("Número Apartamento: " + this.getApartamento().getNumero());
+				System.out.println("Bloco Apartamento: " + this.getApartamento().getBloco());
+				System.out.println("Valor Pago: R$ " + condominio.getValorAluguel());
+			}
+		}
+	}
+	
 	public void alugarApartamento(Inquilino inquilino) {
 		if (this.isEhProprietario() == true) {
 			System.out.println("Imóvel Alugado com Sucesso!");
