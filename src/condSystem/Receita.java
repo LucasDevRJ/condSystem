@@ -8,11 +8,7 @@ public class Receita {
 		return this.total;
 	}
 	
-	public void setTotal(Apartamento apartamento) {
-		this.total += apartamento.getPrecoAluguel();
-	}
-	
-	public void setTotal(Condominio condominio) {
-		this.total += condominio.getValorAluguel();
+	public void setTotal(float valor) {
+		this.total += valor;
 	}
 }
