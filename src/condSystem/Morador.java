@@ -29,7 +29,11 @@ public class Morador extends Colaborador { //pode não ser colaborador do condomí
 				System.out.println("Número Apartamento: " + this.getApartamento().getNumero());
 				System.out.println("Bloco Apartamento: " + this.getApartamento().getBloco());
 				System.out.println("Valor Pago: R$ " + condominio.getValorAluguel());
+			} else {
+				System.out.println("Saldo insuficiente para pagar o alguel!");
 			}
+		} else {
+			System.out.println("Para pagar aluguel tem que ser proprietário do apartamento!");
 		}
 	}
 	
@@ -60,7 +64,8 @@ public class Morador extends Colaborador { //pode não ser colaborador do condomí
 				System.out.println("Nome Completo do Inquilino: " + inquilino.getInformacoesPessoais().getNome() + " " + inquilino.getInformacoesPessoais().getSobrenome());
 				System.out.println("CPF do Inquilino: " + inquilino.getInformacoesPessoais().getCpf());
 				System.out.println("Valor do Aluguel: R$ " + apartamento.getPrecoAluguel());
-				
+				this.getTitular().setSaldo(this.getTitular().getSaldo() + apartamento.getPrecoAluguel());
+				inquilino.getTitular().setSaldo(this.titular.getSaldo() - apartamento.getPrecoAluguel());
 			}
 		}
 	}

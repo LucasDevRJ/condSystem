@@ -185,7 +185,7 @@ public class Main {
 		Conta contaMorador = new Conta();
 		contaMorador.setAgencia(32);
 		contaMorador.setNumero(33433432);
-		contaMorador.setSaldo(2370.40f);
+		contaMorador.setSaldo(10000.0f);
 		contaMorador.setSenha(33424);
 		
 		Conta contaInquilino = new Conta();
@@ -524,8 +524,12 @@ public class Main {
 		professorAcademia.montarSerie();
 		
 		System.out.println();
-		
+		System.out.println(morador.getTitular().getSaldo());
 		morador.pagarAluguelCondominio(receita, condominio);
+		morador.pagarAluguelCondominio(receita, condominio);
+		morador.pagarAluguelCondominio(receita, condominio);
+		morador.pagarAluguelCondominio(receita, condominio);
+		System.out.println(morador.getTitular().getSaldo());
 		
 		System.out.println();
 		

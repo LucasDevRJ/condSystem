@@ -3,12 +3,12 @@ package condSystem;
 public class Receita {
 
 	private float total;
-	
+
 	public float getTotal() {
-		return this.total;
+		return total;
 	}
-	
-	public void setTotal(float valor) {
-		this.total += valor;
+
+	public void setTotal(float total) {
+		this.total = total;
 	}
 }
