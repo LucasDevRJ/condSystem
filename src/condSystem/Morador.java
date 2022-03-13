@@ -19,6 +19,7 @@ public class Morador extends Colaborador { //pode não ser colaborador do condomí
 				System.out.println("RG do Novo Proprietário: " + this.getInformacoesPessoais().getRg());
 				System.out.println("Valor do Imóvel: R$ " + this.apartamento.getPrecoApartamento());
 				System.out.println("Endereço do Imóvel: " + this.apartamento.getEndereco().getCidade() + " - " + this.apartamento.getEndereco().getRua() + " - " + this.apartamento.getNumero());
+				this.setEhProprietario(true);
 			}
 		}
 	}

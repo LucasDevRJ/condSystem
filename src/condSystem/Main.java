@@ -150,14 +150,14 @@ public class Main {
 		Conta contaMorador4 = new Conta();
 		contaMorador4.setAgencia(43);
 		contaMorador4.setNumero(11343454);
-		contaMorador4.setSaldo(23450.40f);
+		contaMorador4.setSaldo(345345.00f);
 		contaMorador4.setSenha(43323);
 
 		Morador morador4 = new Morador();
 		morador4.setApartamento(apartamento4);
 		morador4.setInformacoesPessoais(informacoesPessoaisMorador4);
 		morador4.setEndereco(enderecoCondominio);
-		morador4.setEhProprietario(true);
+		morador4.setEhProprietario(false);
 		morador4.setProfissao(profissaoMorador4);
 		morador4.setTitular(contaMorador4);
 		
@@ -502,44 +502,41 @@ public class Main {
 		
 		//Chamadas de métodos
 		pedreiro.consertar("piso do condomínio");
+		System.out.println();
 		pedreiro.construir("parquinho");
-		
 		System.out.println();
-		
 		porteiro.abrirPorta();
+		System.out.println();
 		porteiro.abrirPortao();
-		
 		System.out.println();
-		
 		seguranca.vigiar("condomínio");
-		
 		System.out.println();
-		
 		eletricista.consertaFiacao();
+		System.out.println();
 		eletricista.trocaFiacao();
-		
 		System.out.println();
-		
 		jardineiro.jardinar();
-		
 		System.out.println();
-		
 		professorAcademia.demonstrarExercicio();
+		System.out.println();
+		morador4.comprarApartamento(receita);
+		System.out.println();
 		professorAcademia.montarSerie();
-		
 		System.out.println();
-		System.out.println(morador.getTitular().getSaldo());
 		morador.pagarAluguelCondominio(receita, condominio);
-		morador.pagarAluguelCondominio(receita, condominio);
-		morador.pagarAluguelCondominio(receita, condominio);
-		morador.pagarAluguelCondominio(receita, condominio);
-		System.out.println(morador.getTitular().getSaldo());
-		
 		System.out.println();
-		
+		morador2.pagarAluguelCondominio(receita, condominio);
+		System.out.println();
+		morador3.pagarAluguelCondominio(receita, condominio);
+		System.out.println();
+		morador4.pagarAluguelCondominio(receita, condominio);
+		System.out.println();
 		administrador.acessarFinanceiro(financeiro);
+		System.out.println();
 		administrador.acessarInformacoesColaborador(porteiro);
+		System.out.println();
 		administrador.acessarInformacoesMorador(morador);
+		System.out.println();
 		administrador.agendarReuniao("23/04/2022");
 	}
 }

@@ -52,13 +52,11 @@ public class Administrador extends Colaborador implements CondSystem {
 		System.out.println("Profissão: " + morador.getInformacoesPessoais().getProfissao());
 		System.out.println("RG: " + morador.getInformacoesPessoais().getRg());
 		System.out.println("CPF: " + morador.getInformacoesPessoais().getCpf());
-		System.out.println();
-		System.out.println("Emprego:");
+		System.out.println("Informações de Emprego:");
 		System.out.println("Cargo: " + morador.getProfissao().getCargo());
 		System.out.println("Salário: " + morador.getProfissao().getSalario());
 		System.out.println("Turno: " + morador.getProfissao().getTurno());
-		System.out.println();
-		System.out.println("Apartamento:");
+		System.out.println("Informações do Apartamento:");
 		System.out.println("Bloco: " + morador.getApartamento().getBloco());
 		System.out.println("Número: " + morador.getApartamento().getNumero());
 		System.out.println("Tamanho: " + morador.getApartamento().getTamanho());
