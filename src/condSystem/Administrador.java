@@ -5,17 +5,15 @@ public class Administrador extends Colaborador implements CondSystem {
 	@Override
 	public void acessarInformacoesColaborador(Colaborador colaborador) {
 		System.out.println("Informações do Colaborador");
-		System.out.println("Informações Pessoais:");
+		System.out.println("Informações Pessoais");
 		System.out.println("Nome: " + colaborador.getInformacoesPessoais().getNome());
 		System.out.println("Sobrenome: " + colaborador.getInformacoesPessoais().getSobrenome());
 		System.out.println("Data de Nascimento: " + colaborador.getInformacoesPessoais().getDataNascimento());
 		System.out.println("Naturalidade: " + colaborador.getInformacoesPessoais().getNaturalidade());
 		System.out.println("Cidade Natal: " + colaborador.getInformacoesPessoais().getCidadeNatal());
-		System.out.println("Profissão: " + colaborador.getInformacoesPessoais().getProfissao());
 		System.out.println("RG: " + colaborador.getInformacoesPessoais().getRg());
 		System.out.println("CPF: " + colaborador.getInformacoesPessoais().getCpf());
-		System.out.println();
-		System.out.println("Endereço:");
+		System.out.println("Informações do Endereço");
 		System.out.println("País: " + colaborador.getEndereco().getPais());
 		System.out.println("Cidade: " + colaborador.getEndereco().getCidade());
 		System.out.println("Estado: " + colaborador.getEndereco().getEstado());
@@ -24,8 +22,7 @@ public class Administrador extends Colaborador implements CondSystem {
 		System.out.println("CEP: " + colaborador.getEndereco().getCep());
 		System.out.println("Ponto de Referência: " + colaborador.getEndereco().getPontoReferencia());
 		System.out.println("Complemento: " + colaborador.getEndereco().getComplemento());
-		System.out.println();
-		System.out.println("Emprego:");
+		System.out.println("Informações de Emprego");
 		System.out.println("Cargo: " + colaborador.getProfissao().getCargo());
 		System.out.println("Salário: " + colaborador.getProfissao().getSalario());
 		System.out.println("Turno: " + colaborador.getProfissao().getTurno());
@@ -43,7 +40,7 @@ public class Administrador extends Colaborador implements CondSystem {
 	@Override
 	public void acessarInformacoesMorador(Morador morador) {
 		System.out.println("Informações do Morador");
-		System.out.println("Informações Pessoais:");
+		System.out.println("Informações Pessoais");
 		System.out.println("Nome: " + morador.getInformacoesPessoais().getNome());
 		System.out.println("Sobrenome: " + morador.getInformacoesPessoais().getSobrenome());
 		System.out.println("Data de Nascimento: " + morador.getInformacoesPessoais().getDataNascimento());
@@ -52,11 +49,11 @@ public class Administrador extends Colaborador implements CondSystem {
 		System.out.println("Profissão: " + morador.getInformacoesPessoais().getProfissao());
 		System.out.println("RG: " + morador.getInformacoesPessoais().getRg());
 		System.out.println("CPF: " + morador.getInformacoesPessoais().getCpf());
-		System.out.println("Informações de Emprego:");
+		System.out.println("Informações de Emprego");
 		System.out.println("Cargo: " + morador.getProfissao().getCargo());
 		System.out.println("Salário: " + morador.getProfissao().getSalario());
 		System.out.println("Turno: " + morador.getProfissao().getTurno());
-		System.out.println("Informações do Apartamento:");
+		System.out.println("Informações do Apartamento");
 		System.out.println("Bloco: " + morador.getApartamento().getBloco());
 		System.out.println("Número: " + morador.getApartamento().getNumero());
 		System.out.println("Tamanho: " + morador.getApartamento().getTamanho());
@@ -74,6 +71,6 @@ public class Administrador extends Colaborador implements CondSystem {
 
 	@Override
 	public void agendarReuniao(String data) {
-		System.out.println("A reunião do condomínio foi agendada para a data: " + data + "\nPor favor todos compareçam!");
+		System.out.println("A reunião do condomínio foi agendada para a data: " + data + "! Por favor todos compareçam!");
 	}
 }

@@ -297,6 +297,7 @@ public class Main {
 		enderecoPorteiro.setRua("Rua dos Asfaltos");
 		enderecoPorteiro.setNumero("312");
 		enderecoPorteiro.setPontoReferencia("Avenida Wilson");
+		enderecoPorteiro.setComplemento("Casa número 12");
 		
 		InformacoesPessoais informacoesPessoaisPorteiro = new InformacoesPessoais();
 		informacoesPessoaisPorteiro.setNome("Carl");
