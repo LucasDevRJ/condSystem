@@ -29,6 +29,7 @@ public class Main {
 		apartamento.setNumeroBanheiros(1);
 		apartamento.setNumeroQuartos(2);
 		apartamento.setNumeroVagasCarro(1);
+		apartamento.setPrecoApartamento(230000.00f);
 		
 		InformacoesPessoais informacoesPessoaisMorador = new InformacoesPessoais();
 		informacoesPessoaisMorador.setNome("Marcus");
@@ -46,6 +47,7 @@ public class Main {
 		apartamento2.setNumeroBanheiros(1);
 		apartamento2.setNumeroQuartos(2);
 		apartamento2.setNumeroVagasCarro(1);
+		apartamento2.setPrecoApartamento(250000.00f);
 		
 		InformacoesPessoais informacoesPessoaisMorador2 = new InformacoesPessoais();
 		informacoesPessoaisMorador2.setNome("Manuel");
@@ -86,6 +88,7 @@ public class Main {
 		apartamento3.setNumeroBanheiros(2);
 		apartamento3.setNumeroQuartos(3);
 		apartamento3.setNumeroVagasCarro(2);
+		apartamento3.setPrecoApartamento(260000.00f);
 		
 		InformacoesPessoais informacoesPessoaisMorador3 = new InformacoesPessoais();
 		informacoesPessoaisMorador3.setNome("Lúcio");
@@ -126,6 +129,7 @@ public class Main {
 		apartamento4.setNumeroBanheiros(2);
 		apartamento4.setNumeroQuartos(3);
 		apartamento4.setNumeroVagasCarro(2);
+		apartamento4.setPrecoApartamento(270000.00f);
 		
 		InformacoesPessoais informacoesPessoaisMorador4 = new InformacoesPessoais();
 		informacoesPessoaisMorador4.setNome("Gabriel");

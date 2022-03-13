@@ -12,7 +12,13 @@ public class Morador extends Colaborador { //pode não ser colaborador do condomí
 		if (this.isEhProprietario() == false) {
 			if (this.titular.getSaldo() >= this.apartamento.getPrecoApartamento()) {
 				this.getTitular().setSaldo(this.getTitular().getSaldo() - this.getApartamento().getPrecoApartamento());
-				
+				financias.setTotal(financias.getTotal() + this.apartamento.getPrecoApartamento());
+				System.out.println("Apartamento Comprado com Sucesso!");
+				System.out.println("Nome Completo do Novo Propritário: " + this.getInformacoesPessoais().getNome() + " " + this.getInformacoesPessoais().getSobrenome());
+				System.out.println("CPF do Novo Proprietário: " + this.getInformacoesPessoais().getCpf());
+				System.out.println("RG do Novo Proprietário: " + this.getInformacoesPessoais().getRg());
+				System.out.println("Valor do Imóvel: R$ " + this.apartamento.getPrecoApartamento());
+				System.out.println("Endereço do Imóvel: " + this.apartamento.getEndereco().getCidade() + " - " + this.apartamento.getEndereco().getRua() + " - " + this.apartamento.getNumero());
 			}
 		}
 	}
