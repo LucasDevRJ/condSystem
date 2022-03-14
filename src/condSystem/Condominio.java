@@ -12,6 +12,24 @@ public class Condominio {
 	private float valorAluguel;
 	private Financeiro receita;
 	
+	public void aumentarTamanhoCondominio(int tamanho) {
+		//1000 metros custa R$ 10.000,00
+		float precoCompra = (tamanho * 10000.00f) / 1000;
+		if (tamanho > 0) {
+			if (this.getReceita().getLucro() >= precoCompra) {
+				this.setTamanho(this.getTamanho() + tamanho);
+				System.out.println("Compra de Metros Realizada com Sucesso!");
+				System.out.println("Metros Comprados: " + tamanho + " metros");
+				System.out.println("Valor: R$ " + precoCompra);
+				System.out.println("Tamanho do Condomínio: " + this.getTamanho() + " metros");
+			} else {
+				System.out.println("Dinheiro insuficiente para comprar mais territorio!");
+			}
+		} else {
+			System.out.println("Tamanho desejado inválido!");
+		}
+	}
+	
 	public void construirParquinho(float tamanhoParquinho) {
 		//a construção do parquinho custa R$ 1000,00 a cada 100 metros
 		float precoConstrucao = (tamanhoParquinho * 1000.00f) / 100;
