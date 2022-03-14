@@ -22,7 +22,11 @@ public class Condominio {
 				System.out.println("Valor da Construção: R$ " + precoConstrucao);
 				System.out.println("Tamanho do Parquinho Construido: " + tamanhoParquinho + " metros");
 				System.out.println("Número Total de Parquinhos no Condomínio: " + this.getNumeroParquinho());
+			} else {
+				System.out.println("Dinheiro insuficiente para construir o parquinho!");
 			}
+		} else {
+			System.out.println("Tamanho do parquinho é maior que o condomínio!");
 		}
 	}
 	
