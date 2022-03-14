@@ -551,6 +551,8 @@ public class Main {
 		System.out.println();
 		condominio.construirParquinho(300);
 		System.out.println();
+		condominio.aumentarTamanhoCondominio(2000);
+		System.out.println();
 		administrador.agendarReuniao("23/04/2022");
 	}
 }

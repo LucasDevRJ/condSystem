@@ -30,12 +30,13 @@ public class Condominio {
 		}
 	}
 	
-	public void construirParquinho(float tamanhoParquinho) {
+	public void construirParquinho(int tamanhoParquinho) {
 		//a construção do parquinho custa R$ 1000,00 a cada 100 metros
 		float precoConstrucao = (tamanhoParquinho * 1000.00f) / 100;
 		if (this.getTamanho() > tamanhoParquinho) {
 			if (this.getReceita().getLucro() >= precoConstrucao) {
 				this.setNumeroParquinho(this.getNumeroParquinho() + 1);
+				this.setTamanho(this.getTamanho() - tamanhoParquinho);
 				System.out.println("Construção do Parquinho Realizada com Sucesso!");
 				System.out.println("Valor da Construção: R$ " + precoConstrucao);
 				System.out.println("Tamanho do Parquinho Construido: " + tamanhoParquinho + " metros");
