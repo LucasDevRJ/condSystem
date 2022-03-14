@@ -19,6 +19,7 @@ public class Main {
 		condominio.setNumeroAcademia(1);
 		condominio.setNumeroPiscinas(1);
 		condominio.setNumeroQuadras(2);
+		condominio.setNumeroParquinho(1);
 		condominio.setTamanho(1500);
 		condominio.setValorAluguel(900.0f);
 
@@ -509,6 +510,8 @@ public class Main {
 		financeiro.setDespesa(despesa);
 		financeiro.setReceita(receita);
 		
+		condominio.setReceita(financeiro);
+		
 		//Chamadas de métodos
 		pedreiro.consertar("piso do condomínio");
 		System.out.println();
@@ -545,6 +548,8 @@ public class Main {
 		administrador.acessarInformacoesColaborador(porteiro);
 		System.out.println();
 		administrador.acessarInformacoesMorador(morador);
+		System.out.println();
+		condominio.construirParquinho(300);
 		System.out.println();
 		administrador.agendarReuniao("23/04/2022");
 	}
