@@ -7,7 +7,6 @@ public class InformacoesPessoais {
 	private String dataNascimento;
 	private String naturalidade;
 	private String cidadeNatal;
-	private String profissao;
 	private String rg;
 	private String cpf;
 	
@@ -41,14 +40,6 @@ public class InformacoesPessoais {
 	
 	public void setCidadeNatal(String cidadeNatal) {
 		this.cidadeNatal = cidadeNatal;
-	}
-	
-	public String getProfissao() {
-		return profissao;
-	}
-	
-	public void setProfissao(String profissao) {
-		this.profissao = profissao;
 	}
 	
 	public String getRg() {

@@ -26,10 +26,12 @@ public class Main {
 		apartamento.setBloco("Bloco A");
 		apartamento.setNumero("305");
 		apartamento.setEndereco(enderecoCondominio);
+		apartamento.setTamanho(250);
 		apartamento.setNumeroBanheiros(1);
 		apartamento.setNumeroQuartos(2);
 		apartamento.setNumeroVagasCarro(1);
 		apartamento.setPrecoApartamento(230000.00f);
+		apartamento.setDescricao("Apartamento com " + apartamento.getTamanho() + " metros, " + apartamento.getNumeroBanheiros() + " banheiro(s), " + apartamento.getNumeroQuartos() + " quarto(s) e " + apartamento.getNumeroVagasCarro() + " vaga(s).");
 		
 		InformacoesPessoais informacoesPessoaisMorador = new InformacoesPessoais();
 		informacoesPessoaisMorador.setNome("Marcus");
@@ -44,10 +46,12 @@ public class Main {
 		apartamento2.setBloco("Bloco B");
 		apartamento2.setNumero("307");
 		apartamento2.setEndereco(enderecoCondominio);
+		apartamento2.setTamanho(260);
 		apartamento2.setNumeroBanheiros(1);
 		apartamento2.setNumeroQuartos(2);
 		apartamento2.setNumeroVagasCarro(1);
 		apartamento2.setPrecoApartamento(250000.00f);
+		apartamento2.setDescricao("Apartamento com " + apartamento2.getTamanho() + " metros, " + apartamento2.getNumeroBanheiros() + " banheiro(s), " + apartamento2.getNumeroQuartos() + " quarto(s) e " + apartamento2.getNumeroVagasCarro() + " vaga(s).");
 		
 		InformacoesPessoais informacoesPessoaisMorador2 = new InformacoesPessoais();
 		informacoesPessoaisMorador2.setNome("Manuel");
@@ -85,10 +89,12 @@ public class Main {
 		apartamento3.setBloco("Bloco C");
 		apartamento3.setNumero("504");
 		apartamento3.setEndereco(enderecoCondominio);
+		apartamento3.setTamanho(280);
 		apartamento3.setNumeroBanheiros(2);
 		apartamento3.setNumeroQuartos(3);
 		apartamento3.setNumeroVagasCarro(2);
 		apartamento3.setPrecoApartamento(260000.00f);
+		apartamento3.setDescricao("Apartamento com " + apartamento3.getTamanho() + " metros, " + apartamento3.getNumeroBanheiros() + " banheiro(s), " + apartamento3.getNumeroQuartos() + " quarto(s) e " + apartamento3.getNumeroVagasCarro() + " vaga(s).");
 		
 		InformacoesPessoais informacoesPessoaisMorador3 = new InformacoesPessoais();
 		informacoesPessoaisMorador3.setNome("Lúcio");
@@ -126,10 +132,12 @@ public class Main {
 		apartamento4.setBloco("Bloco C");
 		apartamento4.setNumero("308");
 		apartamento4.setEndereco(enderecoCondominio);
+		apartamento4.setTamanho(320);
 		apartamento4.setNumeroBanheiros(2);
 		apartamento4.setNumeroQuartos(3);
 		apartamento4.setNumeroVagasCarro(2);
 		apartamento4.setPrecoApartamento(270000.00f);
+		apartamento4.setDescricao("Apartamento com " + apartamento4.getTamanho() + " metros, " + apartamento4.getNumeroBanheiros() + " banheiro(s), " + apartamento4.getNumeroQuartos() + " quarto(s) e " + apartamento4.getNumeroVagasCarro() + " vaga(s).");
 		
 		InformacoesPessoais informacoesPessoaisMorador4 = new InformacoesPessoais();
 		informacoesPessoaisMorador4.setNome("Gabriel");
