@@ -12,6 +12,30 @@ public class Condominio {
 	private float valorAluguel;
 	private Financeiro receita;
 	
+	public void construirPredio(float largura, float altura) {
+		//100 metros de largura ou altura custam R$ 500,00 
+		float precoLargura = (largura * 500) / 100;
+		float precoAlura = (altura * 500) / 100;
+		float precoConstrucao = precoAlura + precoLargura;
+		
+		float tamanhoAndar = altura / 600;
+		int totalAndares = (int) tamanhoAndar;
+		
+		float tamanhoApartamento = largura / 300; //cada apartamento possui 300 metros
+		int quantidadeApartamentos = (int) tamanhoApartamento;
+		
+		if (this.getReceita().getLucro() >= precoConstrucao) {
+			this.getReceita().setLucro(this.getReceita().getLucro() - precoConstrucao);
+			System.out.println("Prédio Construído com Sucesso!");
+			System.out.println("Altura do Prédio: " + altura + " metros");
+			System.out.println("Largura do Prédio: " + largura + " metros");
+			System.out.println("Total de Andares: " + totalAndares);
+			System.out.println("Quantidade de Apartamentos por Andar: " + quantidadeApartamentos);
+		} else {
+			System.out.println("Saldo insuficiente para construir prédio!");
+		}
+	}
+	
 	public void aumentarTamanhoCondominio(int tamanho) {
 		//1000 metros custa R$ 10.000,00
 		float precoCompra = (tamanho * 10000.00f) / 1000;
