@@ -18,7 +18,7 @@ public class Condominio {
 		float precoAlura = (altura * 500) / 100;
 		float precoConstrucao = precoAlura + precoLargura;
 		
-		float tamanhoAndar = altura / 600;
+		float tamanhoAndar = altura / 600; //cada apartamento possui 600 metros de altura
 		int totalAndares = (int) tamanhoAndar;
 		
 		float tamanhoApartamento = largura / 300; //cada apartamento possui 300 metros
@@ -51,6 +51,25 @@ public class Condominio {
 			}
 		} else {
 			System.out.println("Tamanho desejado inválido!");
+		}
+	}
+	
+	public void construirPiscina(int tamanhoPiscina) {
+		//a construção do pscina custa R$ 200,00 a cada 10 metros
+		float precoConstrucao = (tamanhoPiscina * 200.00f) / 10;
+		if (this.getTamanho() > tamanhoPiscina) {
+			if (this.getReceita().getLucro() >= precoConstrucao) {
+				this.setNumeroPiscinas(this.getNumeroPiscinas() + 1);
+				this.setTamanho(this.getTamanho() - tamanhoPiscina);
+				System.out.println("Construção da Piscina Realizada com Sucesso!");
+				System.out.println("Valor da Construção: R$ " + precoConstrucao);
+				System.out.println("Tamanho da Piscina Construido: " + tamanhoPiscina + " metros");
+				System.out.println("Número Total de Piscinas no Condomínio: " + this.getNumeroPiscinas());
+			} else {
+				System.out.println("Dinheiro insuficiente para construir a piscina!");
+			}
+		} else {
+			System.out.println("Tamanho da piscina é maior que o condomínio!");
 		}
 	}
 	
