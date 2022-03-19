@@ -92,6 +92,25 @@ public class Condominio {
 		}
 	}
 	
+	public void construirAcademia(int numeroEquipamentosPartesSuperiores, int numeroEquipamentosPartesInferiores, int numeroEquipamentosTronco) {
+		float valorEquipamentosSuperiores = 3000.0f;
+		float valorEquipamentosInferiores = 4000.0f;
+		float valorEquipamentosTronco = 6000.0f;
+		float valorTotal = valorEquipamentosSuperiores + valorEquipamentosInferiores + valorEquipamentosTronco;
+		
+		if (this.getReceita().getLucro() >= valorTotal) {
+			this.getReceita().setLucro(this.getReceita().getLucro() - valorTotal);
+			this.setNumeroAcademia(this.getNumeroAcademia() + 1);
+			
+			System.out.println("Academia Construida com Sucesso!");
+			System.out.println("Número de Equipamentos para Membros Superiores: " + numeroEquipamentosPartesSuperiores);
+			System.out.println("Número de Equipamentos para Membros Inferiores: " + valorEquipamentosInferiores);
+			System.out.println("Número de Equipamentos para Tronco: " + valorEquipamentosTronco);
+		} else {
+			System.out.println("Valor insuficiênte para a construção!");
+		}
+	}
+	
 	public Endereco getEndereco() {
 		return endereco;
 	}
