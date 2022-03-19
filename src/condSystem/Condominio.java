@@ -25,12 +25,13 @@ public class Condominio {
 		int quantidadeApartamentos = (int) tamanhoApartamento;
 		
 		if (this.getReceita().getLucro() >= precoConstrucao) {
-			this.getReceita().setLucro(this.getReceita().getLucro() - precoConstrucao);
+			this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoConstrucao);
 			System.out.println("Prédio Construído com Sucesso!");
 			System.out.println("Altura do Prédio: " + altura + " metros");
 			System.out.println("Largura do Prédio: " + largura + " metros");
 			System.out.println("Total de Andares: " + totalAndares);
 			System.out.println("Quantidade de Apartamentos por Andar: " + quantidadeApartamentos);
+			System.out.println("Custo da Construção: R$ " + precoConstrucao);
 		} else {
 			System.out.println("Saldo insuficiente para construir prédio!");
 		}
@@ -41,7 +42,7 @@ public class Condominio {
 		float precoCompra = (tamanho * 10000.00f) / 1000;
 		if (tamanho > 0) {
 			if (this.getReceita().getLucro() >= precoCompra) {
-				this.getReceita().setLucro(this.getReceita().getLucro() - precoCompra);
+				this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoCompra);
 				this.setTamanho(this.getTamanho() + tamanho);
 				System.out.println("Compra de Metros Realizada com Sucesso!");
 				System.out.println("Metros Comprados: " + tamanho + " metros");
@@ -60,7 +61,7 @@ public class Condominio {
 		float precoConstrucao = (tamanhoPiscina * 200.00f) / 10;
 		if (this.getTamanho() > tamanhoPiscina) {
 			if (this.getReceita().getLucro() >= precoConstrucao) {
-				this.getReceita().setLucro(this.getReceita().getLucro() - precoConstrucao);
+				this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoConstrucao);
 				this.setNumeroPiscinas(this.getNumeroPiscinas() + 1);
 				this.setTamanho(this.getTamanho() - tamanhoPiscina);
 				System.out.println("Construção da Piscina Realizada com Sucesso!");
@@ -80,7 +81,7 @@ public class Condominio {
 		float precoConstrucao = (tamanhoParquinho * 1000.00f) / 100;
 		if (this.getTamanho() > tamanhoParquinho) {
 			if (this.getReceita().getLucro() >= precoConstrucao) {
-				this.getReceita().setLucro(this.getReceita().getLucro() - precoConstrucao);
+				this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoConstrucao);
 				this.setNumeroParquinho(this.getNumeroParquinho() + 1);
 				this.setTamanho(this.getTamanho() - tamanhoParquinho);
 				System.out.println("Construção do Parquinho Realizada com Sucesso!");
@@ -102,13 +103,14 @@ public class Condominio {
 		float valorTotal = valorEquipamentosSuperiores + valorEquipamentosInferiores + valorEquipamentosTronco;
 		
 		if (this.getReceita().getLucro() >= valorTotal) {
-			this.getReceita().setLucro(this.getReceita().getLucro() - valorTotal);
+			this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - valorTotal);
 			this.setNumeroAcademia(this.getNumeroAcademia() + 1);
 			
 			System.out.println("Academia Construida com Sucesso!");
 			System.out.println("Número de Equipamentos para Membros Superiores: " + numeroEquipamentosPartesSuperiores);
 			System.out.println("Número de Equipamentos para Membros Inferiores: " + valorEquipamentosInferiores);
 			System.out.println("Número de Equipamentos para Tronco: " + valorEquipamentosTronco);
+			System.out.println("Custo Total: R$ " + valorTotal);
 		} else {
 			System.out.println("Valor insuficiênte para a construção!");
 		}

@@ -34,8 +34,4 @@ public class Financeiro {
 	public float getLucro() {
 		return lucro = receita.getTotal() - (despesa.getTotal() + custo.getTotal());
 	}
-	
-	public void setLucro(float lucro) {
-		this.lucro = lucro;
-	}
 }

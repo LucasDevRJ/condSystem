@@ -556,5 +556,9 @@ public class Main {
 		administrador.agendarReuniao("23/04/2022");
 		System.out.println();
 		condominio.construirPredio(3000, 4000);
+		System.out.println();
+		condominio.construirAcademia(2, 3, 1);
+		System.out.println();
+		administrador.acessarFinanceiro(financeiro);
 	}
 }
