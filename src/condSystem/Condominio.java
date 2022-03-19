@@ -41,6 +41,7 @@ public class Condominio {
 		float precoCompra = (tamanho * 10000.00f) / 1000;
 		if (tamanho > 0) {
 			if (this.getReceita().getLucro() >= precoCompra) {
+				this.getReceita().setLucro(this.getReceita().getLucro() - precoCompra);
 				this.setTamanho(this.getTamanho() + tamanho);
 				System.out.println("Compra de Metros Realizada com Sucesso!");
 				System.out.println("Metros Comprados: " + tamanho + " metros");
@@ -59,6 +60,7 @@ public class Condominio {
 		float precoConstrucao = (tamanhoPiscina * 200.00f) / 10;
 		if (this.getTamanho() > tamanhoPiscina) {
 			if (this.getReceita().getLucro() >= precoConstrucao) {
+				this.getReceita().setLucro(this.getReceita().getLucro() - precoConstrucao);
 				this.setNumeroPiscinas(this.getNumeroPiscinas() + 1);
 				this.setTamanho(this.getTamanho() - tamanhoPiscina);
 				System.out.println("Construção da Piscina Realizada com Sucesso!");
@@ -78,6 +80,7 @@ public class Condominio {
 		float precoConstrucao = (tamanhoParquinho * 1000.00f) / 100;
 		if (this.getTamanho() > tamanhoParquinho) {
 			if (this.getReceita().getLucro() >= precoConstrucao) {
+				this.getReceita().setLucro(this.getReceita().getLucro() - precoConstrucao);
 				this.setNumeroParquinho(this.getNumeroParquinho() + 1);
 				this.setTamanho(this.getTamanho() - tamanhoParquinho);
 				System.out.println("Construção do Parquinho Realizada com Sucesso!");
