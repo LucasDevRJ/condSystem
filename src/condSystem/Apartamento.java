@@ -25,8 +25,8 @@ public class Apartamento {
 		return bloco;
 	}
 	
-	public void setBloco(String bloco) {
-		this.bloco = bloco;
+	public void setBloco(String string) {
+		this.bloco = string;
 	}
 	
 	public String getNumero() {

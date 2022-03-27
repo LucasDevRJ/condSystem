@@ -22,9 +22,14 @@ public class Main {
 		condominio.setNumeroParquinho(1);
 		condominio.setTamanho(1500);
 		condominio.setValorAluguel(900.0f);
+		
+		Blocos blocoA = Blocos.BLOCO1;
+		Blocos blocoB = Blocos.BLOCO2;
+		Blocos blocoC = Blocos.BLOCO3;
+		
 
 		Apartamento apartamento = new Apartamento();
-		apartamento.setBloco("Bloco A");
+		apartamento.setBloco(blocoA.getBloco());
 		apartamento.setNumero("305");
 		apartamento.setEndereco(enderecoCondominio);
 		apartamento.setTamanho(250);
@@ -44,7 +49,7 @@ public class Main {
 		informacoesPessoaisMorador.setCidadeNatal("Rio de Janeiro");
 		
 		Apartamento apartamento2 = new Apartamento();
-		apartamento2.setBloco("Bloco B");
+		apartamento2.setBloco(blocoB.getBloco());
 		apartamento2.setNumero("307");
 		apartamento2.setEndereco(enderecoCondominio);
 		apartamento2.setTamanho(260);
@@ -87,7 +92,7 @@ public class Main {
 		apartamento2.setPrecoAluguel(1700.0f);
 		
 		Apartamento apartamento3 = new Apartamento();
-		apartamento3.setBloco("Bloco C");
+		apartamento3.setBloco(blocoC.getBloco());
 		apartamento3.setNumero("504");
 		apartamento3.setEndereco(enderecoCondominio);
 		apartamento3.setTamanho(280);
@@ -130,7 +135,7 @@ public class Main {
 		apartamento3.setPrecoAluguel(2400.0f);
 		
 		Apartamento apartamento4 = new Apartamento();
-		apartamento4.setBloco("Bloco C");
+		apartamento4.setBloco(blocoB.getBloco());
 		apartamento4.setNumero("308");
 		apartamento4.setEndereco(enderecoCondominio);
 		apartamento4.setTamanho(320);
