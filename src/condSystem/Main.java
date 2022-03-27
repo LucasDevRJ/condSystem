@@ -1,5 +1,10 @@
 package condSystem;
 
+@Autor (
+		autor = "Lucas Pereira de Lima",
+		gitHub = "LucasDevRJ"
+	)
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -26,7 +31,6 @@ public class Main {
 		Blocos blocoA = Blocos.BLOCO1;
 		Blocos blocoB = Blocos.BLOCO2;
 		Blocos blocoC = Blocos.BLOCO3;
-		
 
 		Apartamento apartamento = new Apartamento();
 		apartamento.setBloco(blocoA.getBloco());
