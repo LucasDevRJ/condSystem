@@ -6,7 +6,7 @@
 
 O CondSystem é um sitema de gerenciamento de condomínio feito totalmente em Java puro (sem uso de API's ou FrameWorks). Nele é possível cadastrar funcionários, moradores, verificar informações referentes aos mesmos. E, possui classes de morador, colaborador, financeiro, condomínio, entre outras. Logo, é um sistema de condomínio com interações de alguns itens e pessoas precisas na realidade de um condomínio.
 
-![Badge - Status](https://img.shields.io/badge/Status-Andamento-brightgreen)
+![Badge - Status](https://img.shields.io/badge/Status-Finalizado-brightgreen)
 
 ![Badge - Autoral](https://img.shields.io/badge/Autoral-Sim-brightgreen)
 
@@ -17,6 +17,19 @@ O CondSystem é um sitema de gerenciamento de condomínio feito totalmente em Ja
 ## Como Funciona?</h2>
 
 O CondSystem funciona com os Setters de informações e os Getters para pegar as informações colocadas. Então, é preciso somente que o usuário dê Stters nos atributos das Classes e chame os métodos disponíveis no Main. Assim, o sistema irá devolver as informações, com a lógica presente nele.
+
+## Conteúdo
+Alguns dos principais coteúdos adicionados no projeto:
+
+- Orientação à Objetos;
+- Herança;
+- Polimorfismo;
+- Interface;
+- Classes Abstratas;
+- Relacionamento entre Classes;
+- Enum;
+- Exceções;
+- Anotações.
 
 ## :open_file_folder: Acesso ao projeto
 
