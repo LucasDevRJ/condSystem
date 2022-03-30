@@ -18,6 +18,19 @@ O CondSystem é um sitema de gerenciamento de condomínio feito totalmente em Ja
 
 O CondSystem funciona com os Setters de informações e os Getters para pegar as informações colocadas. Então, é preciso somente que o usuário dê Stters nos atributos das Classes e chame os métodos disponíveis no Main. Assim, o sistema irá devolver as informações, com a lógica presente nele.
 
+## Conteúdo
+Alguns dos principais coteúdos adicionados no projeto:
+
+- Orientação à Objetos;
+- Herança;
+- Polimorfismo;
+- Interface;
+- Classes Abstratas;
+- Relacionamento entre Classes;
+- Enum;
+- Exceções;
+- Anotações.
+
 ## :open_file_folder: Acesso ao projeto
 
 **Para baixar o <a href="https://github.com/LucasDevRJ/condSystem/archive/refs/heads/master.zip" >projeto<a/> ou somente ter acesso aos <a href="https://github.com/LucasDevRJ/condSystem">diretorios<a/> , basta clicar nos links azuis.**
