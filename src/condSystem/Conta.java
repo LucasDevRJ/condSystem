@@ -34,6 +34,10 @@ public class Conta {
 	}
 
 	public void setNumero(int numero) {
+		if (numero <= 0) {
+			throw new IllegalArgumentException("Insira um número de conta válido, por favor!");
+		}
+		
 		this.numero = numero;
 	}
 	
@@ -42,6 +46,10 @@ public class Conta {
 	}
 	
 	public void setAgencia(int agencia) {
+		if (agencia <= 0) {
+			throw new IllegalArgumentException("Insira um número de agência válida, por favor!");
+		}
+		
 		this.agencia = agencia;
 	}
 	
@@ -50,6 +58,10 @@ public class Conta {
 	}
 	
 	public void setSaldo(float saldo) {
+		if (saldo <= 0) {
+			throw new IllegalArgumentException("Insira um saldo válido, por favor!");
+		}
+		
 		this.saldo = saldo;
 	}
 	
@@ -58,6 +70,10 @@ public class Conta {
 	}
 	
 	public void setSenha(int senha) {
+		if (senha <= 0) {
+			throw new IllegalArgumentException("Insira uma senha válida, por favor!");
+		}
+		
 		this.senha = senha;
 	}
 }

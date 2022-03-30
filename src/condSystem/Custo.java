@@ -14,6 +14,10 @@ public class Custo {
 	}
 	
 	public void setMaterialConstrucao(float materialConstrucao) {
+		if (materialConstrucao <= 0) {
+			throw new IllegalArgumentException("Insira um valor de material válido, por favor!");
+		}
+		
 		this.materialConstrucao = materialConstrucao;
 	}
 	
@@ -22,6 +26,10 @@ public class Custo {
 	}
 	
 	public void setConstrucao(float construcao) {
+		if (construcao <= 0) {
+			throw new IllegalArgumentException("Insira um valor de construção válido, por favor!");
+		}
+		
 		this.construcao = construcao;
 	}
 	
@@ -30,6 +38,10 @@ public class Custo {
 	}
 	
 	public void setMaterialLimpeza(float materialLimpeza) {
+		if (materialLimpeza <= 0) {
+			throw new IllegalArgumentException("Insira um valor de material de limpeza válido, por favor!");
+		}
+		
 		this.materialLimpeza = materialLimpeza;
 	}
 	
@@ -38,6 +50,10 @@ public class Custo {
 	}
 	
 	public void setConsertos(float consertos) {
+		if (consertos <= 0) {
+			throw new IllegalArgumentException("Insira um valor de material de conserto válido, por favor!");
+		}
+		
 		this.consertos = consertos;
 	}
 	

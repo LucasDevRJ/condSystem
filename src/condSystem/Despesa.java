@@ -13,6 +13,10 @@ public class Despesa {
 	}
 	
 	public void setEletricidade(float eletricidade) {
+		if (eletricidade <= 0) {
+			throw new IllegalArgumentException("Insira um valor de eletricidade válido, por favor!");
+		}
+		
 		this.eletricidade = eletricidade;
 	}
 	
@@ -21,6 +25,10 @@ public class Despesa {
 	}
 	
 	public void setAgua(float agua) {
+		if (agua <= 0) {
+			throw new IllegalArgumentException("Insira um valor de aguá válido, por favor!");
+		}
+		
 		this.agua = agua;
 	}
 	
@@ -29,6 +37,10 @@ public class Despesa {
 	}
 	
 	public void setGas(float gas) {
+		if (gas <= 0) {
+			throw new IllegalArgumentException("Insira um valor de gás válido, por favor!");
+		}
+		
 		this.gas = gas;
 	}
 	
@@ -37,6 +49,10 @@ public class Despesa {
 	}
 	
 	public void setImposto(float imposto) {
+		if (imposto <= 0) {
+			throw new IllegalArgumentException("Insira um valor de imposto válido, por favor!");
+		}
+		
 		this.imposto = imposto;
 	}
 	
