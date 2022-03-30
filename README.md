@@ -14,7 +14,7 @@ O CondSystem é um sitema de gerenciamento de condomínio feito totalmente em Ja
 
 ![GitHub Org's stars](https://img.shields.io/github/stars/lucasDevRJ?style=social)
 
-![](../condSystem/img/condSystem.gif)
+![CondSystem gif](../condSystem/img/condSystem.gif)
 
 ## Como Funciona?</h2>
 
