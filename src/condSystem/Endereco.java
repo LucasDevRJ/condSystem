@@ -16,6 +16,10 @@ public class Endereco {
 	}
 
 	public void setPais(String pais) {
+		if (pais.length() == 0) {
+			throw new NullPointerException("Insira o país, por favor!");
+		}
+		
 		this.pais = pais;
 	}
 
@@ -24,6 +28,10 @@ public class Endereco {
 	}
 
 	public void setCidade(String cidade) {
+		if (cidade.length() == 0) {
+			throw new NullPointerException("Insira a cidade, por favor!");
+		}
+		
 		this.cidade = cidade;
 	}
 
@@ -32,6 +40,10 @@ public class Endereco {
 	}
 
 	public void setEstado(String estado) {
+		if (estado.length() == 0) {
+			throw new NullPointerException("Insira o Estado, por favor!");
+		}
+		
 		this.estado = estado;
 	}
 	
@@ -40,6 +52,10 @@ public class Endereco {
 	}
 	
 	public void setRua(String rua) {
+		if (rua.length() == 0) {
+			throw new NullPointerException("Insira a Rua, por favor!");
+		}
+		
 		this.rua = rua;
 	}
 	
@@ -48,6 +64,10 @@ public class Endereco {
 	}
 	
 	public void setNumero(String numero) {
+		if (numero.length() == 0) {
+			throw new NullPointerException("Insira o número, por favor!");
+		}
+		
 		this.numero = numero;
 	}
 	
@@ -56,6 +76,10 @@ public class Endereco {
 	}
 	
 	public void setCep(String cep) {
+		if (cep.length() == 0) {
+			throw new NullPointerException("Insira o CEP, por favor!");
+		}
+		
 		this.cep = cep;
 	}
 	
@@ -64,6 +88,10 @@ public class Endereco {
 	}
 	
 	public void setPontoReferencia(String pontoReferencia) {
+		if (pontoReferencia.length() == 0) {
+			throw new NullPointerException("Insira o ponto de referência, por favor!");
+		}
+		
 		this.pontoReferencia = pontoReferencia;
 	}
 	
@@ -72,6 +100,10 @@ public class Endereco {
 	}
 	
 	public void setComplemento(String complemento) {
+		if (complemento.length() == 0) {
+			throw new NullPointerException("Insira o complemento, por favor!");
+		}
+		
 		this.complemento = complemento;
 	}
 }
