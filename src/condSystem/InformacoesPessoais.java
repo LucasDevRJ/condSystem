@@ -15,6 +15,10 @@ public class InformacoesPessoais {
 	}
 	
 	public void setNome(String nome) {
+		if (nome.length() == 0) {
+			throw new NullPointerException("Insira o nome, por favor!");
+		}
+		
 		this.nome = nome;
 	}
 	
@@ -23,6 +27,10 @@ public class InformacoesPessoais {
 	}
 	
 	public void setSobrenome(String sobrenome) {
+		if (sobrenome.length() == 0) {
+			throw new NullPointerException("Insira o sobrenome, por favor!");
+		}
+		
 		this.sobrenome = sobrenome;
 	}
 
@@ -31,6 +39,10 @@ public class InformacoesPessoais {
 	}
 	
 	public void setNaturalidade(String naturalidade) {
+		if (naturalidade.length() == 0) {
+			throw new NullPointerException("Insira a naturalidade, por favor!");
+		}
+		
 		this.naturalidade = naturalidade;
 	}
 	
@@ -39,6 +51,10 @@ public class InformacoesPessoais {
 	}
 	
 	public void setCidadeNatal(String cidadeNatal) {
+		if (cidadeNatal.length() == 0) {
+			throw new NullPointerException("Insira a cidade natal, por favor!");
+		}
+		
 		this.cidadeNatal = cidadeNatal;
 	}
 	
@@ -47,6 +63,10 @@ public class InformacoesPessoais {
 	}
 	
 	public void setRg(String rg) {
+		if (rg.length() == 0) {
+			throw new NullPointerException("Insira o RG, por favor!");
+		}
+		
 		this.rg = rg;
 	}
 	
@@ -55,6 +75,10 @@ public class InformacoesPessoais {
 	}
 	
 	public void setCpf(String cpf) {
+		if (cpf.length() == 0) {
+			throw new NullPointerException("Insira o CPF, por favor!");
+		}
+		
 		this.cpf = cpf;
 	}
 
@@ -63,6 +87,10 @@ public class InformacoesPessoais {
 	}
 
 	public void setDataNascimento(String dataNascimento) {
+		if (dataNascimento.length() == 0) {
+			throw new NullPointerException("Insira a data de nascimento, por favor!");
+		}
+		
 		this.dataNascimento = dataNascimento;
 	}
 }
