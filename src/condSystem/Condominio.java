@@ -129,6 +129,10 @@ public class Condominio {
 	}
 	
 	public void setNome(String nome) {
+		if (nome.length() == 0) {
+			throw new NullPointerException("Insira o nome, por favor!");
+		}
+		
 		this.nome = nome;
 	}
 	
@@ -137,6 +141,10 @@ public class Condominio {
 	}
 	
 	public void setTamanho(int tamanho) {
+		if (tamanho <= 0) {
+			throw new IllegalArgumentException("Insira um tamanho válido, por favor!");
+		}
+		
 		this.tamanho = tamanho;
 	}
 	
@@ -145,6 +153,10 @@ public class Condominio {
 	}
 	
 	public void setNumeroPiscinas(int numeroPiscinas) {
+		if (numeroPiscinas <= 0) {
+			throw new IllegalArgumentException("Insira um número de piscina(s) válido(s), por favor!");
+		}
+		
 		this.numeroPiscinas = numeroPiscinas;
 	}
 	
@@ -153,6 +165,10 @@ public class Condominio {
 	}
 	
 	public void setNumeroQuadras(int numeroQuadras) {
+		if (numeroQuadras <= 0) {
+			throw new IllegalArgumentException("Insira um número de quadra(s) válida(s), por favor!");
+		}
+		
 		this.numeroQuadras = numeroQuadras;
 	}
 	
@@ -161,6 +177,10 @@ public class Condominio {
 	}
 	
 	public void setNumeroAcademia(int numeroAcademia) {
+		if (numeroAcademia <= 0) {
+			throw new IllegalArgumentException("Insira um número de academia(s) válida(s), por favor!");
+		}
+		
 		this.numeroAcademia = numeroAcademia;
 	}
 
@@ -169,6 +189,10 @@ public class Condominio {
 	}
 
 	public void setValorAluguel(float valorAluguel) {
+		if (valorAluguel <= 0) {
+			throw new IllegalArgumentException("Insira um valor de aluguel válido, por favor!");
+		}
+		
 		this.valorAluguel = valorAluguel;
 	}
 
@@ -185,6 +209,10 @@ public class Condominio {
 	}
 
 	public void setNumeroParquinho(int numeroParquinho) {
+		if (numeroParquinho <= 0) {
+			throw new IllegalArgumentException("Insira um número de parquinho(s) válido(s), por favor!");
+		}
+		
 		this.numeroParquinho = numeroParquinho;
 	}
 }
