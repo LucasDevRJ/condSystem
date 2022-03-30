@@ -14,8 +14,6 @@ O CondSystem é um sitema de gerenciamento de condomínio feito totalmente em Ja
 
 ![GitHub Org's stars](https://img.shields.io/github/stars/lucasDevRJ?style=social)
 
-![CondSystem gif](../condSystem/img/condSystem.gif)
-
 ## Como Funciona?</h2>
 
 O CondSystem funciona com os Setters de informações e os Getters para pegar as informações colocadas. Então, é preciso somente que o usuário dê Stters nos atributos das Classes e chame os métodos disponíveis no Main. Assim, o sistema irá devolver as informações, com a lógica presente nele.
