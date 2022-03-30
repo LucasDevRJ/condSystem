@@ -8,82 +8,129 @@ package condSystem;
 public class Main {
 
 	public static void main(String[] args) {
-		//Criação e instaciação de Objetos
+		
 		Endereco enderecoCondominio = new Endereco();
-		enderecoCondominio.setPais("Brasil");
-		enderecoCondominio.setCep("32454565");
-		enderecoCondominio.setEstado("Rio de Janeiro");
-		enderecoCondominio.setCidade("Rio de Janeiro");
-		enderecoCondominio.setRua("Rua do Java");
-		enderecoCondominio.setNumero("3004");
-		enderecoCondominio.setPontoReferencia("Próximo à praça das Graças");
+		
+		try {
+			enderecoCondominio.setPais("Brasil");
+			enderecoCondominio.setCep("32454565");
+			enderecoCondominio.setEstado("Rio de Janeiro");
+			enderecoCondominio.setCidade("Rio de Janeiro");
+			enderecoCondominio.setRua("Rua do Java");
+			enderecoCondominio.setNumero("3004");
+			enderecoCondominio.setPontoReferencia("Próximo à praça das Graças");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		Condominio condominio = new Condominio();
-		condominio.setNome("Condomínio Lazer");
-		condominio.setEndereco(enderecoCondominio);
-		condominio.setNumeroAcademia(1);
-		condominio.setNumeroPiscinas(1);
-		condominio.setNumeroQuadras(2);
-		condominio.setNumeroParquinho(1);
-		condominio.setTamanho(1500);
-		condominio.setValorAluguel(900.0f);
+		
+		try {
+			condominio.setNome("Condomínio Lazer");
+			condominio.setEndereco(enderecoCondominio);
+			condominio.setNumeroAcademia(1);
+			condominio.setNumeroPiscinas(1);
+			condominio.setNumeroQuadras(2);
+			condominio.setNumeroParquinho(1);
+			condominio.setTamanho(1500);
+			condominio.setValorAluguel(900.0f);
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Blocos blocoA = Blocos.BLOCO1;
 		Blocos blocoB = Blocos.BLOCO2;
 		Blocos blocoC = Blocos.BLOCO3;
 
 		Apartamento apartamento = new Apartamento();
-		apartamento.setBloco(blocoA.getBloco());
-		apartamento.setNumero("305");
-		apartamento.setEndereco(enderecoCondominio);
-		apartamento.setTamanho(250);
-		apartamento.setNumeroBanheiros(1);
-		apartamento.setNumeroQuartos(2);
-		apartamento.setNumeroVagasCarro(1);
-		apartamento.setPrecoApartamento(230000.00f);
-		apartamento.setDescricao("Apartamento com " + apartamento.getTamanho() + " metros, " + apartamento.getNumeroBanheiros() + " banheiro(s), " + apartamento.getNumeroQuartos() + " quarto(s) e " + apartamento.getNumeroVagasCarro() + " vaga(s).");
+		
+		try {
+			apartamento.setBloco(blocoA.getBloco());
+			apartamento.setNumero("305");
+			apartamento.setEndereco(enderecoCondominio);
+			apartamento.setTamanho(250);
+			apartamento.setNumeroBanheiros(1);
+			apartamento.setNumeroQuartos(2);
+			apartamento.setNumeroVagasCarro(1);
+			apartamento.setPrecoApartamento(230000.00f);
+			apartamento.setDescricao("Apartamento com " + apartamento.getTamanho() + " metros, " + apartamento.getNumeroBanheiros() + " banheiro(s), " + apartamento.getNumeroQuartos() + " quarto(s) e " + apartamento.getNumeroVagasCarro() + " vaga(s).");
+			
+		} catch (NullPointerException | IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		InformacoesPessoais informacoesPessoaisMorador = new InformacoesPessoais();
-		informacoesPessoaisMorador.setNome("Marcus");
-		informacoesPessoaisMorador.setSobrenome("Fênix");
-		informacoesPessoaisMorador.setDataNascimento("03/02/1997");
-		informacoesPessoaisMorador.setCpf("323.544.985-40");
-		informacoesPessoaisMorador.setRg("45.433.783-8");
-		informacoesPessoaisMorador.setNaturalidade("brasileiro");
-		informacoesPessoaisMorador.setCidadeNatal("Rio de Janeiro");
+		
+		try {
+			informacoesPessoaisMorador.setNome("Marcus");
+			informacoesPessoaisMorador.setSobrenome("Fênix");
+			informacoesPessoaisMorador.setDataNascimento("03/02/1997");
+			informacoesPessoaisMorador.setCpf("323.544.985-40");
+			informacoesPessoaisMorador.setRg("45.433.783-8");
+			informacoesPessoaisMorador.setNaturalidade("brasileiro");
+			informacoesPessoaisMorador.setCidadeNatal("Rio de Janeiro");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		Apartamento apartamento2 = new Apartamento();
-		apartamento2.setBloco(blocoB.getBloco());
-		apartamento2.setNumero("307");
-		apartamento2.setEndereco(enderecoCondominio);
-		apartamento2.setTamanho(260);
-		apartamento2.setNumeroBanheiros(1);
-		apartamento2.setNumeroQuartos(2);
-		apartamento2.setNumeroVagasCarro(1);
-		apartamento2.setPrecoApartamento(250000.00f);
-		apartamento2.setDescricao("Apartamento com " + apartamento2.getTamanho() + " metros, " + apartamento2.getNumeroBanheiros() + " banheiro(s), " + apartamento2.getNumeroQuartos() + " quarto(s) e " + apartamento2.getNumeroVagasCarro() + " vaga(s).");
+		
+		try {
+			apartamento2.setBloco(blocoB.getBloco());
+			apartamento2.setNumero("307");
+			apartamento2.setEndereco(enderecoCondominio);
+			apartamento2.setTamanho(260);
+			apartamento2.setNumeroBanheiros(1);
+			apartamento2.setNumeroQuartos(2);
+			apartamento2.setNumeroVagasCarro(1);
+			apartamento2.setPrecoApartamento(250000.00f);
+			apartamento2.setDescricao("Apartamento com " + apartamento2.getTamanho() + " metros, " + apartamento2.getNumeroBanheiros() + " banheiro(s), " + apartamento2.getNumeroQuartos() + " quarto(s) e " + apartamento2.getNumeroVagasCarro() + " vaga(s).");
+			
+		} catch (NullPointerException | IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		InformacoesPessoais informacoesPessoaisMorador2 = new InformacoesPessoais();
-		informacoesPessoaisMorador2.setNome("Manuel");
-		informacoesPessoaisMorador2.setSobrenome("Reto");
-		informacoesPessoaisMorador2.setDataNascimento("13/01/1994");
-		informacoesPessoaisMorador2.setCpf("234.121.987-22");
-		informacoesPessoaisMorador2.setRg("11.545.324-7");
-		informacoesPessoaisMorador2.setNaturalidade("brasileiro");
-		informacoesPessoaisMorador2.setCidadeNatal("Rio de Janeiro");
+		
+		try {
+			informacoesPessoaisMorador2.setNome("Manuel");
+			informacoesPessoaisMorador2.setSobrenome("Reto");
+			informacoesPessoaisMorador2.setDataNascimento("13/01/1994");
+			informacoesPessoaisMorador2.setCpf("234.121.987-22");
+			informacoesPessoaisMorador2.setRg("11.545.324-7");
+			informacoesPessoaisMorador2.setNaturalidade("brasileiro");
+			informacoesPessoaisMorador2.setCidadeNatal("Rio de Janeiro");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		Profissao profissaoMorador2 = new Profissao();
-		profissaoMorador2.setCargo("Policial");
-		profissaoMorador2.setDataIngresso("17/03/2001");
-		profissaoMorador2.setSalario(6450.0f);
-		profissaoMorador2.setTurno("Matutino");
-		profissaoMorador2.setDescricaoAtividades("Realização das atividades de policial.");
+		
+		try {
+			profissaoMorador2.setCargo("Policial");
+			profissaoMorador2.setDataIngresso("17/03/2001");
+			profissaoMorador2.setSalario(6450.0f);
+			profissaoMorador2.setTurno("Matutino");
+			profissaoMorador2.setDescricaoAtividades("Realização das atividades de policial.");
+			
+		} catch (NullPointerException | IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Conta contaMorador2 = new Conta();
-		contaMorador2.setAgencia(21);
-		contaMorador2.setNumero(55434356);
-		contaMorador2.setSaldo(4340.60f);
-		contaMorador2.setSenha(23232);
+		
+		try {
+			contaMorador2.setAgencia(21);
+			contaMorador2.setNumero(55434356);
+			contaMorador2.setSaldo(4340.60f);
+			contaMorador2.setSenha(23232);
+			
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 
 		Morador morador2 = new Morador();
 		morador2.setApartamento(apartamento2);
@@ -93,18 +140,29 @@ public class Main {
 		morador2.setProfissao(profissaoMorador2);
 		morador2.setTitular(contaMorador2);
 		
-		apartamento2.setPrecoAluguel(1700.0f);
+		try {
+			apartamento2.setPrecoAluguel(1700.0f);
+			
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Apartamento apartamento3 = new Apartamento();
-		apartamento3.setBloco(blocoC.getBloco());
-		apartamento3.setNumero("504");
-		apartamento3.setEndereco(enderecoCondominio);
-		apartamento3.setTamanho(280);
-		apartamento3.setNumeroBanheiros(2);
-		apartamento3.setNumeroQuartos(3);
-		apartamento3.setNumeroVagasCarro(2);
-		apartamento3.setPrecoApartamento(260000.00f);
-		apartamento3.setDescricao("Apartamento com " + apartamento3.getTamanho() + " metros, " + apartamento3.getNumeroBanheiros() + " banheiro(s), " + apartamento3.getNumeroQuartos() + " quarto(s) e " + apartamento3.getNumeroVagasCarro() + " vaga(s).");
+		
+		try {
+			apartamento3.setBloco(blocoC.getBloco());
+			apartamento3.setNumero("504");
+			apartamento3.setEndereco(enderecoCondominio);
+			apartamento3.setTamanho(280);
+			apartamento3.setNumeroBanheiros(2);
+			apartamento3.setNumeroQuartos(3);
+			apartamento3.setNumeroVagasCarro(2);
+			apartamento3.setPrecoApartamento(260000.00f);
+			apartamento3.setDescricao("Apartamento com " + apartamento3.getTamanho() + " metros, " + apartamento3.getNumeroBanheiros() + " banheiro(s), " + apartamento3.getNumeroQuartos() + " quarto(s) e " + apartamento3.getNumeroVagasCarro() + " vaga(s).");
+			
+		} catch (NullPointerException | IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		InformacoesPessoais informacoesPessoaisMorador3 = new InformacoesPessoais();
 		informacoesPessoaisMorador3.setNome("Lúcio");
