@@ -165,26 +165,44 @@ public class Main {
 		}
 		
 		InformacoesPessoais informacoesPessoaisMorador3 = new InformacoesPessoais();
-		informacoesPessoaisMorador3.setNome("Lúcio");
-		informacoesPessoaisMorador3.setSobrenome("Adalberto");
-		informacoesPessoaisMorador3.setDataNascimento("15/08/1992");
-		informacoesPessoaisMorador3.setCpf("344.231.667-23");
-		informacoesPessoaisMorador3.setRg("21.543.876-4");
-		informacoesPessoaisMorador3.setNaturalidade("brasileiro");
-		informacoesPessoaisMorador3.setCidadeNatal("São Paulo");
+		
+		try {
+			informacoesPessoaisMorador3.setNome("Lúcio");
+			informacoesPessoaisMorador3.setSobrenome("Adalberto");
+			informacoesPessoaisMorador3.setDataNascimento("15/08/1992");
+			informacoesPessoaisMorador3.setCpf("344.231.667-23");
+			informacoesPessoaisMorador3.setRg("21.543.876-4");
+			informacoesPessoaisMorador3.setNaturalidade("brasileiro");
+			informacoesPessoaisMorador3.setCidadeNatal("São Paulo");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		Profissao profissaoMorador3 = new Profissao();
-		profissaoMorador3.setCargo("Médico");
-		profissaoMorador3.setDataIngresso("21/04/2000");
-		profissaoMorador3.setSalario(12340.00f);
-		profissaoMorador3.setTurno("Integral");
-		profissaoMorador3.setDescricaoAtividades("Realização das atividades de médico.");
+		
+		try {
+			profissaoMorador3.setCargo("Médico");
+			profissaoMorador3.setDataIngresso("21/04/2000");
+			profissaoMorador3.setSalario(12340.00f);
+			profissaoMorador3.setTurno("Integral");
+			profissaoMorador3.setDescricaoAtividades("Realização das atividades de médico.");
+			
+		} catch (NullPointerException | IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Conta contaMorador3 = new Conta();
-		contaMorador3.setAgencia(33);
-		contaMorador3.setNumero(54356765);
-		contaMorador3.setSaldo(32560.00f);
-		contaMorador3.setSenha(88767);
+		
+		try {
+			contaMorador3.setAgencia(33);
+			contaMorador3.setNumero(54356765);
+			contaMorador3.setSaldo(32560.00f);
+			contaMorador3.setSenha(88767);
+			
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 
 		Morador morador3 = new Morador();
 		morador3.setApartamento(apartamento3);
@@ -194,40 +212,69 @@ public class Main {
 		morador3.setProfissao(profissaoMorador3);
 		morador3.setTitular(contaMorador3);
 		
-		apartamento3.setPrecoAluguel(2400.0f);
+		try {
+			apartamento3.setPrecoAluguel(2400.0f);
+			
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Apartamento apartamento4 = new Apartamento();
-		apartamento4.setBloco(blocoB.getBloco());
-		apartamento4.setNumero("308");
-		apartamento4.setEndereco(enderecoCondominio);
-		apartamento4.setTamanho(320);
-		apartamento4.setNumeroBanheiros(2);
-		apartamento4.setNumeroQuartos(3);
-		apartamento4.setNumeroVagasCarro(2);
-		apartamento4.setPrecoApartamento(270000.00f);
-		apartamento4.setDescricao("Apartamento com " + apartamento4.getTamanho() + " metros, " + apartamento4.getNumeroBanheiros() + " banheiro(s), " + apartamento4.getNumeroQuartos() + " quarto(s) e " + apartamento4.getNumeroVagasCarro() + " vaga(s).");
+		
+		try {
+			apartamento4.setBloco(blocoB.getBloco());
+			apartamento4.setNumero("308");
+			apartamento4.setEndereco(enderecoCondominio);
+			apartamento4.setTamanho(320);
+			apartamento4.setNumeroBanheiros(2);
+			apartamento4.setNumeroQuartos(3);
+			apartamento4.setNumeroVagasCarro(2);
+			apartamento4.setPrecoApartamento(270000.00f);
+			apartamento4.setDescricao("Apartamento com " + apartamento4.getTamanho() + " metros, " + apartamento4.getNumeroBanheiros() + " banheiro(s), " + apartamento4.getNumeroQuartos() + " quarto(s) e " + apartamento4.getNumeroVagasCarro() + " vaga(s).");
+			
+		} catch (NullPointerException | IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		InformacoesPessoais informacoesPessoaisMorador4 = new InformacoesPessoais();
-		informacoesPessoaisMorador4.setNome("Gabriel");
-		informacoesPessoaisMorador4.setSobrenome("Saldoso");
-		informacoesPessoaisMorador4.setDataNascimento("11/05/1999");
-		informacoesPessoaisMorador4.setCpf("233.432.112-21");
-		informacoesPessoaisMorador4.setRg("54.332.543-2");
-		informacoesPessoaisMorador4.setNaturalidade("brasileiro");
-		informacoesPessoaisMorador4.setCidadeNatal("Rio de Janeiro");
+		
+		try {
+			informacoesPessoaisMorador4.setNome("Gabriel");
+			informacoesPessoaisMorador4.setSobrenome("Saldoso");
+			informacoesPessoaisMorador4.setDataNascimento("11/05/1999");
+			informacoesPessoaisMorador4.setCpf("233.432.112-21");
+			informacoesPessoaisMorador4.setRg("54.332.543-2");
+			informacoesPessoaisMorador4.setNaturalidade("brasileiro");
+			informacoesPessoaisMorador4.setCidadeNatal("Rio de Janeiro");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		Profissao profissaoMorador4 = new Profissao();
-		profissaoMorador4.setCargo("Empresário");
-		profissaoMorador4.setDataIngresso("13/03/2005");
-		profissaoMorador4.setSalario(8210.00f);
-		profissaoMorador4.setTurno("Integral");
-		profissaoMorador4.setDescricaoAtividades("Realização das atividades de empresário.");
+		
+		try {
+			profissaoMorador4.setCargo("Empresário");
+			profissaoMorador4.setDataIngresso("13/03/2005");
+			profissaoMorador4.setSalario(8210.00f);
+			profissaoMorador4.setTurno("Integral");
+			profissaoMorador4.setDescricaoAtividades("Realização das atividades de empresário.");
+			
+		} catch (NullPointerException | IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Conta contaMorador4 = new Conta();
-		contaMorador4.setAgencia(43);
-		contaMorador4.setNumero(11343454);
-		contaMorador4.setSaldo(345345.00f);
-		contaMorador4.setSenha(43323);
+		
+		try {
+			contaMorador4.setAgencia(43);
+			contaMorador4.setNumero(11343454);
+			contaMorador4.setSaldo(345345.00f);
+			contaMorador4.setSenha(43323);
+			
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 
 		Morador morador4 = new Morador();
 		morador4.setApartamento(apartamento4);
@@ -237,42 +284,77 @@ public class Main {
 		morador4.setProfissao(profissaoMorador4);
 		morador4.setTitular(contaMorador4);
 		
-		apartamento4.setPrecoAluguel(2400.0f);
+		try {
+			apartamento4.setPrecoAluguel(2400.0f);
+			
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		InformacoesPessoais informacoesPessoaisInquilino = new InformacoesPessoais();
-		informacoesPessoaisInquilino.setNome("Dominic");
-		informacoesPessoaisInquilino.setSobrenome("Santhiago");
-		informacoesPessoaisInquilino.setDataNascimento("14/06/2003");
-		informacoesPessoaisInquilino.setCpf("221.434.543-12");
-		informacoesPessoaisInquilino.setRg("23.434.454-3");
-		informacoesPessoaisInquilino.setNaturalidade("brasileiro");
-		informacoesPessoaisInquilino.setCidadeNatal("Rio de Janeiro");
+		
+		try {
+			informacoesPessoaisInquilino.setNome("Dominic");
+			informacoesPessoaisInquilino.setSobrenome("Santhiago");
+			informacoesPessoaisInquilino.setDataNascimento("14/06/2003");
+			informacoesPessoaisInquilino.setCpf("221.434.543-12");
+			informacoesPessoaisInquilino.setRg("23.434.454-3");
+			informacoesPessoaisInquilino.setNaturalidade("brasileiro");
+			informacoesPessoaisInquilino.setCidadeNatal("Rio de Janeiro");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		Profissao profissaoMorador = new Profissao();
-		profissaoMorador.setCargo("Contador");
-		profissaoMorador.setDataIngresso("10/06/2013");
-		profissaoMorador.setSalario(4240.0f);
-		profissaoMorador.setTurno("Vespertino");
-		profissaoMorador.setDescricaoAtividades("Realização das atividades contabéis.");
+		
+		try {
+			profissaoMorador.setCargo("Contador");
+			profissaoMorador.setDataIngresso("10/06/2013");
+			profissaoMorador.setSalario(4240.0f);
+			profissaoMorador.setTurno("Vespertino");
+			profissaoMorador.setDescricaoAtividades("Realização das atividades contabéis.");
+			
+		} catch (NullPointerException | IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Profissao profissaoInquilino = new Profissao();
-		profissaoInquilino.setCargo("Gerente");
-		profissaoInquilino.setDataIngresso("15/02/2006");
-		profissaoInquilino.setSalario(3650.0f);
-		profissaoInquilino.setTurno("Vespertino");
-		profissaoInquilino.setDescricaoAtividades("Realização das atividades gerenciais.");
+		
+		try {
+			profissaoInquilino.setCargo("Gerente");
+			profissaoInquilino.setDataIngresso("15/02/2006");
+			profissaoInquilino.setSalario(3650.0f);
+			profissaoInquilino.setTurno("Vespertino");
+			profissaoInquilino.setDescricaoAtividades("Realização das atividades gerenciais.");
+			
+		} catch (NullPointerException | IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Conta contaMorador = new Conta();
-		contaMorador.setAgencia(32);
-		contaMorador.setNumero(33433432);
-		contaMorador.setSaldo(10000.0f);
-		contaMorador.setSenha(33424);
+		
+		try {
+			contaMorador.setAgencia(32);
+			contaMorador.setNumero(33433432);
+			contaMorador.setSaldo(10000.0f);
+			contaMorador.setSenha(33424);
+			
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Conta contaInquilino = new Conta();
-		contaInquilino.setAgencia(12);
-		contaInquilino.setNumero(45434435);
-		contaInquilino.setSaldo(3850.80f);
-		contaInquilino.setSenha(23432);
+		
+		try {
+			contaInquilino.setAgencia(12);
+			contaInquilino.setNumero(45434435);
+			contaInquilino.setSaldo(3850.80f);
+			contaInquilino.setSenha(23432);
+			
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Morador morador = new Morador();
 		morador.setApartamento(apartamento);
@@ -282,7 +364,12 @@ public class Main {
 		morador.setProfissao(profissaoMorador);
 		morador.setTitular(contaMorador);
 		
-		apartamento.setPrecoAluguel(1500.0f);
+		try {
+			apartamento.setPrecoAluguel(1500.0f);
+			
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Inquilino inquilino = new Inquilino();
 		inquilino.setEndereco(enderecoCondominio);
@@ -291,35 +378,59 @@ public class Main {
 		inquilino.setTitular(contaInquilino);
 		
 		Endereco enderecoEletricista = new Endereco();
-		enderecoEletricista.setPais("Brasil");
-		enderecoEletricista.setCep("44344324");
-		enderecoEletricista.setEstado("Rio de Janeiro");
-		enderecoEletricista.setCidade("Rio de Janeiro");
-		enderecoEletricista.setRua("Rua do JavaScript");
-		enderecoEletricista.setNumero("804");
-		enderecoEletricista.setPontoReferencia("Avenida das Américas");
+		
+		try {
+			enderecoEletricista.setPais("Brasil");
+			enderecoEletricista.setCep("44344324");
+			enderecoEletricista.setEstado("Rio de Janeiro");
+			enderecoEletricista.setCidade("Rio de Janeiro");
+			enderecoEletricista.setRua("Rua do JavaScript");
+			enderecoEletricista.setNumero("804");
+			enderecoEletricista.setPontoReferencia("Avenida das Américas");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		InformacoesPessoais informacoesPessoaisEletricista = new InformacoesPessoais();
-		informacoesPessoaisEletricista.setNome("Dominic");
-		informacoesPessoaisEletricista.setSobrenome("Santhiago");
-		informacoesPessoaisEletricista.setDataNascimento("14/06/2003");
-		informacoesPessoaisEletricista.setCpf("221.434.543-12");
-		informacoesPessoaisEletricista.setRg("23.434.454-3");
-		informacoesPessoaisEletricista.setNaturalidade("brasileiro");
-		informacoesPessoaisEletricista.setCidadeNatal("Rio de Janeiro");
+		
+		try {
+			informacoesPessoaisEletricista.setNome("Dominic");
+			informacoesPessoaisEletricista.setSobrenome("Santhiago");
+			informacoesPessoaisEletricista.setDataNascimento("14/06/2003");
+			informacoesPessoaisEletricista.setCpf("221.434.543-12");
+			informacoesPessoaisEletricista.setRg("23.434.454-3");
+			informacoesPessoaisEletricista.setNaturalidade("brasileiro");
+			informacoesPessoaisEletricista.setCidadeNatal("Rio de Janeiro");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		Profissao profissaoEletricista = new Profissao();
-		profissaoEletricista.setCargo("Eletricista");
-		profissaoEletricista.setDataIngresso("20/05/2020");
-		profissaoEletricista.setSalario(2810.0f);
-		profissaoEletricista.setTurno("Vespertino");
-		profissaoEletricista.setDescricaoAtividades("Realização das atividades de eletricista.");
+		
+		try {
+			profissaoEletricista.setCargo("Eletricista");
+			profissaoEletricista.setDataIngresso("20/05/2020");
+			profissaoEletricista.setSalario(2810.0f);
+			profissaoEletricista.setTurno("Vespertino");
+			profissaoEletricista.setDescricaoAtividades("Realização das atividades de eletricista.");
+			
+		} catch (NullPointerException | IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Conta contaEletricista = new Conta();
-		contaEletricista.setAgencia(19);
-		contaEletricista.setNumero(34325654);
-		contaEletricista.setSaldo(5234.60f);
-		contaEletricista.setSenha(21211);
+		
+		try {
+			contaEletricista.setAgencia(19);
+			contaEletricista.setNumero(34325654);
+			contaEletricista.setSaldo(5234.60f);
+			contaEletricista.setSenha(21211);
+			
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Eletricista eletricista = new Eletricista();
 		eletricista.setEndereco(enderecoEletricista);
@@ -328,35 +439,59 @@ public class Main {
 		eletricista.setTitular(contaEletricista);
 		
 		Endereco enderecoJardineiro = new Endereco();
-		enderecoJardineiro.setPais("Brasil");
-		enderecoJardineiro.setCep("44354334");
-		enderecoJardineiro.setEstado("Rio de Janeiro");
-		enderecoJardineiro.setCidade("Rio de Janeiro");
-		enderecoJardineiro.setRua("Rua das Bananadas");
-		enderecoJardineiro.setNumero("302");
-		enderecoJardineiro.setPontoReferencia("Avenida Goiaba");
+		
+		try {
+			enderecoJardineiro.setPais("Brasil");
+			enderecoJardineiro.setCep("44354334");
+			enderecoJardineiro.setEstado("Rio de Janeiro");
+			enderecoJardineiro.setCidade("Rio de Janeiro");
+			enderecoJardineiro.setRua("Rua das Bananadas");
+			enderecoJardineiro.setNumero("302");
+			enderecoJardineiro.setPontoReferencia("Avenida Goiaba");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		InformacoesPessoais informacoesPessoaisJardineiro = new InformacoesPessoais();
-		informacoesPessoaisJardineiro.setNome("Niko");
-		informacoesPessoaisJardineiro.setSobrenome("Bellic");
-		informacoesPessoaisJardineiro.setDataNascimento("10/02/1994");
-		informacoesPessoaisJardineiro.setCpf("332.112.554-14");
-		informacoesPessoaisJardineiro.setRg("11.232.113-4");
-		informacoesPessoaisJardineiro.setNaturalidade("brasileiro");
-		informacoesPessoaisJardineiro.setCidadeNatal("Rio de Janeiro");
+		
+		try {
+			informacoesPessoaisJardineiro.setNome("Niko");
+			informacoesPessoaisJardineiro.setSobrenome("Bellic");
+			informacoesPessoaisJardineiro.setDataNascimento("10/02/1994");
+			informacoesPessoaisJardineiro.setCpf("332.112.554-14");
+			informacoesPessoaisJardineiro.setRg("11.232.113-4");
+			informacoesPessoaisJardineiro.setNaturalidade("brasileiro");
+			informacoesPessoaisJardineiro.setCidadeNatal("Rio de Janeiro");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		Profissao profissaoJardineiro = new Profissao();
-		profissaoJardineiro.setCargo("Eletricista");
-		profissaoJardineiro.setDataIngresso("12/01/2018");
-		profissaoJardineiro.setSalario(2810.0f);
-		profissaoJardineiro.setTurno("Vespertino");
-		profissaoJardineiro.setDescricaoAtividades("Realização das atividades de jardinagens.");
+		
+		try {
+			profissaoJardineiro.setCargo("Eletricista");
+			profissaoJardineiro.setDataIngresso("12/01/2018");
+			profissaoJardineiro.setSalario(2810.0f);
+			profissaoJardineiro.setTurno("Vespertino");
+			profissaoJardineiro.setDescricaoAtividades("Realização das atividades de jardinagens.");
+			
+		} catch (NullPointerException | IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Conta contaJardineiro = new Conta();
-		contaJardineiro.setAgencia(11);
-		contaJardineiro.setNumero(33234543);
-		contaJardineiro.setSaldo(2312.30f);
-		contaJardineiro.setSenha(11122);
+		
+		try {
+			contaJardineiro.setAgencia(11);
+			contaJardineiro.setNumero(33234543);
+			contaJardineiro.setSaldo(2312.30f);
+			contaJardineiro.setSenha(11122);
+			
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Jardineiro jardineiro = new Jardineiro();
 		jardineiro.setEndereco(enderecoJardineiro);
@@ -366,36 +501,60 @@ public class Main {
 		jardineiro.setTitular(contaJardineiro);
 		
 		Endereco enderecoPorteiro = new Endereco();
-		enderecoPorteiro.setPais("Brasil");
-		enderecoPorteiro.setCep("43334543");
-		enderecoPorteiro.setEstado("Rio de Janeiro");
-		enderecoPorteiro.setCidade("Rio de Janeiro");
-		enderecoPorteiro.setRua("Rua dos Asfaltos");
-		enderecoPorteiro.setNumero("312");
-		enderecoPorteiro.setPontoReferencia("Avenida Wilson");
-		enderecoPorteiro.setComplemento("Casa número 12");
+		
+		try {
+			enderecoPorteiro.setPais("Brasil");
+			enderecoPorteiro.setCep("43334543");
+			enderecoPorteiro.setEstado("Rio de Janeiro");
+			enderecoPorteiro.setCidade("Rio de Janeiro");
+			enderecoPorteiro.setRua("Rua dos Asfaltos");
+			enderecoPorteiro.setNumero("312");
+			enderecoPorteiro.setPontoReferencia("Avenida Wilson");
+			enderecoPorteiro.setComplemento("Casa número 12");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		InformacoesPessoais informacoesPessoaisPorteiro = new InformacoesPessoais();
-		informacoesPessoaisPorteiro.setNome("Carl");
-		informacoesPessoaisPorteiro.setSobrenome("Jhoson");
-		informacoesPessoaisPorteiro.setDataNascimento("16/04/1992");
-		informacoesPessoaisPorteiro.setCpf("112.321.554-12");
-		informacoesPessoaisPorteiro.setRg("22.432.112-1");
-		informacoesPessoaisPorteiro.setNaturalidade("brasileiro");
-		informacoesPessoaisPorteiro.setCidadeNatal("Rio de Janeiro");
+		
+		try {
+			informacoesPessoaisPorteiro.setNome("Carl");
+			informacoesPessoaisPorteiro.setSobrenome("Jhoson");
+			informacoesPessoaisPorteiro.setDataNascimento("16/04/1992");
+			informacoesPessoaisPorteiro.setCpf("112.321.554-12");
+			informacoesPessoaisPorteiro.setRg("22.432.112-1");
+			informacoesPessoaisPorteiro.setNaturalidade("brasileiro");
+			informacoesPessoaisPorteiro.setCidadeNatal("Rio de Janeiro");
+			
+		} catch (NullPointerException | IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Profissao profissaoPorteiro = new Profissao();
-		profissaoPorteiro.setCargo("Porteiro");
-		profissaoPorteiro.setDataIngresso("21/03/2007");
-		profissaoPorteiro.setSalario(2630.0f);
-		profissaoPorteiro.setTurno("Vespertino");
-		profissaoPorteiro.setDescricaoAtividades("Realização das atividades de porteiro.");
+		
+		try {
+			profissaoPorteiro.setCargo("Porteiro");
+			profissaoPorteiro.setDataIngresso("21/03/2007");
+			profissaoPorteiro.setSalario(2630.0f);
+			profissaoPorteiro.setTurno("Vespertino");
+			profissaoPorteiro.setDescricaoAtividades("Realização das atividades de porteiro.");
+			
+		} catch (NullPointerException | IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Conta contaPorteiro = new Conta();
-		contaPorteiro.setAgencia(21);
-		contaPorteiro.setNumero(34423432);
-		contaPorteiro.setSaldo(3420.60f);
-		contaPorteiro.setSenha(33321);
+		
+		try {
+			contaPorteiro.setAgencia(21);
+			contaPorteiro.setNumero(34423432);
+			contaPorteiro.setSaldo(3420.60f);
+			contaPorteiro.setSenha(33321);
+			
+		} catch (NullPointerException | IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Porteiro porteiro = new Porteiro();
 		porteiro.setEndereco(enderecoPorteiro);
@@ -404,35 +563,59 @@ public class Main {
 		porteiro.setTitular(contaPorteiro);
 		
 		Endereco enderecoPedreiro = new Endereco();
-		enderecoPedreiro.setPais("Brasil");
-		enderecoPedreiro.setCep("34234332");
-		enderecoPedreiro.setEstado("Rio de Janeiro");
-		enderecoPedreiro.setCidade("Rio de Janeiro");
-		enderecoPedreiro.setRua("Rua dos Gatinhos");
-		enderecoPedreiro.setNumero("4010");
-		enderecoPedreiro.setPontoReferencia("Proximo a faculdade Fisk");
+		
+		try {
+			enderecoPedreiro.setPais("Brasil");
+			enderecoPedreiro.setCep("34234332");
+			enderecoPedreiro.setEstado("Rio de Janeiro");
+			enderecoPedreiro.setCidade("Rio de Janeiro");
+			enderecoPedreiro.setRua("Rua dos Gatinhos");
+			enderecoPedreiro.setNumero("4010");
+			enderecoPedreiro.setPontoReferencia("Proximo a faculdade Fisk");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		InformacoesPessoais informacoesPessoaisPedreiro = new InformacoesPessoais();
-		informacoesPessoaisPedreiro.setNome("Luciano");
-		informacoesPessoaisPedreiro.setSobrenome("Pereira");
-		informacoesPessoaisPedreiro.setDataNascimento("12/09/1999");
-		informacoesPessoaisPedreiro.setCpf("115.344.221-19");
-		informacoesPessoaisPedreiro.setRg("11.321.654-3");
-		informacoesPessoaisPedreiro.setNaturalidade("brasileiro");
-		informacoesPessoaisPedreiro.setCidadeNatal("Rio de Janeiro");
+		
+		try {
+			informacoesPessoaisPedreiro.setNome("Luciano");
+			informacoesPessoaisPedreiro.setSobrenome("Pereira");
+			informacoesPessoaisPedreiro.setDataNascimento("12/09/1999");
+			informacoesPessoaisPedreiro.setCpf("115.344.221-19");
+			informacoesPessoaisPedreiro.setRg("11.321.654-3");
+			informacoesPessoaisPedreiro.setNaturalidade("brasileiro");
+			informacoesPessoaisPedreiro.setCidadeNatal("Rio de Janeiro");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		Profissao profissaoPedreiro = new Profissao();
-		profissaoPedreiro.setCargo("Porteiro");
-		profissaoPedreiro.setDataIngresso("19/07/2002");
-		profissaoPedreiro.setSalario(3420.50f);
-		profissaoPedreiro.setTurno("Vespertino");
-		profissaoPedreiro.setDescricaoAtividades("Realização das atividades de pedreiro.");
+		
+		try {
+			profissaoPedreiro.setCargo("Porteiro");
+			profissaoPedreiro.setDataIngresso("19/07/2002");
+			profissaoPedreiro.setSalario(3420.50f);
+			profissaoPedreiro.setTurno("Vespertino");
+			profissaoPedreiro.setDescricaoAtividades("Realização das atividades de pedreiro.");
+			
+		} catch (NullPointerException | IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Conta contaPedreiro = new Conta();
-		contaPedreiro.setAgencia(21);
-		contaPedreiro.setNumero(34423432);
-		contaPedreiro.setSaldo(3420.60f);
-		contaPedreiro.setSenha(33321);
+		
+		try {
+			contaPedreiro.setAgencia(21);
+			contaPedreiro.setNumero(34423432);
+			contaPedreiro.setSaldo(3420.60f);
+			contaPedreiro.setSenha(33321);
+			
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Pedreiro pedreiro = new Pedreiro();
 		pedreiro.setEndereco(enderecoPedreiro);
@@ -441,35 +624,59 @@ public class Main {
 		pedreiro.setTitular(contaPedreiro);
 		
 		Endereco enderecoProfessorAcademia = new Endereco();
-		enderecoProfessorAcademia.setPais("Brasil");
-		enderecoProfessorAcademia.setCep("44354432");
-		enderecoProfessorAcademia.setEstado("Rio de Janeiro");
-		enderecoProfessorAcademia.setCidade("Rio de Janeiro");
-		enderecoProfessorAcademia.setRua("Rua dos Gafonhotos");
-		enderecoProfessorAcademia.setNumero("3200");
-		enderecoProfessorAcademia.setPontoReferencia("Proximo a shopping Guanabara");
+		
+		try {
+			enderecoProfessorAcademia.setPais("Brasil");
+			enderecoProfessorAcademia.setCep("44354432");
+			enderecoProfessorAcademia.setEstado("Rio de Janeiro");
+			enderecoProfessorAcademia.setCidade("Rio de Janeiro");
+			enderecoProfessorAcademia.setRua("Rua dos Gafonhotos");
+			enderecoProfessorAcademia.setNumero("3200");
+			enderecoProfessorAcademia.setPontoReferencia("Proximo a shopping Guanabara");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		InformacoesPessoais informacoesPessoaisProfessorAcademia = new InformacoesPessoais();
-		informacoesPessoaisProfessorAcademia.setNome("Rodolfo");
-		informacoesPessoaisProfessorAcademia.setSobrenome("Gomes");
-		informacoesPessoaisProfessorAcademia.setDataNascimento("21/02/2002");
-		informacoesPessoaisProfessorAcademia.setCpf("101.322.876-23");
-		informacoesPessoaisProfessorAcademia.setRg("22.432.113-2");
-		informacoesPessoaisProfessorAcademia.setNaturalidade("brasileiro");
-		informacoesPessoaisProfessorAcademia.setCidadeNatal("Paraíba");
+		
+		try {
+			informacoesPessoaisProfessorAcademia.setNome("Rodolfo");
+			informacoesPessoaisProfessorAcademia.setSobrenome("Gomes");
+			informacoesPessoaisProfessorAcademia.setDataNascimento("21/02/2002");
+			informacoesPessoaisProfessorAcademia.setCpf("101.322.876-23");
+			informacoesPessoaisProfessorAcademia.setRg("22.432.113-2");
+			informacoesPessoaisProfessorAcademia.setNaturalidade("brasileiro");
+			informacoesPessoaisProfessorAcademia.setCidadeNatal("Paraíba");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		Profissao profissaoProfessorAcademia = new Profissao();
-		profissaoProfessorAcademia.setCargo("Professor de Academia");
-		profissaoProfessorAcademia.setDataIngresso("23/03/1997");
-		profissaoProfessorAcademia.setSalario(4640.0f);
-		profissaoProfessorAcademia.setTurno("Vespertino");
-		profissaoProfessorAcademia.setDescricaoAtividades("Realização das atividades de professor de academia.");
+		
+		try {
+			profissaoProfessorAcademia.setCargo("Professor de Academia");
+			profissaoProfessorAcademia.setDataIngresso("23/03/1997");
+			profissaoProfessorAcademia.setSalario(4640.0f);
+			profissaoProfessorAcademia.setTurno("Vespertino");
+			profissaoProfessorAcademia.setDescricaoAtividades("Realização das atividades de professor de academia.");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		Conta contaProfessorAcademia = new Conta();
-		contaProfessorAcademia.setAgencia(19);
-		contaProfessorAcademia.setNumero(44355432);
-		contaProfessorAcademia.setSaldo(2870.60f);
-		contaProfessorAcademia.setSenha(44432);
+		
+		try {
+			contaProfessorAcademia.setAgencia(19);
+			contaProfessorAcademia.setNumero(44355432);
+			contaProfessorAcademia.setSaldo(2870.60f);
+			contaProfessorAcademia.setSenha(44432);
+			
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		ProfessorAcademia professorAcademia = new ProfessorAcademia();
 		professorAcademia.setEndereco(enderecoProfessorAcademia);
@@ -478,35 +685,59 @@ public class Main {
 		professorAcademia.setTitular(contaProfessorAcademia);
 		
 		Endereco enderecoSeguranca = new Endereco();
-		enderecoSeguranca.setPais("Brasil");
-		enderecoSeguranca.setCep("73843432");
-		enderecoSeguranca.setEstado("Rio de Janeiro");
-		enderecoSeguranca.setCidade("Rio de Janeiro");
-		enderecoSeguranca.setRua("Rua dos Arautos");
-		enderecoSeguranca.setNumero("1230");
-		enderecoSeguranca.setPontoReferencia("Próximo ao Barra Shooping");
+		
+		try {
+			enderecoSeguranca.setPais("Brasil");
+			enderecoSeguranca.setCep("73843432");
+			enderecoSeguranca.setEstado("Rio de Janeiro");
+			enderecoSeguranca.setCidade("Rio de Janeiro");
+			enderecoSeguranca.setRua("Rua dos Arautos");
+			enderecoSeguranca.setNumero("1230");
+			enderecoSeguranca.setPontoReferencia("Próximo ao Barra Shooping");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		InformacoesPessoais informacoesPessoaisSeguranca = new InformacoesPessoais();
-		informacoesPessoaisSeguranca.setNome("Júlio");
-		informacoesPessoaisSeguranca.setSobrenome("Ribas");
-		informacoesPessoaisSeguranca.setDataNascimento("24/04/1998");
-		informacoesPessoaisSeguranca.setCpf("311.465.342-11");
-		informacoesPessoaisSeguranca.setRg("45.233.112-3");
-		informacoesPessoaisSeguranca.setNaturalidade("brasileiro");
-		informacoesPessoaisSeguranca.setCidadeNatal("Rio de Janeiro");
+		
+		try {
+			informacoesPessoaisSeguranca.setNome("Júlio");
+			informacoesPessoaisSeguranca.setSobrenome("Ribas");
+			informacoesPessoaisSeguranca.setDataNascimento("24/04/1998");
+			informacoesPessoaisSeguranca.setCpf("311.465.342-11");
+			informacoesPessoaisSeguranca.setRg("45.233.112-3");
+			informacoesPessoaisSeguranca.setNaturalidade("brasileiro");
+			informacoesPessoaisSeguranca.setCidadeNatal("Rio de Janeiro");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		Profissao profissaoSeguranca = new Profissao();
-		profissaoSeguranca.setCargo("Segurança");
-		profissaoSeguranca.setDataIngresso("11/06/2010");
-		profissaoSeguranca.setSalario(3830.50f);
-		profissaoSeguranca.setTurno("Vespertino");
-		profissaoSeguranca.setDescricaoAtividades("Realização das atividades de professor de segurança.");
+		
+		try {
+			profissaoSeguranca.setCargo("Segurança");
+			profissaoSeguranca.setDataIngresso("11/06/2010");
+			profissaoSeguranca.setSalario(3830.50f);
+			profissaoSeguranca.setTurno("Vespertino");
+			profissaoSeguranca.setDescricaoAtividades("Realização das atividades de professor de segurança.");
+			
+		} catch (NullPointerException | IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Conta contaSeguranca = new Conta();
-		contaSeguranca.setAgencia(23);
-		contaSeguranca.setNumero(44323432);
-		contaSeguranca.setSaldo(4230.00f);
-		contaSeguranca.setSenha(44343);
+		
+		try {
+			contaSeguranca.setAgencia(23);
+			contaSeguranca.setNumero(44323432);
+			contaSeguranca.setSaldo(4230.00f);
+			contaSeguranca.setSenha(44343);
+			
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Seguranca seguranca = new Seguranca();
 		seguranca.setEndereco(enderecoSeguranca);
@@ -515,35 +746,59 @@ public class Main {
 		seguranca.setTitular(contaSeguranca);
 		
 		Endereco enderecoAdministrador = new Endereco();
-		enderecoAdministrador.setPais("Brasil");
-		enderecoAdministrador.setCep("34343343");
-		enderecoAdministrador.setEstado("Rio de Janeiro");
-		enderecoAdministrador.setCidade("Rio de Janeiro");
-		enderecoAdministrador.setRua("Rua dos Mouras");
-		enderecoAdministrador.setNumero("1950");
-		enderecoAdministrador.setPontoReferencia("Próximo a feira");
+		
+		try {
+			enderecoAdministrador.setPais("Brasil");
+			enderecoAdministrador.setCep("34343343");
+			enderecoAdministrador.setEstado("Rio de Janeiro");
+			enderecoAdministrador.setCidade("Rio de Janeiro");
+			enderecoAdministrador.setRua("Rua dos Mouras");
+			enderecoAdministrador.setNumero("1950");
+			enderecoAdministrador.setPontoReferencia("Próximo a feira");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
 		
 		InformacoesPessoais informacoesPessoaisAdministrador = new InformacoesPessoais();
-		informacoesPessoaisAdministrador.setNome("Rafael");
-		informacoesPessoaisAdministrador.setSobrenome("Gonzales");
-		informacoesPessoaisAdministrador.setDataNascimento("04/06/2001");
-		informacoesPessoaisAdministrador.setCpf("234.654.211-33");
-		informacoesPessoaisAdministrador.setRg("32.443.120-5");
-		informacoesPessoaisAdministrador.setNaturalidade("brasileiro");
-		informacoesPessoaisAdministrador.setCidadeNatal("Rio de Janeiro");
 		
+		try {
+			informacoesPessoaisAdministrador.setNome("Rafael");
+			informacoesPessoaisAdministrador.setSobrenome("Gonzales");
+			informacoesPessoaisAdministrador.setDataNascimento("04/06/2001");
+			informacoesPessoaisAdministrador.setCpf("234.654.211-33");
+			informacoesPessoaisAdministrador.setRg("32.443.120-5");
+			informacoesPessoaisAdministrador.setNaturalidade("brasileiro");
+			informacoesPessoaisAdministrador.setCidadeNatal("Rio de Janeiro");
+			
+		} catch (NullPointerException erro) {
+			erro.printStackTrace();
+		}
+		 
 		Profissao profissaoAdministrador = new Profissao();
-		profissaoAdministrador.setCargo("Administrador");
-		profissaoAdministrador.setDataIngresso("03/09/2005");
-		profissaoAdministrador.setSalario(5230.00f);
-		profissaoAdministrador.setTurno("Vespertino");
-		profissaoAdministrador.setDescricaoAtividades("Realização das atividades de administrador.");
+		
+		try {
+			profissaoAdministrador.setCargo("Administrador");
+			profissaoAdministrador.setDataIngresso("03/09/2005");
+			profissaoAdministrador.setSalario(5230.00f);
+			profissaoAdministrador.setTurno("Vespertino");
+			profissaoAdministrador.setDescricaoAtividades("Realização das atividades de administrador.");
+			
+		} catch (NullPointerException | IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Conta contaAdministrador = new Conta();
-		contaAdministrador.setAgencia(17);
-		contaAdministrador.setNumero(54534541);
-		contaAdministrador.setSaldo(9430.50f);
-		contaAdministrador.setSenha(33234);
+		
+		try {
+			contaAdministrador.setAgencia(17);
+			contaAdministrador.setNumero(54534541);
+			contaAdministrador.setSaldo(9430.50f);
+			contaAdministrador.setSenha(33234);
+			
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Administrador administrador = new Administrador();
 		administrador.setEndereco(enderecoAdministrador);
@@ -552,10 +807,17 @@ public class Main {
 		administrador.setTitular(contaAdministrador);
 		
 		Custo custo = new Custo();
-		custo.setConsertos(635.30f);
-		custo.setConstrucao(1234.50f);
-		custo.setMaterialConstrucao(3160.0f);
-		custo.setMaterialLimpeza(213.40f);
+		
+		try {
+			custo.setConsertos(635.30f);
+			custo.setConstrucao(1234.50f);
+			custo.setMaterialConstrucao(3160.0f);
+			custo.setMaterialLimpeza(213.40f);
+			
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
+		
 		custo.setSalarioTotal(administrador);
 		custo.setSalarioTotal(porteiro);
 		custo.setSalarioTotal(seguranca);
@@ -565,10 +827,16 @@ public class Main {
 		custo.setSalarioTotal(professorAcademia);
 		
 		Despesa despesa = new Despesa();
-		despesa.setAgua(8340.30f);
-		despesa.setEletricidade(1560.50f);
-		despesa.setGas(563.20f);
-		despesa.setImposto(320.30f);
+		
+		try {
+			despesa.setAgua(8340.30f);
+			despesa.setEletricidade(1560.50f);
+			despesa.setGas(563.20f);
+			despesa.setImposto(320.30f);
+			
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		Receita receita = new Receita();
 		
