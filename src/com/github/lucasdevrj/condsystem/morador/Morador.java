@@ -9,7 +9,7 @@ import com.github.lucasdevrj.condsystem.financeiro.Receita;
 import com.github.lucasdevrj.condsystem.condominio.Condominio;
 import com.github.lucasdevrj.condsystem.inquilino.Inquilino;
 
-public class Morador extends Colaborador { //pode não ser colaborador do condomínio em si, mas é de alguma empresa
+public class Morador extends Colaborador { /** pode não ser colaborador do condomínio em si, mas é de alguma empresa **/
 
 	private InformacoesPessoais informacoesPessoais;
 	private Apartamento apartamento;

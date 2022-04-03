@@ -3,8 +3,6 @@ package com.github.lucasdevrj.condsystem.condominio;
 import com.github.lucasdevrj.condsystem.informacoespessoais.Endereco;
 import com.github.lucasdevrj.condsystem.financeiro.Financeiro;
 
-
-
 public class Condominio {
 
 	private Endereco endereco;
