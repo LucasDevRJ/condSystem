@@ -7,7 +7,9 @@ package com.github.lucasdevrj.condsystem.funcionario;
 public class ProfessorAcademia extends Colaborador {
 
 	private boolean estaMontandoSerie;
-	
+	/**
+	 * Método para o Professor de Academia montar a série, que possui uma lógica para verificar se a série já foi montada ou não.
+	 */
 	public void montarSerie() {
 		if (this.isEstaMontandoSerie() == false) {
 			System.out.println("Professor de Educação Física " + super.getInformacoesPessoais().getNome() + super.getInformacoesPessoais().getSobrenome() + " esta montando série para o aluno.");
@@ -15,7 +17,9 @@ public class ProfessorAcademia extends Colaborador {
 			System.out.println("Professor de Educação Física " + super.getInformacoesPessoais().getNome() + super.getInformacoesPessoais().getSobrenome() + " já montou a série para o aluno.");
 		}
 	}
-	 
+	/**
+	 * Método para o Professor de Academia demonstrar um exercício, com informações do Professor.
+	 */
 	public void demonstrarExercicio() {
 		System.out.println("Professor de Educação Física " + super.getInformacoesPessoais().getNome() + " " + super.getInformacoesPessoais().getSobrenome() + " esta demonstrando o exercício para o aluno.");
 	}

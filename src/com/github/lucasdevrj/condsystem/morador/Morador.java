@@ -20,7 +20,10 @@ public class Morador extends Colaborador { /** pode não ser colaborador do condo
 	private Profissao profissao;
 	private boolean ehProprietario;
 	private Conta titular;
-	
+	/**
+	 * Método para comprar um apartamento, que possui uma lógica para verificar se é proprietário e se tem saldo suficiênte para comprar o apartamento.
+	 * @param financias
+	 */
 	public void comprarApartamento(Receita financias) {
 		if (this.isEhProprietario() == false) {
 			if (this.titular.getSaldo() >= this.apartamento.getPrecoApartamento()) {
@@ -36,7 +39,11 @@ public class Morador extends Colaborador { /** pode não ser colaborador do condo
 			}
 		}
 	}
-	
+	/**
+	 * Método para comprar um apartamento, que possui uma lógica para verificar se é proprietário e se tem saldo suficiênte para pagar o aluguel.
+	 * @param financias
+	 * @param condominio
+	 */
 	public void pagarAluguelCondominio(Receita financias, Condominio condominio) {
 		if (this.isEhProprietario() == true) {
 			if (this.titular.getSaldo() >= condominio.getValorAluguel()) {
@@ -56,7 +63,11 @@ public class Morador extends Colaborador { /** pode não ser colaborador do condo
 			System.out.println("Para pagar aluguel tem que ser proprietário do apartamento!");
 		}
 	}
-	
+	/**
+	 * Método para alugar o apartamento, passando informações do inquilino e proprietário.
+	 * @param inquilino
+	 * @param proprietario
+	 */
 	public void alugarApartamento(Inquilino inquilino, Morador proprietario) {
 		if (this.isEhProprietario() == true) {
 			System.out.println("Imóvel Alugado com Sucesso!");
@@ -76,7 +87,11 @@ public class Morador extends Colaborador { /** pode não ser colaborador do condo
 			System.out.println("Para alugar um imóvel precisa ser proprietário!");
 		}
 	}
-	
+	/**
+	 * Método para receber aluguel do inquilino, com lógica para verificar se é proprietário e se o inquilino tem saldo para pagar. 
+	 * @param inquilino
+	 * @param apartamento
+	 */
 	public void receberAluguel(Inquilino inquilino, Apartamento apartamento) {
 		if (this.isEhProprietario() == true) {
 			if (inquilino.getTitular().getSaldo() >= apartamento.getPrecoAluguel()) {
@@ -89,7 +104,10 @@ public class Morador extends Colaborador { /** pode não ser colaborador do condo
 			}
 		}
 	}
-	
+	/**
+	 * Método para reformar apartamento, possuindo uma estrutura de repetição para verificar qual reforma foi solicitada.
+	 * @param opcaoEscolhida
+	 */
 	public void reformarApartamento(int opcaoEscolhida) {
 		int opcaoReforma = opcaoEscolhida;
 		float reformaPreco = 1000.0f;

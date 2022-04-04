@@ -8,8 +8,11 @@ import com.github.lucasdevrj.condsystem.sistemacondominio.CondSystem;
  * @author Lucas Pereira de Lima
  * @version 1.0
  */
+
 public class Administrador extends Colaborador implements CondSystem {
-	
+	/**
+	 * Método reescrito para acessar todas as informações de algum Colaborador. Passando como parâmetro a classe Colaborador e sua referência.
+	 */
 	@Override
 	public void acessarInformacoesColaborador(Colaborador colaborador) {
 		System.out.println("Informações do Colaborador");
@@ -35,7 +38,9 @@ public class Administrador extends Colaborador implements CondSystem {
 		System.out.println("Salário: " + colaborador.getProfissao().getSalario());
 		System.out.println("Turno: " + colaborador.getProfissao().getTurno());
 	}
-
+	/**
+	 * Método para acessar o Financeiro do Condomínio, passando como parâmetro a Classe Financeiro e sua referência.
+	 */
 	@Override
 	public void acessarFinanceiro(Financeiro financeiro) {
 		System.out.println("Situação Financeira do Condomínio");
@@ -44,7 +49,9 @@ public class Administrador extends Colaborador implements CondSystem {
 		System.out.println("Total de Receita: R$ " + financeiro.getReceita().getTotal());
 		System.out.println("Lucro Total: R$ " + financeiro.getLucro());
 	}
-
+	/**
+	 * Método para acessar as informações de algum Morador, passando como parâmetro a Classe Morador e sua referência.
+	 */
 	@Override
 	public void acessarInformacoesMorador(Morador morador) {
 		System.out.println("Informações do Morador");
@@ -76,7 +83,9 @@ public class Administrador extends Colaborador implements CondSystem {
 			System.out.println("É Proprietário: Não");
 		}
 	}
-
+	/**
+	 * Método para agendar reunião do Condomínio, passando como parâmetro uma String e sua referência.
+	 */
 	@Override
 	public void agendarReuniao(String data) {
 		System.out.println("A reunião do condomínio foi agendada para a data: " + data + "! Por favor todos compareçam!");

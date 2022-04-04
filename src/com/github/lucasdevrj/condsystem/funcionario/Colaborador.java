@@ -16,6 +16,9 @@ public abstract class Colaborador {
 	private Profissao profissao;
 	private Conta titular;
 	
+	/**
+	 * Método para receber salário, pegando a Conta do funcionário e adicionando o salário nela.
+	 */
 	public void receberSalario() {
 		titular.setSaldo(titular.getSaldo() + profissao.getSalario());
 		System.out.println("Salário Depositado com Sucesso!");

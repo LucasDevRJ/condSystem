@@ -8,7 +8,9 @@ public class Porteiro extends Colaborador {
 	
 	private boolean portaEstaAberta;
 	private boolean portaoEstaAberto;
-	
+	/**
+	 * Método para o Porteiro abrir a porta, que possui uma lógica para verificar se a porta esta aberta ou fechada.
+	 */
 	public void abrirPorta() {
 		if (this.isPortaEstaAberta() == false) {
 			System.out.println("O porteiro " + super.getInformacoesPessoais().getNome() +  " " + super.getInformacoesPessoais().getSobrenome() + " abriu a porta.");
@@ -17,7 +19,9 @@ public class Porteiro extends Colaborador {
 			System.out.println("A porta já esta aberta!");
 		}
 	}
-	
+	/**
+	 * Método para o Porteiro abrir o portão, que possui uma lógica para verificar se a portão esta aberta ou fechada.
+	 */
 	public void abrirPortao() {
 		if (this.isPortaoEstaAberto() == false) {
 			System.out.println("O porteiro " + super.getInformacoesPessoais().getNome() +  " " + super.getInformacoesPessoais().getSobrenome() + " abriu o portão.");

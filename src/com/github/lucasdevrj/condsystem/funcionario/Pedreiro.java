@@ -8,7 +8,9 @@ public class Pedreiro extends Colaborador {
 
 	private boolean estaConsertado;
 	private boolean foiConstruido;
-	
+	/**
+	 * Método para o Pedreiro consertar algo, que possui uma lógica para verificar se o objeto esta consertado ou não.
+	 */
 	public void consertar(String oQue) {
 		if (this.isEstaConsertado() == false) {
 			System.out.println("O pedreiro " + super.getInformacoesPessoais().getNome() + " " + super.getInformacoesPessoais().getSobrenome() + " esta consertando o " + oQue + ".");
@@ -17,7 +19,9 @@ public class Pedreiro extends Colaborador {
 			System.out.println("O " + oQue + " já foi consertado!");
 		}
 	}
-	
+	/**
+	 * Método para o Pedreiro construir algo, que possui uma lógica para verificar se já foi construido ou não.
+	 */
 	public void construir(String oQue) {
 		if (this.isFoiConstruido() == false) {
 			System.out.println("O pedreiro " + super.getInformacoesPessoais().getNome() + " " + super.getInformacoesPessoais().getSobrenome() + " esta construindo o " + oQue + ".");

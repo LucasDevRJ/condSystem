@@ -7,7 +7,9 @@ package com.github.lucasdevrj.condsystem.funcionario;
 public class Jardineiro extends Colaborador {
 
 	private boolean jardinagemEstaGrande;
-	
+	/**
+	 * Método para o Jardineiro jardinar, que possui uma lógica para verificar se a jardinagem esta grande ou não.
+	 */
 	public void jardinar() {
 		if (this.isJardinagemEstaGrande() == true) {
 			System.out.println("O jardineiro " + super.getInformacoesPessoais().getNome() + " " + super.getInformacoesPessoais().getSobrenome() + " esta jardinando.");
