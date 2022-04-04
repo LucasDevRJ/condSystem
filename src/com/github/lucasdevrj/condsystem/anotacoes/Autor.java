@@ -1,8 +1,8 @@
 package com.github.lucasdevrj.condsystem.anotacoes;
 /**
  * Anotações do Projeto
- * @author lucas
- *
+ * @author Lucas Pereira de Lima
+ * @version 1.0
  */
 public @interface Autor {
 

@@ -1,5 +1,9 @@
 package com.github.lucasdevrj.condsystem.financeiro;
-
+/**
+ * Classe que representa o Financeiro
+ * @author Lucas Pereira de Lima
+ * @version 1.0
+ */
 public class Financeiro {
 
 	private Despesa despesa;

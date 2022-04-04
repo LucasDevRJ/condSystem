@@ -1,5 +1,9 @@
 package com.github.lucasdevrj.condsystem.informacoespessoais;
-
+/**
+ * Classe que representa o Endereço
+ * @author Lucas Pereira de Lima
+ * @version 1.0
+ */
 public class Endereco {
 
 	private String pais;

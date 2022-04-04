@@ -1,5 +1,9 @@
 package com.github.lucasdevrj.condsystem.morador;
-
+/**
+ * Classe que representa o Morador
+ * @author Lucas Pereira de Lima
+ * @version 1.0
+ */
 import com.github.lucasdevrj.condsystem.funcionario.Colaborador;
 import com.github.lucasdevrj.condsystem.informacoespessoais.InformacoesPessoais;
 import com.github.lucasdevrj.condsystem.apartamento.Apartamento;

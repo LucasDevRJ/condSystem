@@ -1,5 +1,9 @@
 package com.github.lucasdevrj.condsystem.principal;
-
+/**
+ * Classe que representa o Principal do Projeto
+ * @author Lucas Pereira de Lima
+ * @version 1.0
+ */
 import com.github.lucasdevrj.condsystem.anotacoes.Autor;
 import com.github.lucasdevrj.condsystem.apartamento.Apartamento;
 import com.github.lucasdevrj.condsystem.condominio.Condominio;

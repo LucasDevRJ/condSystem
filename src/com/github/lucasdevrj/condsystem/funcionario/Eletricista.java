@@ -1,5 +1,9 @@
 package com.github.lucasdevrj.condsystem.funcionario;
-
+/**
+ * Classe que representa o Eletricista
+ * @author Lucas Pereira de Lima
+ * @version 1.0
+ */
 public class Eletricista extends Colaborador {
 
 	public void trocaFiacao() {

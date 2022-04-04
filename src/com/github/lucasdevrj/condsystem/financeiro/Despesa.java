@@ -1,5 +1,9 @@
 package com.github.lucasdevrj.condsystem.financeiro;
-
+/**
+ * Classe que representa a Despesa do Financeiro
+ * @author Lucas Pereira de Lima
+ * @version 1.0
+ */
 public class Despesa {
 
 	private float eletricidade;

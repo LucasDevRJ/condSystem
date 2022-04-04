@@ -1,5 +1,9 @@
 package com.github.lucasdevrj.condsystem.funcionario;
-
+/**
+ * Classe que representa o Porteiro
+ * @author Lucas Pereira de Lima
+ * @version 1.0
+ */
 public class Porteiro extends Colaborador {
 	
 	private boolean portaEstaAberta;

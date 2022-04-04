@@ -1,7 +1,11 @@
 package com.github.lucasdevrj.condsystem.apartamento;
 
 import com.github.lucasdevrj.condsystem.informacoespessoais.Endereco;
-
+/**
+ * Classe que representa Apartamentos
+ * @author Lucas Pereira de Lima
+ * @version 1.0
+ */
 public class Apartamento {
 
 	private Endereco endereco;

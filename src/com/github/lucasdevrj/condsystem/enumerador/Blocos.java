@@ -1,8 +1,17 @@
 package com.github.lucasdevrj.condsystem.enumerador;
+/**
+ * Enumerador do Projeto
+ * @author Lucas Pereira de Lima
+ * @version 1.0
+ */
 
 public enum Blocos {
-
-	BLOCO1("Bloco A"), BLOCO2("Bloco B"), BLOCO3("Bloco C");
+	/**Variável constante que é o Bloco do Condomínio.*/
+	BLOCO1("Bloco A"),
+	/**Variável constante que é o Bloco do Condomínio.*/
+	BLOCO2("Bloco B"), 
+	/**Variável constante que é o Bloco do Condomínio.*/
+	BLOCO3("Bloco C");
 	
 	private String bloco;
 	

@@ -4,7 +4,11 @@ import com.github.lucasdevrj.condsystem.informacoespessoais.InformacoesPessoais;
 import com.github.lucasdevrj.condsystem.informacoespessoais.Endereco;
 import com.github.lucasdevrj.condsystem.informacoespessoais.Profissao;
 import com.github.lucasdevrj.condsystem.contabancaria.Conta;
-
+/**
+ * Classe que representa o Colaborador não especifico
+ * @author Lucas Pereira de Lima
+ * @version 1.0
+ */
 public abstract class Colaborador {
 
 	private InformacoesPessoais informacoesPessoais;

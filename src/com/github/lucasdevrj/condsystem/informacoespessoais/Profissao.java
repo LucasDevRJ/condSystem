@@ -1,5 +1,9 @@
 package com.github.lucasdevrj.condsystem.informacoespessoais;
-
+/**
+ * Classe que representa a Profissão
+ * @author Lucas Pereira de Lima
+ * @version 1.0
+ */
 public class Profissao {
 
 	private String cargo;

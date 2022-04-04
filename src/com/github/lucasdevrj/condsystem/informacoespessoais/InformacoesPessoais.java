@@ -1,5 +1,9 @@
 package com.github.lucasdevrj.condsystem.informacoespessoais;
-
+/**
+ * Classe que representa as Informações Pessoais
+ * @author Lucas Pereira de Lima
+ * @version 1.0
+ */
 public class InformacoesPessoais {
 
 	private String nome;

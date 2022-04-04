@@ -3,9 +3,13 @@ package com.github.lucasdevrj.condsystem.funcionario;
 import com.github.lucasdevrj.condsystem.financeiro.Financeiro;
 import com.github.lucasdevrj.condsystem.morador.Morador;
 import com.github.lucasdevrj.condsystem.sistemacondominio.CondSystem;
-
+/**
+ * Classe que representa o Administrador
+ * @author Lucas Pereira de Lima
+ * @version 1.0
+ */
 public class Administrador extends Colaborador implements CondSystem {
-
+	
 	@Override
 	public void acessarInformacoesColaborador(Colaborador colaborador) {
 		System.out.println("Informações do Colaborador");

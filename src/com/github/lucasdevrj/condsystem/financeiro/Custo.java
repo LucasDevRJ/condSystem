@@ -1,7 +1,11 @@
 package com.github.lucasdevrj.condsystem.financeiro;
 
 import com.github.lucasdevrj.condsystem.funcionario.Colaborador;
-
+/**
+ * Classe que representa o Custo do Financeiro
+ * @author Lucas Pereira de Lima
+ * @version 1.0
+ */
 public class Custo {
 
 	private float salarioTotal;

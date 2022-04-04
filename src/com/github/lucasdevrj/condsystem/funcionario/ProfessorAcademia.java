@@ -1,5 +1,9 @@
 package com.github.lucasdevrj.condsystem.funcionario;
-
+/**
+ * Classe que representa o Professor de Academia
+ * @author Lucas Pereira de Lima
+ * @version 1.0
+ */
 public class ProfessorAcademia extends Colaborador {
 
 	private boolean estaMontandoSerie;

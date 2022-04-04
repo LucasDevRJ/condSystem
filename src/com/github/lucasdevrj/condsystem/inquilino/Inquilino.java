@@ -1,5 +1,9 @@
 package com.github.lucasdevrj.condsystem.inquilino;
-
+/**
+ * Classe que representa o Inquilino
+ * @author Lucas Pereira de Lima
+ * @version 1.0
+ */
 import com.github.lucasdevrj.condsystem.informacoespessoais.InformacoesPessoais;
 import com.github.lucasdevrj.condsystem.informacoespessoais.Endereco;
 import com.github.lucasdevrj.condsystem.informacoespessoais.Profissao;

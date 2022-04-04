@@ -2,14 +2,22 @@ package com.github.lucasdevrj.condsystem.contabancaria;
 
 import com.github.lucasdevrj.condsystem.contabancaria.Conta;
 import com.github.lucasdevrj.condsystem.funcionario.Colaborador;
-
+/**
+ * Classe que representa uma Conta não especificada
+ * @author Lucas Pereira de Lima
+ * @version 1.0
+ */
 public class Conta {
 
 	private int numero;
 	private int agencia;
 	private float saldo;
 	private int senha;
-	
+	/**
+	 * Método para depositar um valor em outra Conta. Lembrando que terá de ter valor suficiente para deposito.
+	 * @param valor
+	 * @param titular
+	 */
 	public void depositar(float valor, Colaborador titular) {
 		if (valor <= titular.getProfissao().getSalario()) {
 			this.setSaldo(valor + this.getSaldo());
@@ -20,7 +28,10 @@ public class Conta {
 			System.out.println("Valor Insuficiênte!");
 		}
 	}
-	
+	/**
+	 * Método para sacar valor suficiente do Banco.
+	 * @param valor
+	 */
 	public void sacar(float valor) {
 		if (valor <= this.getSaldo()) {
 			this.setSaldo(valor - this.getSaldo());
