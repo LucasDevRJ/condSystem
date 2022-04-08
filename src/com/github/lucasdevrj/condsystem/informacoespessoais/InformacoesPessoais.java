@@ -1,4 +1,5 @@
 package com.github.lucasdevrj.condsystem.informacoespessoais;
+
 /**
  * Classe que representa as Informações Pessoais
  * @author Lucas Pereira de Lima
@@ -19,6 +20,14 @@ public class InformacoesPessoais {
 	}
 	
 	public void setNome(String nome) {
+		nome = nome.trim();
+		
+		nome = nome.replaceAll("[^a-zA-Z íãáàôõüÍÃÁÀÕÔÜ]", "");
+		
+		if (nome.contains("  ")) {
+			throw new IllegalArgumentException("Não coloque muitos espaços, por favor!");
+		}
+		
 		if (nome.length() == 0) {
 			throw new NullPointerException("Insira o nome, por favor!");
 		}
@@ -31,6 +40,14 @@ public class InformacoesPessoais {
 	}
 	
 	public void setSobrenome(String sobrenome) {
+		sobrenome = sobrenome.trim();
+		
+		sobrenome = sobrenome.replaceAll("[^a-zA-Z íãáàôõüÍÃÁÀÕÔÜ]", "");
+		
+		if (sobrenome.contains("  ")) {
+			throw new IllegalArgumentException("Não coloque muitos espaços, por favor!");
+		}
+		
 		if (sobrenome.length() == 0) {
 			throw new NullPointerException("Insira o sobrenome, por favor!");
 		}
@@ -43,6 +60,14 @@ public class InformacoesPessoais {
 	}
 	
 	public void setNaturalidade(String naturalidade) {
+		naturalidade = naturalidade.trim();
+		
+		naturalidade = naturalidade.replaceAll("[^a-zA-Z íãáàôõüÍÃÁÀÕÔÜ]", "");
+		
+		if (naturalidade.contains("  ")) {
+			throw new IllegalArgumentException("Não coloque muitos espaços, por favor!");
+		}
+		
 		if (naturalidade.length() == 0) {
 			throw new NullPointerException("Insira a naturalidade, por favor!");
 		}
@@ -55,6 +80,14 @@ public class InformacoesPessoais {
 	}
 	
 	public void setCidadeNatal(String cidadeNatal) {
+		cidadeNatal = cidadeNatal.trim();
+		
+		cidadeNatal = cidadeNatal.replaceAll("[^a-zA-Z íãáàôõüÍÃÁÀÕÔÜ]", "");
+		
+		if (cidadeNatal.contains("  ")) {
+			throw new IllegalArgumentException("Não coloque muitos espaços, por favor!");
+		}
+		
 		if (cidadeNatal.length() == 0) {
 			throw new NullPointerException("Insira a cidade natal, por favor!");
 		}
@@ -67,6 +100,12 @@ public class InformacoesPessoais {
 	}
 	
 	public void setRg(String rg) {
+		rg = rg.trim();
+		
+		rg = rg.replaceAll("[^0-9]", "");
+		
+		rg = rg.substring(0,2) + "." + rg.substring(2,5) + "." + rg.substring(5,8) + "-" + rg.substring(8,9);
+		
 		if (rg.length() == 0) {
 			throw new NullPointerException("Insira o RG, por favor!");
 		}
@@ -79,20 +118,36 @@ public class InformacoesPessoais {
 	}
 	
 	public void setCpf(String cpf) {
+		cpf = cpf.trim();
+		
+		cpf = cpf.replaceAll("[^0-9]", "");
+		
+		cpf = cpf.substring(0,3) + "." + cpf.substring(3,6) + "." + cpf.substring(6,9) + "-" + cpf.substring(9,11);
+		
 		if (cpf.length() == 0) {
 			throw new NullPointerException("Insira o CPF, por favor!");
 		}
 		
 		this.cpf = cpf;
 	}
-
+	
 	public String getDataNascimento() {
 		return dataNascimento;
 	}
 
 	public void setDataNascimento(String dataNascimento) {
+		dataNascimento = dataNascimento.trim();
+		
+		dataNascimento = dataNascimento.replaceAll("[^0-9]", "");
+		
+		dataNascimento = dataNascimento.substring(0,2) + "/" + dataNascimento.substring(2,4) + "/" + dataNascimento.substring(4,8);
+		
 		if (dataNascimento.length() == 0) {
-			throw new NullPointerException("Insira a data de nascimento, por favor!");
+			throw new NullPointerException("Insira o CPF, por favor!");
+		}
+		
+		if (dataNascimento.length() > 11) {
+			throw new StringIndexOutOfBoundsException("Digite a data de nascimento completa, por favor!");
 		}
 		
 		this.dataNascimento = dataNascimento;

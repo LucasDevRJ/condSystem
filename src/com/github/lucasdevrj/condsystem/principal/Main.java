@@ -1,4 +1,5 @@
 package com.github.lucasdevrj.condsystem.principal;
+
 /**
  * Classe que representa o Principal do Projeto
  * @author Lucas Pereira de Lima
@@ -39,7 +40,7 @@ public class Main {
 		
 		try {
 			enderecoCondominio.setPais("Brasil");
-			enderecoCondominio.setCep("32454565");
+			enderecoCondominio.setCep("22710270");
 			enderecoCondominio.setEstado("Rio de Janeiro");
 			enderecoCondominio.setCidade("Rio de Janeiro");
 			enderecoCondominio.setRua("Rua do Java");
@@ -49,7 +50,7 @@ public class Main {
 		} catch (NullPointerException erro) {
 			erro.printStackTrace();
 		}
-		
+	
 		Condominio condominio = new Condominio();
 		
 		try {
@@ -61,19 +62,19 @@ public class Main {
 			condominio.setNumeroParquinho(1);
 			condominio.setTamanho(1500);
 			condominio.setValorAluguel(900.0f);
-		} catch (IllegalArgumentException erro) {
+		} catch (NullPointerException | IllegalArgumentException  erro) {
 			erro.printStackTrace();
 		}
-		
-		Blocos blocoA = Blocos.BLOCO1;
-		Blocos blocoB = Blocos.BLOCO2;
-		Blocos blocoC = Blocos.BLOCO3;
+		System.out.println(condominio.getNome());
+		Blocos blocoA = Blocos.BLOCO_A;
+		Blocos blocoB = Blocos.BLOCO_B;
+		Blocos blocoC = Blocos.BLOCO_C;
 
 		Apartamento apartamento = new Apartamento();
 		
 		try {
-			apartamento.setBloco(blocoA.getBloco());
-			apartamento.setNumero("305");
+			apartamento.setBloco(blocoB);
+			apartamento.setNumero(300);
 			apartamento.setEndereco(enderecoCondominio);
 			apartamento.setTamanho(250);
 			apartamento.setNumeroBanheiros(1);
@@ -91,21 +92,25 @@ public class Main {
 		try {
 			informacoesPessoaisMorador.setNome("Marcus");
 			informacoesPessoaisMorador.setSobrenome("Fênix");
-			informacoesPessoaisMorador.setDataNascimento("03/02/1997");
-			informacoesPessoaisMorador.setCpf("323.544.985-40");
-			informacoesPessoaisMorador.setRg("45.433.783-8");
+			informacoesPessoaisMorador.setDataNascimento("1504199");
+			informacoesPessoaisMorador.setCpf("32111332244");
+			informacoesPessoaisMorador.setRg("212334221");
 			informacoesPessoaisMorador.setNaturalidade("brasileiro");
 			informacoesPessoaisMorador.setCidadeNatal("Rio de Janeiro");
 			
-		} catch (NullPointerException erro) {
+		} catch (NullPointerException | StringIndexOutOfBoundsException erro) {
 			erro.printStackTrace();
 		}
+		
+		System.out.println(informacoesPessoaisMorador.getRg());
+		System.out.println(informacoesPessoaisMorador.getCpf());
+		System.out.println(informacoesPessoaisMorador.getDataNascimento());
 		
 		Apartamento apartamento2 = new Apartamento();
 		
 		try {
-			apartamento2.setBloco(blocoB.getBloco());
-			apartamento2.setNumero("307");
+			apartamento2.setBloco(blocoB);
+			apartamento2.setNumero(102);
 			apartamento2.setEndereco(enderecoCondominio);
 			apartamento2.setTamanho(260);
 			apartamento2.setNumeroBanheiros(1);
@@ -123,9 +128,9 @@ public class Main {
 		try {
 			informacoesPessoaisMorador2.setNome("Manuel");
 			informacoesPessoaisMorador2.setSobrenome("Reto");
-			informacoesPessoaisMorador2.setDataNascimento("13/01/1994");
-			informacoesPessoaisMorador2.setCpf("234.121.987-22");
-			informacoesPessoaisMorador2.setRg("11.545.324-7");
+			informacoesPessoaisMorador2.setDataNascimento("13011994");
+			informacoesPessoaisMorador2.setCpf("23412198722");
+			informacoesPessoaisMorador2.setRg("115453247");
 			informacoesPessoaisMorador2.setNaturalidade("brasileiro");
 			informacoesPessoaisMorador2.setCidadeNatal("Rio de Janeiro");
 			
@@ -137,7 +142,7 @@ public class Main {
 		
 		try {
 			profissaoMorador2.setCargo("Policial");
-			profissaoMorador2.setDataIngresso("17/03/2001");
+			profissaoMorador2.setDataIngresso("17032001");
 			profissaoMorador2.setSalario(6450.0f);
 			profissaoMorador2.setTurno("Matutino");
 			profissaoMorador2.setDescricaoAtividades("Realização das atividades de policial.");
@@ -176,8 +181,8 @@ public class Main {
 		Apartamento apartamento3 = new Apartamento();
 		
 		try {
-			apartamento3.setBloco(blocoC.getBloco());
-			apartamento3.setNumero("504");
+			apartamento3.setBloco(blocoA);
+			apartamento3.setNumero(205);
 			apartamento3.setEndereco(enderecoCondominio);
 			apartamento3.setTamanho(280);
 			apartamento3.setNumeroBanheiros(2);
@@ -195,9 +200,9 @@ public class Main {
 		try {
 			informacoesPessoaisMorador3.setNome("Lúcio");
 			informacoesPessoaisMorador3.setSobrenome("Adalberto");
-			informacoesPessoaisMorador3.setDataNascimento("15/08/1992");
-			informacoesPessoaisMorador3.setCpf("344.231.667-23");
-			informacoesPessoaisMorador3.setRg("21.543.876-4");
+			informacoesPessoaisMorador3.setDataNascimento("15081992");
+			informacoesPessoaisMorador3.setCpf("34423166723");
+			informacoesPessoaisMorador3.setRg("215438764");
 			informacoesPessoaisMorador3.setNaturalidade("brasileiro");
 			informacoesPessoaisMorador3.setCidadeNatal("São Paulo");
 			
@@ -209,7 +214,7 @@ public class Main {
 		
 		try {
 			profissaoMorador3.setCargo("Médico");
-			profissaoMorador3.setDataIngresso("21/04/2000");
+			profissaoMorador3.setDataIngresso("21042000");
 			profissaoMorador3.setSalario(12340.00f);
 			profissaoMorador3.setTurno("Integral");
 			profissaoMorador3.setDescricaoAtividades("Realização das atividades de médico.");
@@ -248,8 +253,8 @@ public class Main {
 		Apartamento apartamento4 = new Apartamento();
 		
 		try {
-			apartamento4.setBloco(blocoB.getBloco());
-			apartamento4.setNumero("308");
+			apartamento4.setBloco(blocoA);
+			apartamento4.setNumero(265);
 			apartamento4.setEndereco(enderecoCondominio);
 			apartamento4.setTamanho(320);
 			apartamento4.setNumeroBanheiros(2);
@@ -267,9 +272,9 @@ public class Main {
 		try {
 			informacoesPessoaisMorador4.setNome("Gabriel");
 			informacoesPessoaisMorador4.setSobrenome("Saldoso");
-			informacoesPessoaisMorador4.setDataNascimento("11/05/1999");
-			informacoesPessoaisMorador4.setCpf("233.432.112-21");
-			informacoesPessoaisMorador4.setRg("54.332.543-2");
+			informacoesPessoaisMorador4.setDataNascimento("11051999");
+			informacoesPessoaisMorador4.setCpf("23343211221");
+			informacoesPessoaisMorador4.setRg("543325432");
 			informacoesPessoaisMorador4.setNaturalidade("brasileiro");
 			informacoesPessoaisMorador4.setCidadeNatal("Rio de Janeiro");
 			
@@ -281,7 +286,7 @@ public class Main {
 		
 		try {
 			profissaoMorador4.setCargo("Empresário");
-			profissaoMorador4.setDataIngresso("13/03/2005");
+			profissaoMorador4.setDataIngresso("13032005");
 			profissaoMorador4.setSalario(8210.00f);
 			profissaoMorador4.setTurno("Integral");
 			profissaoMorador4.setDescricaoAtividades("Realização das atividades de empresário.");
@@ -322,9 +327,9 @@ public class Main {
 		try {
 			informacoesPessoaisInquilino.setNome("Dominic");
 			informacoesPessoaisInquilino.setSobrenome("Santhiago");
-			informacoesPessoaisInquilino.setDataNascimento("14/06/2003");
-			informacoesPessoaisInquilino.setCpf("221.434.543-12");
-			informacoesPessoaisInquilino.setRg("23.434.454-3");
+			informacoesPessoaisInquilino.setDataNascimento("14062003");
+			informacoesPessoaisInquilino.setCpf("22143454312");
+			informacoesPessoaisInquilino.setRg("234344543");
 			informacoesPessoaisInquilino.setNaturalidade("brasileiro");
 			informacoesPessoaisInquilino.setCidadeNatal("Rio de Janeiro");
 			
@@ -336,7 +341,7 @@ public class Main {
 		
 		try {
 			profissaoMorador.setCargo("Contador");
-			profissaoMorador.setDataIngresso("10/06/2013");
+			profissaoMorador.setDataIngresso("10062013");
 			profissaoMorador.setSalario(4240.0f);
 			profissaoMorador.setTurno("Vespertino");
 			profissaoMorador.setDescricaoAtividades("Realização das atividades contabéis.");
@@ -349,7 +354,7 @@ public class Main {
 		
 		try {
 			profissaoInquilino.setCargo("Gerente");
-			profissaoInquilino.setDataIngresso("15/02/2006");
+			profissaoInquilino.setDataIngresso("15022006");
 			profissaoInquilino.setSalario(3650.0f);
 			profissaoInquilino.setTurno("Vespertino");
 			profissaoInquilino.setDescricaoAtividades("Realização das atividades gerenciais.");
@@ -423,9 +428,9 @@ public class Main {
 		try {
 			informacoesPessoaisEletricista.setNome("Dominic");
 			informacoesPessoaisEletricista.setSobrenome("Santhiago");
-			informacoesPessoaisEletricista.setDataNascimento("14/06/2003");
-			informacoesPessoaisEletricista.setCpf("221.434.543-12");
-			informacoesPessoaisEletricista.setRg("23.434.454-3");
+			informacoesPessoaisEletricista.setDataNascimento("14062003");
+			informacoesPessoaisEletricista.setCpf("22143454312");
+			informacoesPessoaisEletricista.setRg("234344543");
 			informacoesPessoaisEletricista.setNaturalidade("brasileiro");
 			informacoesPessoaisEletricista.setCidadeNatal("Rio de Janeiro");
 			
@@ -437,7 +442,7 @@ public class Main {
 		
 		try {
 			profissaoEletricista.setCargo("Eletricista");
-			profissaoEletricista.setDataIngresso("20/05/2020");
+			profissaoEletricista.setDataIngresso("20052020");
 			profissaoEletricista.setSalario(2810.0f);
 			profissaoEletricista.setTurno("Vespertino");
 			profissaoEletricista.setDescricaoAtividades("Realização das atividades de eletricista.");
@@ -484,9 +489,9 @@ public class Main {
 		try {
 			informacoesPessoaisJardineiro.setNome("Niko");
 			informacoesPessoaisJardineiro.setSobrenome("Bellic");
-			informacoesPessoaisJardineiro.setDataNascimento("10/02/1994");
-			informacoesPessoaisJardineiro.setCpf("332.112.554-14");
-			informacoesPessoaisJardineiro.setRg("11.232.113-4");
+			informacoesPessoaisJardineiro.setDataNascimento("10021994");
+			informacoesPessoaisJardineiro.setCpf("33211255414");
+			informacoesPessoaisJardineiro.setRg("112321134");
 			informacoesPessoaisJardineiro.setNaturalidade("brasileiro");
 			informacoesPessoaisJardineiro.setCidadeNatal("Rio de Janeiro");
 			
@@ -498,7 +503,7 @@ public class Main {
 		
 		try {
 			profissaoJardineiro.setCargo("Eletricista");
-			profissaoJardineiro.setDataIngresso("12/01/2018");
+			profissaoJardineiro.setDataIngresso("12012018");
 			profissaoJardineiro.setSalario(2810.0f);
 			profissaoJardineiro.setTurno("Vespertino");
 			profissaoJardineiro.setDescricaoAtividades("Realização das atividades de jardinagens.");
@@ -529,7 +534,7 @@ public class Main {
 		Endereco enderecoPorteiro = new Endereco();
 		
 		try {
-			enderecoPorteiro.setPais("Brasil");
+			enderecoPorteiro.setPais("Brasil1");
 			enderecoPorteiro.setCep("43334543");
 			enderecoPorteiro.setEstado("Rio de Janeiro");
 			enderecoPorteiro.setCidade("Rio de Janeiro");
@@ -547,9 +552,9 @@ public class Main {
 		try {
 			informacoesPessoaisPorteiro.setNome("Carl");
 			informacoesPessoaisPorteiro.setSobrenome("Jhoson");
-			informacoesPessoaisPorteiro.setDataNascimento("16/04/1992");
-			informacoesPessoaisPorteiro.setCpf("112.321.554-12");
-			informacoesPessoaisPorteiro.setRg("22.432.112-1");
+			informacoesPessoaisPorteiro.setDataNascimento("16041992");
+			informacoesPessoaisPorteiro.setCpf("11232155412");
+			informacoesPessoaisPorteiro.setRg("224321121");
 			informacoesPessoaisPorteiro.setNaturalidade("brasileiro");
 			informacoesPessoaisPorteiro.setCidadeNatal("Rio de Janeiro");
 			
@@ -561,7 +566,7 @@ public class Main {
 		
 		try {
 			profissaoPorteiro.setCargo("Porteiro");
-			profissaoPorteiro.setDataIngresso("21/03/2007");
+			profissaoPorteiro.setDataIngresso("21032007");
 			profissaoPorteiro.setSalario(2630.0f);
 			profissaoPorteiro.setTurno("Vespertino");
 			profissaoPorteiro.setDescricaoAtividades("Realização das atividades de porteiro.");
@@ -608,9 +613,9 @@ public class Main {
 		try {
 			informacoesPessoaisPedreiro.setNome("Luciano");
 			informacoesPessoaisPedreiro.setSobrenome("Pereira");
-			informacoesPessoaisPedreiro.setDataNascimento("12/09/1999");
-			informacoesPessoaisPedreiro.setCpf("115.344.221-19");
-			informacoesPessoaisPedreiro.setRg("11.321.654-3");
+			informacoesPessoaisPedreiro.setDataNascimento("12091999");
+			informacoesPessoaisPedreiro.setCpf("11534422119");
+			informacoesPessoaisPedreiro.setRg("113216543");
 			informacoesPessoaisPedreiro.setNaturalidade("brasileiro");
 			informacoesPessoaisPedreiro.setCidadeNatal("Rio de Janeiro");
 			
@@ -622,7 +627,7 @@ public class Main {
 		
 		try {
 			profissaoPedreiro.setCargo("Porteiro");
-			profissaoPedreiro.setDataIngresso("19/07/2002");
+			profissaoPedreiro.setDataIngresso("19072002");
 			profissaoPedreiro.setSalario(3420.50f);
 			profissaoPedreiro.setTurno("Vespertino");
 			profissaoPedreiro.setDescricaoAtividades("Realização das atividades de pedreiro.");
@@ -669,9 +674,9 @@ public class Main {
 		try {
 			informacoesPessoaisProfessorAcademia.setNome("Rodolfo");
 			informacoesPessoaisProfessorAcademia.setSobrenome("Gomes");
-			informacoesPessoaisProfessorAcademia.setDataNascimento("21/02/2002");
-			informacoesPessoaisProfessorAcademia.setCpf("101.322.876-23");
-			informacoesPessoaisProfessorAcademia.setRg("22.432.113-2");
+			informacoesPessoaisProfessorAcademia.setDataNascimento("21022002");
+			informacoesPessoaisProfessorAcademia.setCpf("10132287623");
+			informacoesPessoaisProfessorAcademia.setRg("224321132");
 			informacoesPessoaisProfessorAcademia.setNaturalidade("brasileiro");
 			informacoesPessoaisProfessorAcademia.setCidadeNatal("Paraíba");
 			
@@ -683,7 +688,7 @@ public class Main {
 		
 		try {
 			profissaoProfessorAcademia.setCargo("Professor de Academia");
-			profissaoProfessorAcademia.setDataIngresso("23/03/1997");
+			profissaoProfessorAcademia.setDataIngresso("23031997");
 			profissaoProfessorAcademia.setSalario(4640.0f);
 			profissaoProfessorAcademia.setTurno("Vespertino");
 			profissaoProfessorAcademia.setDescricaoAtividades("Realização das atividades de professor de academia.");
@@ -730,9 +735,9 @@ public class Main {
 		try {
 			informacoesPessoaisSeguranca.setNome("Júlio");
 			informacoesPessoaisSeguranca.setSobrenome("Ribas");
-			informacoesPessoaisSeguranca.setDataNascimento("24/04/1998");
-			informacoesPessoaisSeguranca.setCpf("311.465.342-11");
-			informacoesPessoaisSeguranca.setRg("45.233.112-3");
+			informacoesPessoaisSeguranca.setDataNascimento("24041998");
+			informacoesPessoaisSeguranca.setCpf("31146534211");
+			informacoesPessoaisSeguranca.setRg("452331123");
 			informacoesPessoaisSeguranca.setNaturalidade("brasileiro");
 			informacoesPessoaisSeguranca.setCidadeNatal("Rio de Janeiro");
 			
@@ -744,7 +749,7 @@ public class Main {
 		
 		try {
 			profissaoSeguranca.setCargo("Segurança");
-			profissaoSeguranca.setDataIngresso("11/06/2010");
+			profissaoSeguranca.setDataIngresso("11062010");
 			profissaoSeguranca.setSalario(3830.50f);
 			profissaoSeguranca.setTurno("Vespertino");
 			profissaoSeguranca.setDescricaoAtividades("Realização das atividades de professor de segurança.");
@@ -791,9 +796,9 @@ public class Main {
 		try {
 			informacoesPessoaisAdministrador.setNome("Rafael");
 			informacoesPessoaisAdministrador.setSobrenome("Gonzales");
-			informacoesPessoaisAdministrador.setDataNascimento("04/06/2001");
-			informacoesPessoaisAdministrador.setCpf("234.654.211-33");
-			informacoesPessoaisAdministrador.setRg("32.443.120-5");
+			informacoesPessoaisAdministrador.setDataNascimento("04062001");
+			informacoesPessoaisAdministrador.setCpf("23465421133");
+			informacoesPessoaisAdministrador.setRg("324431205");
 			informacoesPessoaisAdministrador.setNaturalidade("brasileiro");
 			informacoesPessoaisAdministrador.setCidadeNatal("Rio de Janeiro");
 			
@@ -805,7 +810,7 @@ public class Main {
 		
 		try {
 			profissaoAdministrador.setCargo("Administrador");
-			profissaoAdministrador.setDataIngresso("03/09/2005");
+			profissaoAdministrador.setDataIngresso("03092005");
 			profissaoAdministrador.setSalario(5230.00f);
 			profissaoAdministrador.setTurno("Vespertino");
 			profissaoAdministrador.setDescricaoAtividades("Realização das atividades de administrador.");

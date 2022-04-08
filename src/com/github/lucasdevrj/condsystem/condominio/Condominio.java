@@ -154,9 +154,13 @@ public class Condominio {
 	}
 	
 	public void setNome(String nome) {
+		nome = nome.trim();
+		
+		nome = nome.replaceAll("[^a-zA-Z Ì„·‡Ùı¸Õ√¡¿’‘‹]", "");
+		
 		if (nome.length() == 0) {
 			throw new NullPointerException("Insira o nome, por favor!");
-		}
+		} 
 		
 		this.nome = nome;
 	}

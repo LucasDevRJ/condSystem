@@ -20,6 +20,14 @@ public class Endereco {
 	}
 
 	public void setPais(String pais) {
+		pais = pais.trim();
+		
+		pais = pais.replaceAll("[^a-zA-Z Ì„·‡Ùı¸Õ√¡¿’‘‹]", "");
+		
+		if (pais.contains("  ")) {
+			throw new IllegalArgumentException("N„o coloque muitos espaÁos, por favor!");
+		}
+		
 		if (pais.length() == 0) {
 			throw new NullPointerException("Insira o paÌs, por favor!");
 		}
@@ -32,6 +40,14 @@ public class Endereco {
 	}
 
 	public void setCidade(String cidade) {
+		cidade = cidade.trim();
+		
+		cidade = cidade.replaceAll("[^a-zA-Z Ì„·‡Ùı¸Õ√¡¿’‘‹]", "");
+		
+		if (cidade.contains("  ")) {
+			throw new IllegalArgumentException("N„o coloque muitos espaÁos, por favor!");
+		}
+		
 		if (cidade.length() == 0) {
 			throw new NullPointerException("Insira a cidade, por favor!");
 		}
@@ -44,6 +60,14 @@ public class Endereco {
 	}
 
 	public void setEstado(String estado) {
+		estado = estado.trim();
+		
+		estado = estado.replaceAll("[^a-zA-Z Ì„·‡Ùı¸Õ√¡¿’‘‹]", "");
+		
+		if (estado.contains("  ")) {
+			throw new IllegalArgumentException("N„o coloque muitos espaÁos, por favor!");
+		}
+		
 		if (estado.length() == 0) {
 			throw new NullPointerException("Insira o Estado, por favor!");
 		}
@@ -56,6 +80,14 @@ public class Endereco {
 	}
 	
 	public void setRua(String rua) {
+		rua = rua.trim();
+		
+		rua = rua.replaceAll("[^a-zA-Z Ì„·‡Ùı¸Õ√¡¿’‘‹]", "");
+		
+		if (rua.contains("  ")) {
+			throw new IllegalArgumentException("N„o coloque muitos espaÁos, por favor!");
+		}
+		
 		if (rua.length() == 0) {
 			throw new NullPointerException("Insira a Rua, por favor!");
 		}
@@ -68,6 +100,10 @@ public class Endereco {
 	}
 	
 	public void setNumero(String numero) {
+		numero = numero.trim();
+		
+		numero = numero.replaceAll("[^0-9]", "");
+		
 		if (numero.length() == 0) {
 			throw new NullPointerException("Insira o n˙mero, por favor!");
 		}
@@ -80,6 +116,12 @@ public class Endereco {
 	}
 	
 	public void setCep(String cep) {
+		cep = cep.trim();
+		
+		cep = cep.replaceAll("[^0-9]", "");
+		
+		cep = cep.substring(0, 5) + "-" + cep.substring(5, 8);
+		
 		if (cep.length() == 0) {
 			throw new NullPointerException("Insira o CEP, por favor!");
 		}
@@ -92,6 +134,14 @@ public class Endereco {
 	}
 	
 	public void setPontoReferencia(String pontoReferencia) {
+		pontoReferencia = pontoReferencia.trim();
+		
+		pontoReferencia = pontoReferencia.replaceAll("[^a-zA-Z Ì„·‡Ùı¸Õ√¡¿’‘‹,.!;:]", "");
+		
+		if (pontoReferencia.contains("  ")) {
+			throw new IllegalArgumentException("N„o coloque muitos espaÁos, por favor!");
+		}
+		
 		if (pontoReferencia.length() == 0) {
 			throw new NullPointerException("Insira o ponto de referÍncia, por favor!");
 		}
@@ -104,6 +154,14 @@ public class Endereco {
 	}
 	
 	public void setComplemento(String complemento) {
+		complemento = complemento.trim();
+		
+		complemento = complemento.replaceAll("[^a-zA-Z Ì„·‡Ùı¸Õ√¡¿’‘‹,.!;:]", "");
+		
+		if (complemento.contains("  ")) {
+			throw new IllegalArgumentException("N„o coloque muitos espaÁos, por favor!");
+		}
+		
 		if (complemento.length() == 0) {
 			throw new NullPointerException("Insira o complemento, por favor!");
 		}

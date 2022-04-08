@@ -7,11 +7,11 @@ package com.github.lucasdevrj.condsystem.enumerador;
 
 public enum Blocos {
 	/**Variável constante que é o Bloco do Condomínio.*/
-	BLOCO1("Bloco A"),
+	BLOCO_A("Bloco A"),
 	/**Variável constante que é o Bloco do Condomínio.*/
-	BLOCO2("Bloco B"), 
+	BLOCO_B("Bloco B"), 
 	/**Variável constante que é o Bloco do Condomínio.*/
-	BLOCO3("Bloco C");
+	BLOCO_C("Bloco C");
 	
 	private String bloco;
 	

@@ -1,5 +1,6 @@
 package com.github.lucasdevrj.condsystem.apartamento;
 
+import com.github.lucasdevrj.condsystem.enumerador.Blocos;
 import com.github.lucasdevrj.condsystem.informacoespessoais.Endereco;
 /**
  * Classe que representa Apartamentos
@@ -9,8 +10,8 @@ import com.github.lucasdevrj.condsystem.informacoespessoais.Endereco;
 public class Apartamento {
 
 	private Endereco endereco;
-	private String bloco;
-	private String numero;
+	private Blocos bloco;
+	private int numero;
 	private int tamanho;
 	private int numeroQuartos;
 	private int numeroBanheiros;
@@ -27,27 +28,14 @@ public class Apartamento {
 		this.endereco = endereco;
 	}
 	
-	public String getBloco() {
-		return bloco;
-	}
-	
-	public void setBloco(String bloco) {
-		if (bloco.length() == 0) {
-			throw new NullPointerException("Insira o bloco, por favor!");
-		}
-		
-		this.bloco = bloco;
-	}
-	
-	public String getNumero() {
+	public int getNumero() {
 		return numero;
 	}
 	
-	public void setNumero(String numero) {
-		if (numero.length() == 0) {
-			throw new NullPointerException("Insira o número do apartamento, por favor!");
-		}
-		
+	public void setNumero(int numero) {
+		if (numero < 100 || numero > 300) {
+			throw new IllegalArgumentException("Insira um número válido de apartamento, por favor!");
+		} 
 		this.numero = numero;
 	}
 	
@@ -104,6 +92,8 @@ public class Apartamento {
 	}
 	
 	public void setDescricao(String descricao) {
+		descricao = descricao.trim();
+		
 		if (descricao.length() == 0) {
 			throw new NullPointerException("Insira uma descrição, por favor!");
 		}
@@ -133,5 +123,13 @@ public class Apartamento {
 		}
 		
 		this.precoApartamento = precoApartamento;
+	}
+
+	public Blocos getBloco() {
+		return bloco;
+	}
+
+	public void setBloco(Blocos bloco) {
+		this.bloco = bloco;
 	}
 }
