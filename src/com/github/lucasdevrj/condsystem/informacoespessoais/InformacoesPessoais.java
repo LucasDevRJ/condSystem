@@ -22,7 +22,7 @@ public class InformacoesPessoais {
 	public void setNome(String nome) {
 		nome = nome.trim();
 		
-		nome = nome.replaceAll("[^a-zA-Z íãáàôõüÍÃÁÀÕÔÜ]", "");
+		nome = nome.replaceAll("[^a-zA-Z íãáàôõúêüÍÃÁÀÊÕÔÜ]", "");
 		
 		if (nome.contains("  ")) {
 			throw new IllegalArgumentException("Não coloque muitos espaços, por favor!");
@@ -143,7 +143,7 @@ public class InformacoesPessoais {
 		dataNascimento = dataNascimento.substring(0,2) + "/" + dataNascimento.substring(2,4) + "/" + dataNascimento.substring(4,8);
 		
 		if (dataNascimento.length() == 0) {
-			throw new NullPointerException("Insira o CPF, por favor!");
+			throw new NullPointerException("Insira a data de nascimento, por favor!");
 		}
 		
 		if (dataNascimento.length() > 11) {

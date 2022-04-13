@@ -15,6 +15,7 @@ import com.github.lucasdevrj.condsystem.financeiro.Despesa;
 import com.github.lucasdevrj.condsystem.financeiro.Financeiro;
 import com.github.lucasdevrj.condsystem.financeiro.Receita;
 import com.github.lucasdevrj.condsystem.funcionario.Administrador;
+import com.github.lucasdevrj.condsystem.funcionario.Colaborador;
 import com.github.lucasdevrj.condsystem.funcionario.Eletricista;
 import com.github.lucasdevrj.condsystem.funcionario.Jardineiro;
 import com.github.lucasdevrj.condsystem.funcionario.Pedreiro;
@@ -65,7 +66,7 @@ public class Main {
 		} catch (NullPointerException | IllegalArgumentException  erro) {
 			erro.printStackTrace();
 		}
-		System.out.println(condominio.getNome());
+		
 		Blocos blocoA = Blocos.BLOCO_A;
 		Blocos blocoB = Blocos.BLOCO_B;
 		Blocos blocoC = Blocos.BLOCO_C;
@@ -91,8 +92,8 @@ public class Main {
 		
 		try {
 			informacoesPessoaisMorador.setNome("Marcus");
-			informacoesPessoaisMorador.setSobrenome("Fênix");
-			informacoesPessoaisMorador.setDataNascimento("1504199");
+			informacoesPessoaisMorador.setSobrenome("Fenix");
+			informacoesPessoaisMorador.setDataNascimento("15041999");
 			informacoesPessoaisMorador.setCpf("32111332244");
 			informacoesPessoaisMorador.setRg("212334221");
 			informacoesPessoaisMorador.setNaturalidade("brasileiro");
@@ -101,10 +102,6 @@ public class Main {
 		} catch (NullPointerException | StringIndexOutOfBoundsException erro) {
 			erro.printStackTrace();
 		}
-		
-		System.out.println(informacoesPessoaisMorador.getRg());
-		System.out.println(informacoesPessoaisMorador.getCpf());
-		System.out.println(informacoesPessoaisMorador.getDataNascimento());
 		
 		Apartamento apartamento2 = new Apartamento();
 		
@@ -878,6 +875,21 @@ public class Main {
 		
 		condominio.setReceita(financeiro);
 		
+		Morador moradores[] = new Morador[4];
+		moradores[0] = morador;
+		moradores[1] = morador2;
+		moradores[2] = morador3;
+		moradores[3] = morador4;
+		
+		Colaborador colaboradores[] = new Colaborador[7];
+		colaboradores[0] = administrador;
+		colaboradores[1] = porteiro;
+		colaboradores[2] = seguranca;
+		colaboradores[3] = eletricista;
+		colaboradores[4] = jardineiro;
+		colaboradores[5] = pedreiro;
+		colaboradores[6] = professorAcademia;
+		
 		//Chamadas de métodos
 		pedreiro.consertar("piso do condomínio");
 		System.out.println();
@@ -895,6 +907,12 @@ public class Main {
 		System.out.println();
 		jardineiro.jardinar();
 		System.out.println();
+		
+		for (int i = 0; i < moradores.length; i++) {
+			administrador.acessarInformacoesMorador(moradores[i]);
+			System.out.println();
+		}
+		
 		professorAcademia.demonstrarExercicio();
 		System.out.println();
 		morador4.comprarApartamento(receita);
@@ -911,15 +929,17 @@ public class Main {
 		System.out.println();
 		administrador.acessarFinanceiro(financeiro);
 		System.out.println();
-		administrador.acessarInformacoesColaborador(porteiro);
-		System.out.println();
-		administrador.acessarInformacoesMorador(morador);
-		System.out.println();
+		
+		for (int i = 0; i < colaboradores.length; i++) {
+			administrador.acessarInformacoesColaborador(colaboradores[i]);
+			System.out.println();
+		}
+		
 		condominio.construirParquinho(300);
 		System.out.println();
 		condominio.aumentarTamanhoCondominio(2000);
 		System.out.println();
-		administrador.agendarReuniao("23/04/2022");
+		administrador.agendarReuniao("23042022");
 		System.out.println();
 		condominio.construirPredio(3000, 4000);
 		System.out.println();
