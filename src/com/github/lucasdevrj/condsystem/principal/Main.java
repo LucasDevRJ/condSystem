@@ -1,5 +1,7 @@
 package com.github.lucasdevrj.condsystem.principal;
 
+import java.util.ArrayList;
+
 /**
  * Classe que representa o Principal do Projeto
  * @author Lucas Pereira de Lima
@@ -875,20 +877,20 @@ public class Main {
 		
 		condominio.setReceita(financeiro);
 		
-		Morador moradores[] = new Morador[4];
-		moradores[0] = morador;
-		moradores[1] = morador2;
-		moradores[2] = morador3;
-		moradores[3] = morador4;
+		ArrayList<Morador> listaMoradores = new ArrayList<Morador>();
+		listaMoradores.add(morador);
+		listaMoradores.add(morador2);
+		listaMoradores.add(morador3);
+		listaMoradores.add(morador4);
 		
-		Colaborador colaboradores[] = new Colaborador[7];
-		colaboradores[0] = administrador;
-		colaboradores[1] = porteiro;
-		colaboradores[2] = seguranca;
-		colaboradores[3] = eletricista;
-		colaboradores[4] = jardineiro;
-		colaboradores[5] = pedreiro;
-		colaboradores[6] = professorAcademia;
+		ArrayList<Colaborador> listaColaboradores = new ArrayList<>();
+		listaColaboradores.add(administrador);
+		listaColaboradores.add(porteiro);
+		listaColaboradores.add(seguranca);
+		listaColaboradores.add(eletricista);
+		listaColaboradores.add(jardineiro);
+		listaColaboradores.add(pedreiro);
+		listaColaboradores.add(professorAcademia);
 		
 		//Chamadas de métodos
 		pedreiro.consertar("piso do condomínio");
@@ -908,8 +910,8 @@ public class Main {
 		jardineiro.jardinar();
 		System.out.println();
 		
-		for (int i = 0; i < moradores.length; i++) {
-			administrador.acessarInformacoesMorador(moradores[i]);
+		for (Morador moradores : listaMoradores) {
+			administrador.acessarInformacoesMorador(moradores);
 			System.out.println();
 		}
 		
@@ -930,8 +932,8 @@ public class Main {
 		administrador.acessarFinanceiro(financeiro);
 		System.out.println();
 		
-		for (int i = 0; i < colaboradores.length; i++) {
-			administrador.acessarInformacoesColaborador(colaboradores[i]);
+		for (Colaborador colaboradores : listaColaboradores) {
+			administrador.acessarInformacoesColaborador(colaboradores);
 			System.out.println();
 		}
 		
