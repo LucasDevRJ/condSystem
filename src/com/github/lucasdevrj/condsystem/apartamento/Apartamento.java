@@ -132,4 +132,16 @@ public class Apartamento {
 	public void setBloco(Blocos bloco) {
 		this.bloco = bloco;
 	}
+	/**
+	 * Método para verificar se existem apartamentos do mesmo bloco e número de apartamento
+	 */
+	@Override
+		public boolean equals(Object referencia) {
+			Apartamento outroApartamento = (Apartamento) referencia;
+			
+			if (this.numero == outroApartamento.getNumero() && this.bloco == outroApartamento.getBloco()) {
+				return false;
+			}
+			return true;
+		}
 }

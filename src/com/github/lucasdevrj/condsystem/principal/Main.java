@@ -77,7 +77,7 @@ public class Main {
 		
 		try {
 			apartamento.setBloco(blocoB);
-			apartamento.setNumero(300);
+			apartamento.setNumero(205);
 			apartamento.setEndereco(enderecoCondominio);
 			apartamento.setTamanho(250);
 			apartamento.setNumeroBanheiros(1);
@@ -109,7 +109,7 @@ public class Main {
 		
 		try {
 			apartamento2.setBloco(blocoB);
-			apartamento2.setNumero(102);
+			apartamento2.setNumero(217);
 			apartamento2.setEndereco(enderecoCondominio);
 			apartamento2.setTamanho(260);
 			apartamento2.setNumeroBanheiros(1);
@@ -181,7 +181,7 @@ public class Main {
 		
 		try {
 			apartamento3.setBloco(blocoA);
-			apartamento3.setNumero(205);
+			apartamento3.setNumero(216);
 			apartamento3.setEndereco(enderecoCondominio);
 			apartamento3.setTamanho(280);
 			apartamento3.setNumeroBanheiros(2);
@@ -909,6 +909,22 @@ public class Main {
 		System.out.println();
 		jardineiro.jardinar();
 		System.out.println();
+		
+		ArrayList<Apartamento> listaApartamentos = new ArrayList<Apartamento>();
+		listaApartamentos.add(apartamento);
+		listaApartamentos.add(apartamento2);
+		listaApartamentos.add(apartamento3);
+		listaApartamentos.add(apartamento4);
+		
+		try {
+			for (Apartamento apartamentos : listaApartamentos) {
+				if (!apartamento.equals(apartamento2)) {
+					throw new IllegalArgumentException("Apartamentos com números e blocos iguais!");
+				}
+			}
+		} catch (IllegalArgumentException erro) {
+			erro.printStackTrace();
+		}
 		
 		for (Morador moradores : listaMoradores) {
 			administrador.acessarInformacoesMorador(moradores);
