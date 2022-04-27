@@ -3,6 +3,9 @@ package com.github.lucasdevrj.condsystem.funcionario;
 import com.github.lucasdevrj.condsystem.informacoespessoais.InformacoesPessoais;
 import com.github.lucasdevrj.condsystem.informacoespessoais.Endereco;
 import com.github.lucasdevrj.condsystem.informacoespessoais.Profissao;
+
+import java.util.Comparator;
+
 import com.github.lucasdevrj.condsystem.contabancaria.Conta;
 /**
  * Classe que representa o Colaborador não especifico

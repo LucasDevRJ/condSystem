@@ -9,6 +9,7 @@ import java.util.ArrayList;
  */
 import com.github.lucasdevrj.condsystem.anotacoes.Autor;
 import com.github.lucasdevrj.condsystem.apartamento.Apartamento;
+import com.github.lucasdevrj.condsystem.comparador.ComparadorMorador;
 import com.github.lucasdevrj.condsystem.condominio.Condominio;
 import com.github.lucasdevrj.condsystem.contabancaria.Conta;
 import com.github.lucasdevrj.condsystem.enumerador.Blocos;
@@ -926,6 +927,9 @@ public class Main {
 			erro.printStackTrace();
 		}
 		
+		ComparadorMorador comparaMoradores = new ComparadorMorador();
+		listaMoradores.sort(comparaMoradores);
+	
 		for (Morador moradores : listaMoradores) {
 			administrador.acessarInformacoesMorador(moradores);
 			System.out.println();
