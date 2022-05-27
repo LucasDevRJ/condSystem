@@ -14,7 +14,7 @@ public class Condominio {
 
 	private Endereco endereco;
 	private String nome;
-	private int tamanho;
+	private static int tamanho;
 	private int numeroPiscinas;
 	private int numeroQuadras;
 	private int numeroAcademia;
@@ -57,10 +57,9 @@ public class Condominio {
 			if (this.getReceita().getLucro() >= precoCompra) {
 				this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoCompra);
 				this.setTamanho(this.getTamanho() + tamanho);
-				System.out.println("Compra de Metros Realizada com Sucesso!");
-				System.out.println("Metros Comprados: " + tamanho + " metros");
-				System.out.println("Valor: R$ " + precoCompra);
-				System.out.println("Tamanho do Condomínio: " + this.getTamanho() + " metros");
+				GravarArquivo.gravar(tamanho, precoCompra);
+				LeituraArquivo.ler(tamanho, precoCompra);
+				
 			} else {
 				System.out.println("Dinheiro insuficiente para comprar mais territorio!");
 			}
@@ -165,7 +164,7 @@ public class Condominio {
 		this.nome = nome;
 	}
 	
-	public int getTamanho() {
+	public static int getTamanho() {
 		return tamanho;
 	}
 	

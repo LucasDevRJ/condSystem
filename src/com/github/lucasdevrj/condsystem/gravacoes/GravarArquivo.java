@@ -5,6 +5,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
+import com.github.lucasdevrj.condsystem.condominio.Condominio;
+
+
 public class GravarArquivo {
 	
 	public static void gravar(float altura, float largura, int totalAndares, int quantidadeApartamentos, float precoConstrucao) {
@@ -24,6 +27,27 @@ public class GravarArquivo {
 			bw.write("Quantidade de Apartamentos por Andar: " + quantidadeApartamentos);
 			bw.newLine();
 			bw.write("Custo da Construção: R$ " + precoConstrucao);
+			
+			bw.close();
+			
+		} catch (IOException erro) {
+			erro.printStackTrace();
+		}
+	}
+	
+	public static void gravar(float tamanho,float precoCompra) {
+		try {
+			FileOutputStream fos = new FileOutputStream("arquivos.txt");
+			OutputStreamWriter osw = new OutputStreamWriter(fos);
+			BufferedWriter bw = new BufferedWriter(osw);
+			
+			bw.write("Compra de Metros Realizada com Sucesso!");
+			bw.newLine();
+			bw.write("Metros Comprados: " + tamanho + " metros");
+			bw.newLine();
+			bw.write("Valor: R$ " + precoCompra);
+			bw.newLine();
+			bw.write("Tamanho do Condomínio: " + Condominio.getTamanho() + " metros");
 			
 			bw.close();
 			

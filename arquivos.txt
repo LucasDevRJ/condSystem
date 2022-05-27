@@ -1,6 +1,6 @@
 Prédio Construído com Sucesso!
-Altura do Prédio: 2000.0 metros
-Largura do Prédio: 7000.0 metros
-Total de Andares: 11
-Quantidade de Apartamentos por Andar: 6
-Custo da Construção: R$ 45000.0
+Altura do Prédio: 3000.0 metros
+Largura do Prédio: 4000.0 metros
+Total de Andares: 6
+Quantidade de Apartamentos por Andar: 10
+Custo da Construção: R$ 35000.0
