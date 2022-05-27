@@ -10,7 +10,7 @@ import com.github.lucasdevrj.condsystem.condominio.Condominio;
 
 public class GravarArquivo {
 	
-	public static void gravar(float altura, float largura, int totalAndares, int quantidadeApartamentos, float precoConstrucao) {
+	public static void gravarConstrucaoPredio(float altura, float largura, int totalAndares, int quantidadeApartamentos, float precoConstrucao) {
 		try {
 			FileOutputStream fos = new FileOutputStream("arquivos.txt");
 			OutputStreamWriter osw = new OutputStreamWriter(fos);
@@ -35,7 +35,7 @@ public class GravarArquivo {
 		}
 	}
 	
-	public static void gravar(float tamanho,float precoCompra) {
+	public static void gravarCompraMetros(float tamanho,float precoCompra) {
 		try {
 			FileOutputStream fos = new FileOutputStream("arquivos.txt");
 			OutputStreamWriter osw = new OutputStreamWriter(fos);
@@ -55,4 +55,27 @@ public class GravarArquivo {
 			erro.printStackTrace();
 		}
 	}
+	
+	public static void gravarConstrucaoPiscina(float precoConstrucao, float tamanhoPiscina) {
+		try {
+			FileOutputStream fos = new FileOutputStream("arquivos.txt");
+			OutputStreamWriter osw = new OutputStreamWriter(fos);
+			BufferedWriter bw = new BufferedWriter(osw);
+			
+			bw.write("Construção da Piscina Realizada com Sucesso!");
+			bw.newLine();
+			bw.write("Valor da Construção: R$ " + precoConstrucao);
+			bw.newLine();
+			bw.write("Tamanho da Piscina Construido: " + tamanhoPiscina + " metros");
+			bw.newLine();
+			bw.write("Número Total de Piscinas no Condomínio: " + Condominio.getNumeroPiscinas());
+			
+			bw.close();
+			
+		} catch (IOException erro) {
+			erro.printStackTrace();
+		}
+	}
+	
+	
 }

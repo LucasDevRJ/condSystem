@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 
 public class LeituraArquivo {
 
-	public static void ler(float largura,float altura,int totalAndares,int quantidadeApartamentos,float precoConstrucao) {
+	public static void lerConstrucaoPredio(float largura,float altura,int totalAndares,int quantidadeApartamentos,float precoConstrucao) {
 		try {
 			FileInputStream fis = new FileInputStream("arquivos.txt");
 			InputStreamReader isr = new InputStreamReader(fis);
@@ -24,7 +24,24 @@ public class LeituraArquivo {
 		}
 	}
 	
-	public static void ler(float tamanho,float precoCompra) {
+	public static void lerCompraMetros(float tamanho,float precoCompra) {
+		try {
+			FileInputStream fis = new FileInputStream("arquivos.txt");
+			InputStreamReader isr = new InputStreamReader(fis);
+			BufferedReader br = new BufferedReader(isr);
+			
+			String linha = br.readLine();
+			
+			while (linha != null) {
+				System.out.println(linha);
+				linha = br.readLine();
+			}
+		} catch (IOException erro) {
+			erro.printStackTrace();
+		}
+	}
+	
+	public static void lerConstrucaoPiscina(float tamanho,float precoCompra) {
 		try {
 			FileInputStream fis = new FileInputStream("arquivos.txt");
 			InputStreamReader isr = new InputStreamReader(fis);

@@ -15,7 +15,7 @@ public class Condominio {
 	private Endereco endereco;
 	private String nome;
 	private static int tamanho;
-	private int numeroPiscinas;
+	private static int numeroPiscinas;
 	private int numeroQuadras;
 	private int numeroAcademia;
 	private int numeroParquinho;
@@ -39,8 +39,8 @@ public class Condominio {
 		int quantidadeApartamentos = (int) tamanhoApartamento;
 		
 		if (this.getReceita().getLucro() >= precoConstrucao) {
-			GravarArquivo.gravar(largura, altura, totalAndares, quantidadeApartamentos, precoConstrucao);
-			LeituraArquivo.ler(largura, altura, totalAndares, quantidadeApartamentos, precoConstrucao);
+			GravarArquivo.gravarConstrucaoPredio(largura, altura, totalAndares, quantidadeApartamentos, precoConstrucao);
+			LeituraArquivo.lerConstrucaoPredio(largura, altura, totalAndares, quantidadeApartamentos, precoConstrucao);
 			this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoConstrucao);
 			
 		} else {
@@ -57,8 +57,8 @@ public class Condominio {
 			if (this.getReceita().getLucro() >= precoCompra) {
 				this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoCompra);
 				this.setTamanho(this.getTamanho() + tamanho);
-				GravarArquivo.gravar(tamanho, precoCompra);
-				LeituraArquivo.ler(tamanho, precoCompra);
+				GravarArquivo.gravarCompraMetros(tamanho, precoCompra);
+				LeituraArquivo.lerCompraMetros(tamanho, precoCompra);
 				
 			} else {
 				System.out.println("Dinheiro insuficiente para comprar mais territorio!");
@@ -79,10 +79,8 @@ public class Condominio {
 				this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoConstrucao);
 				this.setNumeroPiscinas(this.getNumeroPiscinas() + 1);
 				this.setTamanho(this.getTamanho() - tamanhoPiscina);
-				System.out.println("Construção da Piscina Realizada com Sucesso!");
-				System.out.println("Valor da Construção: R$ " + precoConstrucao);
-				System.out.println("Tamanho da Piscina Construido: " + tamanhoPiscina + " metros");
-				System.out.println("Número Total de Piscinas no Condomínio: " + this.getNumeroPiscinas());
+				GravarArquivo.gravarConstrucaoPiscina(precoConstrucao, tamanhoPiscina);
+				LeituraArquivo.lerConstrucaoPiscina(tamanhoPiscina, precoConstrucao);
 			} else {
 				System.out.println("Dinheiro insuficiente para construir a piscina!");
 			}
@@ -102,6 +100,7 @@ public class Condominio {
 				this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoConstrucao);
 				this.setNumeroParquinho(this.getNumeroParquinho() + 1);
 				this.setTamanho(this.getTamanho() - tamanhoParquinho);
+				
 				System.out.println("Construção do Parquinho Realizada com Sucesso!");
 				System.out.println("Valor da Construção: R$ " + precoConstrucao);
 				System.out.println("Tamanho do Parquinho Construido: " + tamanhoParquinho + " metros");
@@ -176,7 +175,7 @@ public class Condominio {
 		this.tamanho = tamanho;
 	}
 	
-	public int getNumeroPiscinas() {
+	public static int getNumeroPiscinas() {
 		return numeroPiscinas;
 	}
 	

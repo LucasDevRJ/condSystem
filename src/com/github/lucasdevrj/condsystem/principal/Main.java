@@ -971,6 +971,8 @@ public class Main {
 		System.out.println();
 		condominio.construirAcademia(2, 3, 1);
 		System.out.println();
+		condominio.construirPiscina(600);
+		System.out.println();
 		administrador.acessarFinanceiro(financeiro);
 	}
 }
