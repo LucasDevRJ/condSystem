@@ -29,7 +29,15 @@ Alguns dos principais coteúdos adicionados no projeto:
 - Relacionamento entre Classes;
 - Enum;
 - Exceções;
-- Anotações.
+- Anotações;
+- Packages;
+- Modificadores;
+- Javadoc;
+- java.lang;
+- Object;
+- ArrayList;
+- Equals;
+- Collections.
 
 ## :open_file_folder: Acesso ao projeto
 
