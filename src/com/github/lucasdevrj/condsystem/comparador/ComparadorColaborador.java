@@ -3,7 +3,11 @@ package com.github.lucasdevrj.condsystem.comparador;
 import java.util.Comparator;
 
 import com.github.lucasdevrj.condsystem.funcionario.Colaborador;
-
+/**
+ * Classe para comparar Colaboradores.
+ * @author lucas
+ *
+ */
 public class ComparadorColaborador implements Comparator<Colaborador> {
 
 	@Override

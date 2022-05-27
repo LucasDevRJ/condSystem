@@ -1,7 +1,10 @@
 package com.github.lucasdevrj.condsystem.condominio;
 
 import com.github.lucasdevrj.condsystem.informacoespessoais.Endereco;
+
 import com.github.lucasdevrj.condsystem.financeiro.Financeiro;
+import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivo;
+import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
 /**
  * Classe que representa o Condominio
  * @author Lucas Pereira de Lima
@@ -36,13 +39,10 @@ public class Condominio {
 		int quantidadeApartamentos = (int) tamanhoApartamento;
 		
 		if (this.getReceita().getLucro() >= precoConstrucao) {
+			GravarArquivo.gravar(largura, altura, totalAndares, quantidadeApartamentos, precoConstrucao);
+			LeituraArquivo.ler(largura, altura, totalAndares, quantidadeApartamentos, precoConstrucao);
 			this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoConstrucao);
-			System.out.println("Prédio Construído com Sucesso!");
-			System.out.println("Altura do Prédio: " + altura + " metros");
-			System.out.println("Largura do Prédio: " + largura + " metros");
-			System.out.println("Total de Andares: " + totalAndares);
-			System.out.println("Quantidade de Apartamentos por Andar: " + quantidadeApartamentos);
-			System.out.println("Custo da Construção: R$ " + precoConstrucao);
+			
 		} else {
 			System.out.println("Saldo insuficiente para construir prédio!");
 		}
