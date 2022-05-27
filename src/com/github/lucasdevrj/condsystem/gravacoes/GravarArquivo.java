@@ -9,7 +9,7 @@ import com.github.lucasdevrj.condsystem.condominio.Condominio;
 
 
 public class GravarArquivo {
-	
+
 	public static void gravarConstrucaoPredio(float altura, float largura, int totalAndares, int quantidadeApartamentos, float precoConstrucao) {
 		try {
 			FileOutputStream fos = new FileOutputStream("arquivos.txt");
@@ -77,5 +77,48 @@ public class GravarArquivo {
 		}
 	}
 	
+	public static void gravarConstruirParquinho(float precoConstrucao, float tamanhoParquinho) {
+		try {
+			FileOutputStream fos = new FileOutputStream("arquivos.txt");
+			OutputStreamWriter osw = new OutputStreamWriter(fos);
+			BufferedWriter bw = new BufferedWriter(osw);
+			
+			bw.write("Construção do Parquinho Realizada com Sucesso!");
+			bw.newLine();
+			bw.write("Valor da Construção: R$ " + precoConstrucao);
+			bw.newLine();
+			bw.write("Tamanho do Parquinho Construido: " + tamanhoParquinho + " metros");
+			bw.newLine();
+			bw.write("Número Total de Parquinhos no Condomínio: " + Condominio.getNumeroParquinho());
+			
+			bw.close();
+			
+		} catch (IOException erro) {
+			erro.printStackTrace();
+		}
+	}
+	
+	public static void gravaConstruirAcademia(int numeroEquipamentosPartesSuperiores, int numeroEquipamentosPartesInferiores, int numeroEquipamentosTronco, float valorTotal) {
+		try {
+			FileOutputStream fos = new FileOutputStream("arquivos.txt");
+			OutputStreamWriter osw = new OutputStreamWriter(fos);
+			BufferedWriter bw = new BufferedWriter(osw);
+			
+			bw.write("Academia Construida com Sucesso!");
+			bw.newLine();
+			bw.write("Número de equipamentos das partes superiores: " + numeroEquipamentosPartesSuperiores);
+			bw.newLine();
+			bw.write("Número de equipamentos das partes tronco: " + numeroEquipamentosTronco);
+			bw.newLine();
+			bw.write("Número de equipamentos das partes inferiores: " + numeroEquipamentosPartesInferiores);
+			bw.newLine();
+			bw.write("Custo Total: R$ " + valorTotal);
+			
+			bw.close();
+			
+		} catch (IOException erro) {
+			erro.printStackTrace();
+		}
+	}
 	
 }

@@ -12,13 +12,13 @@ import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
  */
 public class Condominio {
 
-	private Endereco endereco;
 	private String nome;
+	private Endereco endereco;
 	private static int tamanho;
 	private static int numeroPiscinas;
 	private int numeroQuadras;
 	private int numeroAcademia;
-	private int numeroParquinho;
+	private static int numeroParquinho;
 	private float valorAluguel;
 	private Financeiro receita;
 	
@@ -40,7 +40,7 @@ public class Condominio {
 		
 		if (this.getReceita().getLucro() >= precoConstrucao) {
 			GravarArquivo.gravarConstrucaoPredio(largura, altura, totalAndares, quantidadeApartamentos, precoConstrucao);
-			LeituraArquivo.lerConstrucaoPredio(largura, altura, totalAndares, quantidadeApartamentos, precoConstrucao);
+			LeituraArquivo.lerArquivo();
 			this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoConstrucao);
 			
 		} else {
@@ -58,7 +58,7 @@ public class Condominio {
 				this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoCompra);
 				this.setTamanho(this.getTamanho() + tamanho);
 				GravarArquivo.gravarCompraMetros(tamanho, precoCompra);
-				LeituraArquivo.lerCompraMetros(tamanho, precoCompra);
+				LeituraArquivo.lerArquivo();
 				
 			} else {
 				System.out.println("Dinheiro insuficiente para comprar mais territorio!");
@@ -80,7 +80,7 @@ public class Condominio {
 				this.setNumeroPiscinas(this.getNumeroPiscinas() + 1);
 				this.setTamanho(this.getTamanho() - tamanhoPiscina);
 				GravarArquivo.gravarConstrucaoPiscina(precoConstrucao, tamanhoPiscina);
-				LeituraArquivo.lerConstrucaoPiscina(tamanhoPiscina, precoConstrucao);
+				LeituraArquivo.lerArquivo();
 			} else {
 				System.out.println("Dinheiro insuficiente para construir a piscina!");
 			}
@@ -100,11 +100,8 @@ public class Condominio {
 				this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoConstrucao);
 				this.setNumeroParquinho(this.getNumeroParquinho() + 1);
 				this.setTamanho(this.getTamanho() - tamanhoParquinho);
-				
-				System.out.println("ConstruÁ„o do Parquinho Realizada com Sucesso!");
-				System.out.println("Valor da ConstruÁ„o: R$ " + precoConstrucao);
-				System.out.println("Tamanho do Parquinho Construido: " + tamanhoParquinho + " metros");
-				System.out.println("N˙mero Total de Parquinhos no CondomÌnio: " + this.getNumeroParquinho());
+				GravarArquivo.gravarConstruirParquinho(precoConstrucao, tamanhoParquinho);
+				LeituraArquivo.lerArquivo();
 			} else {
 				System.out.println("Dinheiro insuficiente para construir o parquinho!");
 			}
@@ -120,20 +117,15 @@ public class Condominio {
 	 * @param numeroEquipamentosTronco
 	 */
 	public void construirAcademia(int numeroEquipamentosPartesSuperiores, int numeroEquipamentosPartesInferiores, int numeroEquipamentosTronco) {
-		float valorEquipamentosSuperiores = 3000.0f;
-		float valorEquipamentosInferiores = 4000.0f;
-		float valorEquipamentosTronco = 6000.0f;
+		float valorEquipamentosSuperiores = 3000.0f * numeroEquipamentosPartesSuperiores;
+		float valorEquipamentosInferiores = 4000.0f * numeroEquipamentosPartesInferiores;
+		float valorEquipamentosTronco = 6000.0f * numeroEquipamentosTronco;
 		float valorTotal = valorEquipamentosSuperiores + valorEquipamentosInferiores + valorEquipamentosTronco;
-		
 		if (this.getReceita().getLucro() >= valorTotal) {
 			this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - valorTotal);
 			this.setNumeroAcademia(this.getNumeroAcademia() + 1);
-			
-			System.out.println("Academia Construida com Sucesso!");
-			System.out.println("N˙mero de Equipamentos para Membros Superiores: " + numeroEquipamentosPartesSuperiores);
-			System.out.println("N˙mero de Equipamentos para Membros Inferiores: " + valorEquipamentosInferiores);
-			System.out.println("N˙mero de Equipamentos para Tronco: " + valorEquipamentosTronco);
-			System.out.println("Custo Total: R$ " + valorTotal);
+			GravarArquivo.gravaConstruirAcademia(numeroEquipamentosPartesSuperiores, numeroEquipamentosTronco, numeroEquipamentosPartesInferiores, valorTotal);
+			LeituraArquivo.lerArquivo();
 		} else {
 			System.out.println("Valor insuficiÍnte para a construÁ„o!");
 		}
@@ -145,22 +137,6 @@ public class Condominio {
 	
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
-	}
-	
-	public String getNome() {
-		return nome;
-	}
-	
-	public void setNome(String nome) {
-		nome = nome.trim();
-		
-		nome = nome.replaceAll("[^a-zA-Z Ì„·‡Ùı¸Õ√¡¿’‘‹]", "");
-		
-		if (nome.length() == 0) {
-			throw new NullPointerException("Insira o nome, por favor!");
-		} 
-		
-		this.nome = nome;
 	}
 	
 	public static int getTamanho() {
@@ -231,7 +207,7 @@ public class Condominio {
 		this.receita = receita;
 	}
 
-	public int getNumeroParquinho() {
+	public static int getNumeroParquinho() {
 		return numeroParquinho;
 	}
 
@@ -241,5 +217,11 @@ public class Condominio {
 		}
 		
 		this.numeroParquinho = numeroParquinho;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 }

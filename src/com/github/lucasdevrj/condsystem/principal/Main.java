@@ -969,7 +969,7 @@ public class Main {
 		System.out.println();
 		condominio.construirPredio(3000, 4000);
 		System.out.println();
-		condominio.construirAcademia(2, 3, 1);
+		condominio.construirAcademia(8, 4, 7);
 		System.out.println();
 		condominio.construirPiscina(600);
 		System.out.println();
