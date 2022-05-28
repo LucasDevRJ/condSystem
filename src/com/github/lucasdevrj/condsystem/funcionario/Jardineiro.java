@@ -1,4 +1,8 @@
 package com.github.lucasdevrj.condsystem.funcionario;
+
+import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoJardineiro;
+import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
+
 /**
  * Classe que representa o Jardineiro
  * @author Lucas Pereira de Lima
@@ -6,19 +10,16 @@ package com.github.lucasdevrj.condsystem.funcionario;
  */
 public class Jardineiro extends Colaborador {
 
-	private boolean jardinagemEstaGrande;
+	private static boolean jardinagemEstaGrande;
 	/**
 	 * Método para o Jardineiro jardinar, que possui uma lógica para verificar se a jardinagem esta grande ou não.
 	 */
 	public void jardinar() {
-		if (this.isJardinagemEstaGrande() == true) {
-			System.out.println("O jardineiro " + super.getInformacoesPessoais().getNome() + " " + super.getInformacoesPessoais().getSobrenome() + " esta jardinando.");
-		} else {
-			System.out.println("A jardinagem não está grande o suficiente!");
-		}
+		GravarArquivoJardineiro.gravarJardinagem();
+		LeituraArquivo.lerArquivo();
 	}
 
-	public boolean isJardinagemEstaGrande() {
+	public static boolean isJardinagemEstaGrande() {
 		return jardinagemEstaGrande;
 	}
 

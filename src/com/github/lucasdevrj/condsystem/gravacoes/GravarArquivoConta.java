@@ -5,7 +5,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
-import com.github.lucasdevrj.condsystem.contabancaria.Conta;
 import com.github.lucasdevrj.condsystem.funcionario.Colaborador;
 
 public class GravarArquivoConta {

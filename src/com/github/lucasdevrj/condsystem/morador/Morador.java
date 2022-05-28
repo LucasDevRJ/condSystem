@@ -15,7 +15,7 @@ import com.github.lucasdevrj.condsystem.inquilino.Inquilino;
 
 public class Morador extends Colaborador { /** pode não ser colaborador do condomínio em si, mas é de alguma empresa **/
 
-	private InformacoesPessoais informacoesPessoais;
+	private static InformacoesPessoais informacoesPessoais;
 	private Apartamento apartamento;
 	private Profissao profissao;
 	private boolean ehProprietario;
@@ -149,7 +149,7 @@ public class Morador extends Colaborador { /** pode não ser colaborador do condo
 		}
 	}
 
-	public InformacoesPessoais getInformacoesPessoais() {
+	public static InformacoesPessoais getInformacoesPessoais() {
 		return informacoesPessoais;
 	}
 

@@ -1,4 +1,8 @@
 package com.github.lucasdevrj.condsystem.funcionario;
+
+import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoEletricista;
+import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
+
 /**
  * Classe que representa o Eletricista
  * @author Lucas Pereira de Lima
@@ -9,12 +13,14 @@ public class Eletricista extends Colaborador {
 	 * Método para o Eletricista trocar a fiação, exibindo uma mensagem com informações do Eletricista.
 	 */
 	public void trocaFiacao() {
-		System.out.println("O eletricista " + super.getInformacoesPessoais().getNome() + " " + super.getInformacoesPessoais().getSobrenome() + " esta trocando a fiação.");
+		GravarArquivoEletricista.gravarTrocaFiacao();
+		LeituraArquivo.lerArquivo();
 	}
 	/**
 	 * Método para o Eletricista consertar a fiação, exibindo uma mensagem com informações do Eletricista.
 	 */
 	public void consertaFiacao() {
-		System.out.println("O eletricista " + super.getInformacoesPessoais().getNome() + " " + super.getInformacoesPessoais().getSobrenome() + " esta consertando a fiação.");
+		GravarArquivoEletricista.gravarConsertoFiacao();
+		LeituraArquivo.lerArquivo();
 	}
 }

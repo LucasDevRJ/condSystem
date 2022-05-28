@@ -17,7 +17,7 @@ import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoColaborador;
  */
 public abstract class Colaborador {
 
-	private InformacoesPessoais informacoesPessoais;
+	private static InformacoesPessoais informacoesPessoais;
 	private Endereco endereco;
 	private Profissao profissao;
 	private Conta titular;
@@ -31,7 +31,7 @@ public abstract class Colaborador {
 		LeituraArquivo.lerArquivo();
 	}
 
-	public InformacoesPessoais getInformacoesPessoais() {
+	public static InformacoesPessoais getInformacoesPessoais() {
 		return informacoesPessoais;
 	}
 
