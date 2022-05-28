@@ -911,6 +911,8 @@ public class Main {
 		System.out.println();
 		jardineiro.jardinar();
 		System.out.println();
+		professorAcademia.montarSerie();
+		System.out.println();
 		
 		ArrayList<Apartamento> listaApartamentos = new ArrayList<Apartamento>();
 		listaApartamentos.add(apartamento);
