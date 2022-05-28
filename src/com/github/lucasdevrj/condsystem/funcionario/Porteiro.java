@@ -1,4 +1,8 @@
 package com.github.lucasdevrj.condsystem.funcionario;
+
+import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoPorteiro;
+import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
+
 /**
  * Classe que representa o Porteiro
  * @author Lucas Pereira de Lima
@@ -6,44 +10,36 @@ package com.github.lucasdevrj.condsystem.funcionario;
  */
 public class Porteiro extends Colaborador {
 	
-	private boolean portaEstaAberta;
-	private boolean portaoEstaAberto;
+	private static boolean portaEstaAberta;
+	private static boolean portaoEstaAberto;
 	/**
 	 * Método para o Porteiro abrir a porta, que possui uma lógica para verificar se a porta esta aberta ou fechada.
 	 */
 	public void abrirPorta() {
-		if (this.isPortaEstaAberta() == false) {
-			System.out.println("O porteiro " + super.getInformacoesPessoais().getNome() +  " " + super.getInformacoesPessoais().getSobrenome() + " abriu a porta.");
-			this.setPortaEstaAberta(true);
-		} else {
-			System.out.println("A porta já esta aberta!");
-		}
+		GravarArquivoPorteiro.gravarAberturaPorta();
+		LeituraArquivo.lerArquivo();
 	}
 	/**
 	 * Método para o Porteiro abrir o portão, que possui uma lógica para verificar se a portão esta aberta ou fechada.
 	 */
 	public void abrirPortao() {
-		if (this.isPortaoEstaAberto() == false) {
-			System.out.println("O porteiro " + super.getInformacoesPessoais().getNome() +  " " + super.getInformacoesPessoais().getSobrenome() + " abriu o portão.");
-			this.setPortaoEstaAberto(true);
-		} else {
-			System.out.println("O portão já esta aberto!");
-		}
+		GravarArquivoPorteiro.gravarAberturaPortao();
+		LeituraArquivo.lerArquivo();
 	}
 	
-	public boolean isPortaEstaAberta() {
+	public static boolean isPortaEstaAberta() {
 		return portaEstaAberta;
 	}
 	
-	public void setPortaEstaAberta(boolean portaEstaAberta) {
-		this.portaEstaAberta = portaEstaAberta;
+	public static void setPortaEstaAberta(boolean portaEstaAberta) {
+		Porteiro.portaEstaAberta = portaEstaAberta;
 	}
 	
-	public boolean isPortaoEstaAberto() {
+	public static boolean isPortaoEstaAberto() {
 		return portaoEstaAberto;
 	}
 	
-	public void setPortaoEstaAberto(boolean portaoEstaAberto) {
-		this.portaoEstaAberto = portaoEstaAberto;
+	public static void setPortaoEstaAberto(boolean portaoEstaAberto) {
+		Porteiro.portaoEstaAberto = portaoEstaAberto;
 	}
 }
