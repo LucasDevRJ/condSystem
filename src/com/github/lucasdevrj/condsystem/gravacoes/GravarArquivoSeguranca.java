@@ -9,13 +9,13 @@ import com.github.lucasdevrj.condsystem.funcionario.Seguranca;
 
 public class GravarArquivoSeguranca {
 
-	public static void gravarVigio(String local) {
+	public static void gravarVigio(Seguranca seguranca, String local) {
 		try {
 			FileOutputStream fos = new FileOutputStream("arquivos.txt");
 			OutputStreamWriter osw = new OutputStreamWriter(fos);
 			BufferedWriter bw = new BufferedWriter(osw);
 			
-			System.out.println("O segurança " + Seguranca.getInformacoesPessoais().getNome() + " " + Seguranca.getInformacoesPessoais().getSobrenome() + " esta vigiando o " + local + ".");
+			System.out.println("O segurança " + seguranca.getInformacoesPessoais().getNome() + " " + seguranca.getInformacoesPessoais().getSobrenome() + " esta vigiando o " + local + ".");
 			
 			bw.close();
 			

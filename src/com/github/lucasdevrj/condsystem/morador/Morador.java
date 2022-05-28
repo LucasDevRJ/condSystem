@@ -15,7 +15,7 @@ import com.github.lucasdevrj.condsystem.inquilino.Inquilino;
 
 public class Morador extends Colaborador { /** pode não ser colaborador do condomínio em si, mas é de alguma empresa **/
 
-	private static InformacoesPessoais informacoesPessoais;
+	private InformacoesPessoais informacoesPessoais;
 	private Apartamento apartamento;
 	private Profissao profissao;
 	private boolean ehProprietario;
@@ -24,16 +24,16 @@ public class Morador extends Colaborador { /** pode não ser colaborador do condo
 	 * Método para comprar um apartamento, que possui uma lógica para verificar se é proprietário e se tem saldo suficiênte para comprar o apartamento.
 	 * @param financias
 	 */
-	public void comprarApartamento(Receita financias) {
+	public void comprarApartamento(Morador morador, Receita financias) {
 		if (this.isEhProprietario() == false) {
 			if (titular.getSaldo() >= this.apartamento.getPrecoApartamento()) {
 				this.getTitular();
 				this.getTitular().setSaldo(titular.getSaldo() - this.getApartamento().getPrecoApartamento());
 				financias.setTotal(financias.getTotal() + this.apartamento.getPrecoApartamento());
 				System.out.println("Apartamento Comprado com Sucesso!");
-				System.out.println("Nome Completo do Novo Propritário: " + this.getInformacoesPessoais().getNome() + " " + this.getInformacoesPessoais().getSobrenome());
-				System.out.println("CPF do Novo Proprietário: " + this.getInformacoesPessoais().getCpf());
-				System.out.println("RG do Novo Proprietário: " + this.getInformacoesPessoais().getRg());
+				System.out.println("Nome Completo do Novo Propritário: " + morador.getInformacoesPessoais().getNome() + " " + morador.getInformacoesPessoais().getSobrenome());
+				System.out.println("CPF do Novo Proprietário: " + morador.getInformacoesPessoais().getCpf());
+				System.out.println("RG do Novo Proprietário: " + morador.getInformacoesPessoais().getRg());
 				System.out.println("Valor do Imóvel: R$ " + this.apartamento.getPrecoApartamento());
 				System.out.println("Endereço do Imóvel: " + this.apartamento.getEndereco().getCidade() + " - " + this.apartamento.getEndereco().getRua() + " - " + this.apartamento.getNumero());
 				this.setEhProprietario(true);
@@ -149,7 +149,7 @@ public class Morador extends Colaborador { /** pode não ser colaborador do condo
 		}
 	}
 
-	public static InformacoesPessoais getInformacoesPessoais() {
+	public InformacoesPessoais getInformacoesPessoais() {
 		return informacoesPessoais;
 	}
 

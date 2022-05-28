@@ -12,8 +12,8 @@ public class Seguranca extends Colaborador {
 	/**
 	 * Método para o Segurança vigiar algum local, passando informações do Segurança.
 	 */
-	public void vigiar(String local) {
-		GravarArquivoSeguranca.gravarVigio(local);
+	public void vigiar(Seguranca seguranca, String local) {
+		GravarArquivoSeguranca.gravarVigio(seguranca, local);
 		LeituraArquivo.lerArquivo();
 	}
 }

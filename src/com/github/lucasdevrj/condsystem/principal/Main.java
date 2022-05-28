@@ -895,23 +895,23 @@ public class Main {
 		listaColaboradores.add(professorAcademia);
 		
 		//Chamadas de métodos
-		pedreiro.consertar("piso do condomínio");
+		pedreiro.consertar(pedreiro, "piso do condomínio");
 		System.out.println();
-		pedreiro.construir("parquinho");
+		pedreiro.construir(pedreiro, "parquinho");
 		System.out.println();
-		porteiro.abrirPorta();
+		porteiro.abrirPorta(porteiro);
 		System.out.println();
-		porteiro.abrirPortao();
+		porteiro.abrirPortao(porteiro);
 		System.out.println();
-		seguranca.vigiar("condomínio");
+		seguranca.vigiar(seguranca, "condomínio");
 		System.out.println();
-		eletricista.consertaFiacao();
+		eletricista.consertaFiacao(eletricista);
 		System.out.println();
-		eletricista.trocaFiacao();
+		eletricista.trocaFiacao(eletricista);
 		System.out.println();
-		jardineiro.jardinar();
+		jardineiro.jardinar(jardineiro);
 		System.out.println();
-		professorAcademia.montarSerie();
+		professorAcademia.montarSerie(professorAcademia);
 		System.out.println();
 		
 		ArrayList<Apartamento> listaApartamentos = new ArrayList<Apartamento>();
@@ -938,11 +938,11 @@ public class Main {
 			System.out.println();
 		}
 		
-		professorAcademia.demonstrarExercicio();
+		professorAcademia.demonstrarExercicio(professorAcademia);
 		System.out.println();
-		morador4.comprarApartamento(receita);
+		morador4.comprarApartamento(morador4, receita);
 		System.out.println();
-		professorAcademia.montarSerie();
+		professorAcademia.montarSerie(professorAcademia);
 		System.out.println();
 		morador.pagarAluguelCondominio(receita, condominio);
 		System.out.println();

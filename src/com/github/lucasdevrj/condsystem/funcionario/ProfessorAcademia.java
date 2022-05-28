@@ -14,15 +14,15 @@ public class ProfessorAcademia extends Colaborador {
 	/**
 	 * Método para o Professor de Academia montar a série, que possui uma lógica para verificar se a série já foi montada ou não.
 	 */
-	public void montarSerie() {
-		GravarArquivoProfessorAcademia.gravacaoMontagemSerie();
+	public void montarSerie(ProfessorAcademia professor) {
+		GravarArquivoProfessorAcademia.gravacaoMontagemSerie(professor);
 		LeituraArquivo.lerArquivo();
 	}
 	/**
 	 * Método para o Professor de Academia demonstrar um exercício, com informações do Professor.
 	 */
-	public void demonstrarExercicio() {
-		GravarArquivoProfessorAcademia.gravarDemonstracaoExercicio();
+	public void demonstrarExercicio(ProfessorAcademia professor) {
+		GravarArquivoProfessorAcademia.gravarDemonstracaoExercicio(professor);
 		LeituraArquivo.lerArquivo();
 	}
 

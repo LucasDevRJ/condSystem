@@ -5,10 +5,7 @@ import com.github.lucasdevrj.condsystem.informacoespessoais.Endereco;
 import com.github.lucasdevrj.condsystem.informacoespessoais.Profissao;
 import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
 
-import java.util.Comparator;
-
 import com.github.lucasdevrj.condsystem.contabancaria.Conta;
-import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoAdministrador;
 import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoColaborador;
 /**
  * Classe que representa o Colaborador não especifico
@@ -17,7 +14,7 @@ import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoColaborador;
  */
 public abstract class Colaborador {
 
-	private static InformacoesPessoais informacoesPessoais;
+	private InformacoesPessoais informacoesPessoais;
 	private Endereco endereco;
 	private Profissao profissao;
 	private Conta titular;
@@ -31,7 +28,7 @@ public abstract class Colaborador {
 		LeituraArquivo.lerArquivo();
 	}
 
-	public static InformacoesPessoais getInformacoesPessoais() {
+	public InformacoesPessoais getInformacoesPessoais() {
 		return informacoesPessoais;
 	}
 

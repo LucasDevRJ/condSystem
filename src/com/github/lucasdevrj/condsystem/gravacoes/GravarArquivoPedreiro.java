@@ -9,14 +9,14 @@ import com.github.lucasdevrj.condsystem.funcionario.Pedreiro;
 
 public class GravarArquivoPedreiro {
 
-	public static void gravaConserto(String oQue) {
+	public static void gravaConserto(Pedreiro pedreiro, String oQue) {
 		try {
 			FileOutputStream fos = new FileOutputStream("arquivos.txt");
 			OutputStreamWriter osw = new OutputStreamWriter(fos);
 			BufferedWriter bw = new BufferedWriter(osw);
 			
 			if (Pedreiro.isEstaConsertado() == false) {
-				bw.write("O pedreiro " + Pedreiro.getInformacoesPessoais().getNome() + " " + Pedreiro.getInformacoesPessoais().getSobrenome() + " esta consertando o " + oQue + ".");
+				bw.write("O pedreiro " + pedreiro.getInformacoesPessoais().getNome() + " " + pedreiro.getInformacoesPessoais().getSobrenome() + " esta consertando o " + oQue + ".");
 				Pedreiro.setEstaConsertado(true);
 			} else {
 				bw.write("O " + oQue + " já foi consertado!");
@@ -29,14 +29,14 @@ public class GravarArquivoPedreiro {
 		}
 	}
 	
-	public static void gravaConstrucao(String oQue) {
+	public static void gravaConstrucao(Pedreiro pedreiro, String oQue) {
 		try {
 			FileOutputStream fos = new FileOutputStream("arquivos.txt");
 			OutputStreamWriter osw = new OutputStreamWriter(fos);
 			BufferedWriter bw = new BufferedWriter(osw);
 			
 			if (Pedreiro.isFoiConstruido() == false) {
-				bw.write("O pedreiro " + Pedreiro.getInformacoesPessoais().getNome() + " " + Pedreiro.getInformacoesPessoais().getSobrenome() + " esta construindo o " + oQue + ".");
+				bw.write("O pedreiro " + pedreiro.getInformacoesPessoais().getNome() + " " + pedreiro.getInformacoesPessoais().getSobrenome() + " esta construindo o " + oQue + ".");
 				Pedreiro.setFoiConstruido(true);
 			} else {
 				bw.write("O " + oQue + " já foi construido!");

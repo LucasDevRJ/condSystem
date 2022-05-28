@@ -12,15 +12,15 @@ public class Eletricista extends Colaborador {
 	/**
 	 * Método para o Eletricista trocar a fiação, exibindo uma mensagem com informações do Eletricista.
 	 */
-	public void trocaFiacao() {
-		GravarArquivoEletricista.gravarTrocaFiacao();
+	public void trocaFiacao(Eletricista eletricista) {
+		GravarArquivoEletricista.gravarTrocaFiacao(eletricista);
 		LeituraArquivo.lerArquivo();
 	}
 	/**
 	 * Método para o Eletricista consertar a fiação, exibindo uma mensagem com informações do Eletricista.
 	 */
-	public void consertaFiacao() {
-		GravarArquivoEletricista.gravarConsertoFiacao();
+	public void consertaFiacao(Eletricista eletricista) {
+		GravarArquivoEletricista.gravarConsertoFiacao(eletricista);
 		LeituraArquivo.lerArquivo();
 	}
 }

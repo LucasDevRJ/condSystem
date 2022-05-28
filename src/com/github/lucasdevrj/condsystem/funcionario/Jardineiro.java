@@ -10,16 +10,16 @@ import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
  */
 public class Jardineiro extends Colaborador {
 
-	private static boolean jardinagemEstaGrande;
+	private boolean jardinagemEstaGrande;
 	/**
 	 * Método para o Jardineiro jardinar, que possui uma lógica para verificar se a jardinagem esta grande ou não.
 	 */
-	public void jardinar() {
-		GravarArquivoJardineiro.gravarJardinagem();
+	public void jardinar(Jardineiro jardineiro) {
+		GravarArquivoJardineiro.gravarJardinagem(jardineiro);
 		LeituraArquivo.lerArquivo();
 	}
 
-	public static boolean isJardinagemEstaGrande() {
+	public boolean isJardinagemEstaGrande() {
 		return jardinagemEstaGrande;
 	}
 

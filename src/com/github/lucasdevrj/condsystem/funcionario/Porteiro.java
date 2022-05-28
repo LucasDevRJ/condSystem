@@ -15,15 +15,15 @@ public class Porteiro extends Colaborador {
 	/**
 	 * Método para o Porteiro abrir a porta, que possui uma lógica para verificar se a porta esta aberta ou fechada.
 	 */
-	public void abrirPorta() {
-		GravarArquivoPorteiro.gravarAberturaPorta();
+	public void abrirPorta(Porteiro porteiro) {
+		GravarArquivoPorteiro.gravarAberturaPorta(porteiro);
 		LeituraArquivo.lerArquivo();
 	}
 	/**
 	 * Método para o Porteiro abrir o portão, que possui uma lógica para verificar se a portão esta aberta ou fechada.
 	 */
-	public void abrirPortao() {
-		GravarArquivoPorteiro.gravarAberturaPortao();
+	public void abrirPortao(Porteiro porteiro) {
+		GravarArquivoPorteiro.gravarAberturaPortao(porteiro);
 		LeituraArquivo.lerArquivo();
 	}
 	

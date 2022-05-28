@@ -16,15 +16,15 @@ public class Pedreiro extends Colaborador {
 	/**
 	 * Método para o Pedreiro consertar algo, que possui uma lógica para verificar se o objeto esta consertado ou não.
 	 */
-	public void consertar(String oQue) {
-		GravarArquivoPedreiro.gravaConserto(oQue);
+	public void consertar(Pedreiro pedreiro, String oQue) {
+		GravarArquivoPedreiro.gravaConserto(pedreiro, oQue);
 		LeituraArquivo.lerArquivo();
 	}
 	/**
 	 * Método para o Pedreiro construir algo, que possui uma lógica para verificar se já foi construido ou não.
 	 */
-	public void construir(String oQue) {
-		GravarArquivoPedreiro.gravaConstrucao(oQue);
+	public void construir(Pedreiro pedreiro, String oQue) {
+		GravarArquivoPedreiro.gravaConstrucao(pedreiro, oQue);
 		LeituraArquivo.lerArquivo();
 	}
 	
