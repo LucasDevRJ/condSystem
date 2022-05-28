@@ -3,7 +3,7 @@ package com.github.lucasdevrj.condsystem.condominio;
 import com.github.lucasdevrj.condsystem.informacoespessoais.Endereco;
 
 import com.github.lucasdevrj.condsystem.financeiro.Financeiro;
-import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivo;
+import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoCondominio;
 import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
 /**
  * Classe que representa o Condominio
@@ -39,7 +39,7 @@ public class Condominio {
 		int quantidadeApartamentos = (int) tamanhoApartamento;
 		
 		if (this.getReceita().getLucro() >= precoConstrucao) {
-			GravarArquivo.gravarConstrucaoPredio(largura, altura, totalAndares, quantidadeApartamentos, precoConstrucao);
+			GravarArquivoCondominio.gravarConstrucaoPredio(largura, altura, totalAndares, quantidadeApartamentos, precoConstrucao);
 			LeituraArquivo.lerArquivo();
 			this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoConstrucao);
 			
@@ -57,7 +57,7 @@ public class Condominio {
 			if (this.getReceita().getLucro() >= precoCompra) {
 				this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoCompra);
 				this.setTamanho(this.getTamanho() + tamanho);
-				GravarArquivo.gravarCompraMetros(tamanho, precoCompra);
+				GravarArquivoCondominio.gravarCompraMetros(tamanho, precoCompra);
 				LeituraArquivo.lerArquivo();
 				
 			} else {
@@ -79,7 +79,7 @@ public class Condominio {
 				this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoConstrucao);
 				this.setNumeroPiscinas(this.getNumeroPiscinas() + 1);
 				this.setTamanho(this.getTamanho() - tamanhoPiscina);
-				GravarArquivo.gravarConstrucaoPiscina(precoConstrucao, tamanhoPiscina);
+				GravarArquivoCondominio.gravarConstrucaoPiscina(precoConstrucao, tamanhoPiscina);
 				LeituraArquivo.lerArquivo();
 			} else {
 				System.out.println("Dinheiro insuficiente para construir a piscina!");
@@ -100,7 +100,7 @@ public class Condominio {
 				this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoConstrucao);
 				this.setNumeroParquinho(this.getNumeroParquinho() + 1);
 				this.setTamanho(this.getTamanho() - tamanhoParquinho);
-				GravarArquivo.gravarConstruirParquinho(precoConstrucao, tamanhoParquinho);
+				GravarArquivoCondominio.gravarConstruirParquinho(precoConstrucao, tamanhoParquinho);
 				LeituraArquivo.lerArquivo();
 			} else {
 				System.out.println("Dinheiro insuficiente para construir o parquinho!");
@@ -124,7 +124,7 @@ public class Condominio {
 		if (this.getReceita().getLucro() >= valorTotal) {
 			this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - valorTotal);
 			this.setNumeroAcademia(this.getNumeroAcademia() + 1);
-			GravarArquivo.gravaConstruirAcademia(numeroEquipamentosPartesSuperiores, numeroEquipamentosTronco, numeroEquipamentosPartesInferiores, valorTotal);
+			GravarArquivoCondominio.gravaConstruirAcademia(numeroEquipamentosPartesSuperiores, numeroEquipamentosTronco, numeroEquipamentosPartesInferiores, valorTotal);
 			LeituraArquivo.lerArquivo();
 		} else {
 			System.out.println("Valor insuficiênte para a construção!");

@@ -8,7 +8,7 @@ import java.io.OutputStreamWriter;
 import com.github.lucasdevrj.condsystem.condominio.Condominio;
 
 
-public class GravarArquivo {
+public class GravarArquivoCondominio {
 
 	public static void gravarConstrucaoPredio(float altura, float largura, int totalAndares, int quantidadeApartamentos, float precoConstrucao) {
 		try {

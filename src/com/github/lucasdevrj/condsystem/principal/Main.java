@@ -961,6 +961,8 @@ public class Main {
 			System.out.println();
 		}
 		
+		administrador.acessarFinanceiro(financeiro);
+		System.out.println();
 		condominio.construirParquinho(300);
 		System.out.println();
 		condominio.aumentarTamanhoCondominio(2000);
@@ -974,5 +976,7 @@ public class Main {
 		condominio.construirPiscina(600);
 		System.out.println();
 		administrador.acessarFinanceiro(financeiro);
+		System.out.println();
+		contaEletricista.depositar(300.00f, jardineiro);
 	}
 }

@@ -1,4 +1,3 @@
-Construção da Piscina Realizada com Sucesso!
-Valor da Construção: R$ 12000.0
-Tamanho da Piscina Construido: 600.0 metros
-Número Total de Piscinas no Condomínio: 2
+Deposito Realizado com Sucesso!
+Valor do Deposito: R$ 300.0
+Valor do Saldo Bancário: R$ 2312.3

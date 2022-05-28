@@ -2,6 +2,8 @@ package com.github.lucasdevrj.condsystem.contabancaria;
 
 import com.github.lucasdevrj.condsystem.contabancaria.Conta;
 import com.github.lucasdevrj.condsystem.funcionario.Colaborador;
+import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoConta;
+import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
 /**
  * Classe que representa uma Conta não especificada
  * @author Lucas Pereira de Lima
@@ -21,9 +23,8 @@ public class Conta {
 	public void depositar(float valor, Colaborador titular) {
 		if (valor <= titular.getProfissao().getSalario()) {
 			this.setSaldo(valor + this.getSaldo());
-			System.out.println("Deposito Realizado com Sucesso!");
-			System.out.println("Valor do Deposito: R$ " + valor);
-			System.out.println("Valor do Saldo Bancário: R$ " + this.getSaldo());
+			GravarArquivoConta.gravaDeposito(valor, titular);
+			LeituraArquivo.lerArquivo();
 		} else {
 			System.out.println("Valor Insuficiênte!");
 		}

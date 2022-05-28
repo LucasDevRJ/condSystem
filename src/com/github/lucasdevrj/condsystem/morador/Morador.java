@@ -26,8 +26,9 @@ public class Morador extends Colaborador { /** pode não ser colaborador do condo
 	 */
 	public void comprarApartamento(Receita financias) {
 		if (this.isEhProprietario() == false) {
-			if (this.titular.getSaldo() >= this.apartamento.getPrecoApartamento()) {
-				this.getTitular().setSaldo(this.getTitular().getSaldo() - this.getApartamento().getPrecoApartamento());
+			if (titular.getSaldo() >= this.apartamento.getPrecoApartamento()) {
+				this.getTitular();
+				this.getTitular().setSaldo(titular.getSaldo() - this.getApartamento().getPrecoApartamento());
 				financias.setTotal(financias.getTotal() + this.apartamento.getPrecoApartamento());
 				System.out.println("Apartamento Comprado com Sucesso!");
 				System.out.println("Nome Completo do Novo Propritário: " + this.getInformacoesPessoais().getNome() + " " + this.getInformacoesPessoais().getSobrenome());
