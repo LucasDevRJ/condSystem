@@ -979,6 +979,6 @@ public class Main {
 		System.out.println();
 		contaEletricista.depositar(300.00f, jardineiro);
 		System.out.println();
-		
+		eletricista.receberSalario(eletricista);
 	}
 }

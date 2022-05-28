@@ -3,10 +3,13 @@ package com.github.lucasdevrj.condsystem.funcionario;
 import com.github.lucasdevrj.condsystem.informacoespessoais.InformacoesPessoais;
 import com.github.lucasdevrj.condsystem.informacoespessoais.Endereco;
 import com.github.lucasdevrj.condsystem.informacoespessoais.Profissao;
+import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
 
 import java.util.Comparator;
 
 import com.github.lucasdevrj.condsystem.contabancaria.Conta;
+import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoAdministrador;
+import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoColaborador;
 /**
  * Classe que representa o Colaborador não especifico
  * @author Lucas Pereira de Lima
@@ -22,11 +25,10 @@ public abstract class Colaborador {
 	/**
 	 * Método para receber salário, pegando a Conta do funcionário e adicionando o salário nela.
 	 */
-	public void receberSalario() {
+	public void receberSalario(Colaborador colaborador) {
 		titular.setSaldo(titular.getSaldo() + profissao.getSalario());
-		System.out.println("Salário Depositado com Sucesso!");
-		System.out.println("Valor Depositado: R$ " + profissao.getSalario());
-		System.out.println("Saldo Total: R$ " + titular.getSaldo());
+		GravarArquivoColaborador.gravaRecebimentoSalario(colaborador);
+		LeituraArquivo.lerArquivo();
 	}
 
 	public InformacoesPessoais getInformacoesPessoais() {
