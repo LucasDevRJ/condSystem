@@ -36,9 +36,8 @@ public class Conta {
 	public void sacar(float valor) {
 		if (valor <= this.getSaldo()) {
 			this.setSaldo(valor - this.getSaldo());
-			System.out.println("Saque Realizado com Sucesso!");
-			System.out.println("Valor do Saque: R$ " + valor);
-			System.out.println("Valor do Saldo Bancário: R$ " + this.getSaldo());
+			GravarArquivoConta.gravarSaque(valor);
+			LeituraArquivo.lerArquivo();
 		} else {
 			System.out.println("Valor Insuficiênte!");
 		}
