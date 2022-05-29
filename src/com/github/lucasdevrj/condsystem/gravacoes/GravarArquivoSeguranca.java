@@ -15,7 +15,7 @@ public class GravarArquivoSeguranca {
 			OutputStreamWriter osw = new OutputStreamWriter(fos);
 			BufferedWriter bw = new BufferedWriter(osw);
 			
-			System.out.println("O segurança " + seguranca.getInformacoesPessoais().getNome() + " " + seguranca.getInformacoesPessoais().getSobrenome() + " esta vigiando o " + local + ".");
+			bw.write("O segurança " + seguranca.getInformacoesPessoais().getNome() + " " + seguranca.getInformacoesPessoais().getSobrenome() + " esta vigiando o " + local + ".");
 			
 			bw.close();
 			

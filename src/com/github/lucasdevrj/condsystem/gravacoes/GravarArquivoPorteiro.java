@@ -36,10 +36,10 @@ public class GravarArquivoPorteiro {
 			BufferedWriter bw = new BufferedWriter(osw);
 			
 			if (Porteiro.isPortaoEstaAberto() == false) {
-				System.out.println("O porteiro " + porteiro.getInformacoesPessoais().getNome() +  " " + porteiro.getInformacoesPessoais().getSobrenome() + " abriu o portão.");
+				bw.write("O porteiro " + porteiro.getInformacoesPessoais().getNome() +  " " + porteiro.getInformacoesPessoais().getSobrenome() + " abriu o portão.");
 				Porteiro.setPortaoEstaAberto(true);
 			} else {
-				System.out.println("O portão já esta aberto!");
+				bw.write("O portão já esta aberto!");
 			}
 			
 			bw.close();

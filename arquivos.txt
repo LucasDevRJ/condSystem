@@ -1,3 +1,5 @@
-Salário Depositado com Sucesso!
-Valor Depositado: R$ 2810.0
-Saldo Total: R$ 8344.6
+Reforma paga com sucesso!
+A reforma será no:
+Dois Quartos
+Banheiro
+Sala

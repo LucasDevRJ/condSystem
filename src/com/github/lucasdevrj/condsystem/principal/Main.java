@@ -944,13 +944,13 @@ public class Main {
 		System.out.println();
 		professorAcademia.montarSerie(professorAcademia);
 		System.out.println();
-		morador.pagarAluguelCondominio(receita, condominio);
+		morador.pagarAluguelCondominio(morador, receita, condominio);
 		System.out.println();
-		morador2.pagarAluguelCondominio(receita, condominio);
+		morador2.pagarAluguelCondominio(morador2, receita, condominio);
 		System.out.println();
-		morador3.pagarAluguelCondominio(receita, condominio);
+		morador3.pagarAluguelCondominio(morador3, receita, condominio);
 		System.out.println();
-		morador4.pagarAluguelCondominio(receita, condominio);
+		morador4.pagarAluguelCondominio(morador4, receita, condominio);
 		System.out.println();
 		administrador.acessarFinanceiro(financeiro);
 		System.out.println();
@@ -982,5 +982,7 @@ public class Main {
 		contaEletricista.depositar(300.00f, jardineiro);
 		System.out.println();
 		eletricista.receberSalario(eletricista);
+		System.out.println();
+		morador.reformarApartamento(2, morador);
 	}
 }

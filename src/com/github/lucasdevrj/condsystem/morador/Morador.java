@@ -5,6 +5,7 @@ package com.github.lucasdevrj.condsystem.morador;
  * @version 1.0
  */
 import com.github.lucasdevrj.condsystem.funcionario.Colaborador;
+import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoMorador;
 import com.github.lucasdevrj.condsystem.informacoespessoais.InformacoesPessoais;
 import com.github.lucasdevrj.condsystem.apartamento.Apartamento;
 import com.github.lucasdevrj.condsystem.informacoespessoais.Profissao;
@@ -12,6 +13,7 @@ import com.github.lucasdevrj.condsystem.contabancaria.Conta;
 import com.github.lucasdevrj.condsystem.financeiro.Receita;
 import com.github.lucasdevrj.condsystem.condominio.Condominio;
 import com.github.lucasdevrj.condsystem.inquilino.Inquilino;
+import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
 
 public class Morador extends Colaborador { /** pode não ser colaborador do condomínio em si, mas é de alguma empresa **/
 
@@ -30,13 +32,9 @@ public class Morador extends Colaborador { /** pode não ser colaborador do condo
 				this.getTitular();
 				this.getTitular().setSaldo(titular.getSaldo() - this.getApartamento().getPrecoApartamento());
 				financias.setTotal(financias.getTotal() + this.apartamento.getPrecoApartamento());
-				System.out.println("Apartamento Comprado com Sucesso!");
-				System.out.println("Nome Completo do Novo Propritário: " + morador.getInformacoesPessoais().getNome() + " " + morador.getInformacoesPessoais().getSobrenome());
-				System.out.println("CPF do Novo Proprietário: " + morador.getInformacoesPessoais().getCpf());
-				System.out.println("RG do Novo Proprietário: " + morador.getInformacoesPessoais().getRg());
-				System.out.println("Valor do Imóvel: R$ " + this.apartamento.getPrecoApartamento());
-				System.out.println("Endereço do Imóvel: " + this.apartamento.getEndereco().getCidade() + " - " + this.apartamento.getEndereco().getRua() + " - " + this.apartamento.getNumero());
 				this.setEhProprietario(true);
+				GravarArquivoMorador.gravaCompraApartamento(morador, financias);
+				LeituraArquivo.lerArquivo();
 			}
 		}
 	}
@@ -45,18 +43,13 @@ public class Morador extends Colaborador { /** pode não ser colaborador do condo
 	 * @param financias
 	 * @param condominio
 	 */
-	public void pagarAluguelCondominio(Receita financias, Condominio condominio) {
+	public void pagarAluguelCondominio(Morador morador, Receita financias, Condominio condominio) {
 		if (this.isEhProprietario() == true) {
 			if (this.titular.getSaldo() >= condominio.getValorAluguel()) {
 				this.titular.setSaldo(this.titular.getSaldo() - condominio.getValorAluguel());
 				financias.setTotal(condominio.getValorAluguel() + financias.getTotal());
-				System.out.println("Aluguel Pago com Sucesso!");
-				System.out.println("Nome Completo: " + this.getInformacoesPessoais().getNome() + " " + this.getInformacoesPessoais().getSobrenome());
-				System.out.println("CPF: " + this.getInformacoesPessoais().getCpf());
-				System.out.println("RG: " + this.getInformacoesPessoais().getRg());
-				System.out.println("Número Apartamento: " + this.getApartamento().getNumero());
-				System.out.println("Bloco Apartamento: " + this.getApartamento().getBloco());
-				System.out.println("Valor Pago: R$ " + condominio.getValorAluguel());
+				GravarArquivoMorador.gravaPagamentoAluguelCondominio(morador, financias, condominio);
+				LeituraArquivo.lerArquivo();
 			} else {
 				System.out.println("Saldo insuficiente para pagar o alguel!");
 			}
@@ -69,21 +62,10 @@ public class Morador extends Colaborador { /** pode não ser colaborador do condo
 	 * @param inquilino
 	 * @param proprietario
 	 */
-	public void alugarApartamento(Inquilino inquilino, Morador proprietario) {
+	public void alugaApartamento(Inquilino inquilino, Morador proprietario) {
 		if (this.isEhProprietario() == true) {
-			System.out.println("Imóvel Alugado com Sucesso!");
-			System.out.println("Informações do Proprietário");
-			System.out.println("Nome do Proprietário: " + proprietario.getInformacoesPessoais().getNome());
-			System.out.println("Sobrenome do Proprietário: " + proprietario.getInformacoesPessoais().getSobrenome());
-			System.out.println("CPF do Proprietário: " + inquilino.getInformacoesPessoais().getCpf());
-			System.out.println("RG do Proprietário: " + inquilino.getInformacoesPessoais().getRg());
-			System.out.println("Informações do Inquilino");
-			System.out.println("Nome do Inquilino: " + inquilino.getInformacoesPessoais().getNome());
-			System.out.println("Sobrenome do Inquilino: " + inquilino.getInformacoesPessoais().getSobrenome());
-			System.out.println("CPF do Inquilino: " + inquilino.getInformacoesPessoais().getCpf());
-			System.out.println("RG do Inquilino: " + inquilino.getInformacoesPessoais().getRg());
-			System.out.println("Profissão do Inquilino: " + inquilino.getProfissao().getCargo());
-			System.out.println("Salário do Inquilino: " + inquilino.getProfissao().getSalario());
+			GravarArquivoMorador.gravaAlugamentoApartamento(inquilino, proprietario);
+			LeituraArquivo.lerArquivo();
 		} else {
 			System.out.println("Para alugar um imóvel precisa ser proprietário!");
 		}
@@ -96,12 +78,10 @@ public class Morador extends Colaborador { /** pode não ser colaborador do condo
 	public void receberAluguel(Inquilino inquilino, Apartamento apartamento) {
 		if (this.isEhProprietario() == true) {
 			if (inquilino.getTitular().getSaldo() >= apartamento.getPrecoAluguel()) {
-				System.out.println("Aluguel Recebido com Sucessso!");
-				System.out.println("Nome Completo do Inquilino: " + inquilino.getInformacoesPessoais().getNome() + " " + inquilino.getInformacoesPessoais().getSobrenome());
-				System.out.println("CPF do Inquilino: " + inquilino.getInformacoesPessoais().getCpf());
-				System.out.println("Valor do Aluguel: R$ " + apartamento.getPrecoAluguel());
 				this.getTitular().setSaldo(this.getTitular().getSaldo() + apartamento.getPrecoAluguel());
 				inquilino.getTitular().setSaldo(this.titular.getSaldo() - apartamento.getPrecoAluguel());
+				GravarArquivoMorador.gravaRecebimentoAluguel(inquilino, apartamento);
+				LeituraArquivo.lerArquivo();
 			}
 		}
 	}
@@ -109,44 +89,9 @@ public class Morador extends Colaborador { /** pode não ser colaborador do condo
 	 * Método para reformar apartamento, possuindo uma estrutura de repetição para verificar qual reforma foi solicitada.
 	 * @param opcaoEscolhida
 	 */
-	public void reformarApartamento(int opcaoEscolhida) {
-		int opcaoReforma = opcaoEscolhida;
-		float reformaPreco = 1000.0f;
-		
-		switch (opcaoReforma) {
-			case 1:
-				if (profissao.getSalario() >= reformaPreco) {
-					System.out.println("Reforma paga com sucesso!\nA reforma será no:\nQuarto\nBanheiro");
-					titular.setSaldo(titular.getSaldo() - reformaPreco);
-				} else {
-					System.out.println("Infelizmente não possui renda suficiente para a reforma de R$ 1.000,00");
-				}
-			break;
-			
-			case 2:
-				reformaPreco = 2000.0f;
-				if (profissao.getSalario() >= reformaPreco) {
-					System.out.println("Reforma paga com sucesso!\nA reforma será no:\nDois Quartos\nBanheiro\nSala\n");
-					titular.setSaldo(titular.getSaldo() - reformaPreco);
-				} else {
-					System.out.println("Infelizmente não possui renda suficiente para a reforma de R$ 2.000,00");
-				}
-			break;
-			
-			case 3:
-				reformaPreco = 3000.0f;
-				if (profissao.getSalario() >= reformaPreco) {
-					System.out.println("Reforma paga com sucesso!\nA reforma será no:\nTrês Quartos\n Dois Banheiro\nSala\nCozinha\nSotão");
-					titular.setSaldo(titular.getSaldo() - reformaPreco);
-				} else {
-					System.out.println("Infelizmente não possui renda suficiente para a reforma de R$ 3.000,00");
-				}
-			break;
-			
-			default:
-				System.out.println("Opção inválida!\nDigite as opções:\n1 - Quarto e Banheiro\n2 - 2 Quartos, Banheiro e Sala\n3 - Três Quartos, Dois Banheiros, Sala, Cozinha e Sotão");
-			break;
-		}
+	public void reformarApartamento(int opcaoEscolhida, Morador morador) {
+		GravarArquivoMorador.gravaReformaApartamento(opcaoEscolhida, morador);
+		LeituraArquivo.lerArquivo();
 	}
 
 	public InformacoesPessoais getInformacoesPessoais() {
