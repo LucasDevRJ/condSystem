@@ -16,9 +16,9 @@ public class GravarArquivoJardineiro {
 			BufferedWriter bw = new BufferedWriter(osw);
 			
 			if (jardineiro.isJardinagemEstaGrande() == true) {
-				System.out.println("O jardineiro " + jardineiro.getInformacoesPessoais().getNome() + " " + jardineiro.getInformacoesPessoais().getSobrenome() + " esta jardinando.");
+				bw.write("O jardineiro " + jardineiro.getInformacoesPessoais().getNome() + " " + jardineiro.getInformacoesPessoais().getSobrenome() + " esta jardinando.");
 			} else {
-				System.out.println("A jardinagem não está grande o suficiente!");
+				bw.write("A jardinagem não está grande o suficiente!");
 			}
 			
 			bw.close();

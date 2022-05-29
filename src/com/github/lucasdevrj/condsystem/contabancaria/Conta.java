@@ -4,6 +4,7 @@ import com.github.lucasdevrj.condsystem.contabancaria.Conta;
 import com.github.lucasdevrj.condsystem.funcionario.Colaborador;
 import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoConta;
 import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
+import com.github.lucasdevrj.condsystem.morador.Morador;
 /**
  * Classe que representa uma Conta não especificada
  * @author Lucas Pereira de Lima
@@ -33,10 +34,10 @@ public class Conta {
 	 * Método para sacar valor suficiente do Banco.
 	 * @param valor
 	 */
-	public void sacar(float valor) {
+	public void sacar(float valor, Colaborador titular) {
 		if (valor <= this.getSaldo()) {
 			this.setSaldo(valor - this.getSaldo());
-			GravarArquivoConta.gravarSaque(valor);
+			GravarArquivoConta.gravarSaque(valor, titular);
 			LeituraArquivo.lerArquivo();
 		} else {
 			System.out.println("Valor Insuficiênte!");

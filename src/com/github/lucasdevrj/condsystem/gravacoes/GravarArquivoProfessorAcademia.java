@@ -16,9 +16,9 @@ public class GravarArquivoProfessorAcademia {
 			BufferedWriter bw = new BufferedWriter(osw);
 			
 			if (ProfessorAcademia.isEstaMontandoSerie() == false) {
-				System.out.println("Professor de Educação Física " + professor.getInformacoesPessoais().getNome() + professor.getInformacoesPessoais().getSobrenome() + " esta montando série para o aluno.");
+				bw.write("Professor de Educação Física " + professor.getInformacoesPessoais().getNome() + professor.getInformacoesPessoais().getSobrenome() + " esta montando série para o aluno.");
 			} else {
-				System.out.println("Professor de Educação Física " + professor.getInformacoesPessoais().getNome() + professor.getInformacoesPessoais().getSobrenome() + " já montou a série para o aluno.");
+				bw.write("Professor de Educação Física " + professor.getInformacoesPessoais().getNome() + professor.getInformacoesPessoais().getSobrenome() + " já montou a série para o aluno.");
 			}
 			
 			bw.close();

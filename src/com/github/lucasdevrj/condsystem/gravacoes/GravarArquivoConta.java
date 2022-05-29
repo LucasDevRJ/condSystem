@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 
 import com.github.lucasdevrj.condsystem.funcionario.Colaborador;
+import com.github.lucasdevrj.condsystem.morador.Morador;
 
 public class GravarArquivoConta {
 
@@ -28,7 +29,7 @@ public class GravarArquivoConta {
 		}
 	}
 	
-	public static void gravarSaque(float valor) {
+	public static void gravarSaque(float valor, Colaborador titular) {
 		try {
 			FileOutputStream fos = new FileOutputStream("arquivos.txt");
 			OutputStreamWriter osr = new OutputStreamWriter(fos);
@@ -36,7 +37,7 @@ public class GravarArquivoConta {
 			
 			br.write("Saque Realizado com Sucesso!");
 			br.write("Valor do Saque: R$ " + valor);
-			//br.write("Valor do Saldo Bancário: R$ " + titular.getSaldo());
+			br.write("Valor do Saldo Bancário: R$ " + titular.getTitular().getSaldo());
 			
 			br.close();
 			
