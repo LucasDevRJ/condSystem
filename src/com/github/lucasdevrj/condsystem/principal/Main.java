@@ -984,5 +984,9 @@ public class Main {
 		eletricista.receberSalario();
 		System.out.println();
 		morador.reformarApartamento(2, morador);
+		System.out.println();
+		System.out.println(porteiro.getTitular().getSaldo());
+		System.out.println();
+		porteiro.getTitular().sacar(200);
 	}
 }

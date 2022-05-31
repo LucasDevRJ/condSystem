@@ -2,8 +2,10 @@ package com.github.lucasdevrj.condsystem.condominio;
 
 import com.github.lucasdevrj.condsystem.informacoespessoais.Endereco;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import com.github.lucasdevrj.condsystem.financeiro.Financeiro;
-import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoCondominio;
 import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
 /**
  * Classe que representa o Condominio
@@ -14,11 +16,11 @@ public class Condominio {
 
 	private String nome;
 	private Endereco endereco;
-	private static int tamanho;
-	private static int numeroPiscinas;
+	private int tamanho;
+	private int numeroPiscinas;
 	private int numeroQuadras;
 	private int numeroAcademia;
-	private static int numeroParquinho;
+	private int numeroParquinho;
 	private float valorAluguel;
 	private Financeiro receita;
 	
@@ -39,9 +41,25 @@ public class Condominio {
 		int quantidadeApartamentos = (int) tamanhoApartamento;
 		
 		if (this.getReceita().getLucro() >= precoConstrucao) {
-			GravarArquivoCondominio.gravarConstrucaoPredio(largura, altura, totalAndares, quantidadeApartamentos, precoConstrucao);
-			LeituraArquivo.lerArquivo();
 			this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoConstrucao);
+			
+			try {
+				PrintWriter grava = new PrintWriter("arquivos.txt");
+				
+				grava.println("Prédio Construído com Sucesso!");
+				grava.println("Altura do Prédio: " + altura + " metros");
+				grava.println("Largura do Prédio: " + largura + " metros");
+				grava.println("Total de Andares: " + totalAndares);
+				grava.println("Quantidade de Apartamentos por Andar: " + quantidadeApartamentos);
+				grava.println("Custo da Construção: R$ " + precoConstrucao);
+				
+				grava.close();
+				
+			} catch (IOException erro) {
+				erro.printStackTrace();
+			}
+			
+			LeituraArquivo.lerArquivo();
 			
 		} else {
 			System.out.println("Saldo insuficiente para construir prédio!");
@@ -57,12 +75,27 @@ public class Condominio {
 			if (this.getReceita().getLucro() >= precoCompra) {
 				this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoCompra);
 				this.setTamanho(this.getTamanho() + tamanho);
-				GravarArquivoCondominio.gravarCompraMetros(tamanho, precoCompra);
+				
+				try {
+					PrintWriter grava = new PrintWriter("arquivos.txt");
+					
+					grava.println("Compra de Metros Realizada com Sucesso!");
+					grava.println("Metros Comprados: " + tamanho + " metros");
+					grava.println("Valor: R$ " + precoCompra);
+					grava.println("Tamanho do Condomínio: " + this.getTamanho() + " metros");
+					
+					grava.close();
+					
+				} catch (IOException erro) {
+					erro.printStackTrace();
+				}
+				
 				LeituraArquivo.lerArquivo();
 				
 			} else {
 				System.out.println("Dinheiro insuficiente para comprar mais territorio!");
 			}
+			
 		} else {
 			System.out.println("Tamanho desejado inválido!");
 		}
@@ -79,7 +112,21 @@ public class Condominio {
 				this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoConstrucao);
 				this.setNumeroPiscinas(this.getNumeroPiscinas() + 1);
 				this.setTamanho(this.getTamanho() - tamanhoPiscina);
-				GravarArquivoCondominio.gravarConstrucaoPiscina(precoConstrucao, tamanhoPiscina);
+				
+				try {
+					PrintWriter grava = new PrintWriter("arquivos.txt");
+					
+					grava.println("Construção da Piscina Realizada com Sucesso!");
+					grava.println("Valor da Construção: R$ " + precoConstrucao);
+					grava.println("Tamanho da Piscina Construido: " + tamanhoPiscina + " metros");
+					grava.println("Número Total de Piscinas no Condomínio: " + this.getNumeroPiscinas());
+					
+					grava.close();
+					
+				} catch (IOException erro) {
+					erro.printStackTrace();
+				}
+				
 				LeituraArquivo.lerArquivo();
 			} else {
 				System.out.println("Dinheiro insuficiente para construir a piscina!");
@@ -87,6 +134,8 @@ public class Condominio {
 		} else {
 			System.out.println("Tamanho da piscina é maior que o condomínio!");
 		}
+		
+		
 	}
 	
 	/**
@@ -100,11 +149,27 @@ public class Condominio {
 				this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - precoConstrucao);
 				this.setNumeroParquinho(this.getNumeroParquinho() + 1);
 				this.setTamanho(this.getTamanho() - tamanhoParquinho);
-				GravarArquivoCondominio.gravarConstruirParquinho(precoConstrucao, tamanhoParquinho);
+				
+				try {
+					PrintWriter grava = new PrintWriter("arquivos.txt");
+					
+					grava.println("Construção do Parquinho Realizada com Sucesso!");
+					grava.println("Valor da Construção: R$ " + precoConstrucao);
+					grava.println("Tamanho do Parquinho Construido: " + tamanhoParquinho + " metros");
+					grava.println("Número Total de Parquinhos no Condomínio: " + this.getNumeroParquinho());
+					
+					grava.close();
+					
+				} catch (IOException erro) {
+					erro.printStackTrace();
+				}
+				
 				LeituraArquivo.lerArquivo();
+				
 			} else {
 				System.out.println("Dinheiro insuficiente para construir o parquinho!");
 			}
+			
 		} else {
 			System.out.println("Tamanho do parquinho é maior que o condomínio!");
 		}
@@ -124,11 +189,28 @@ public class Condominio {
 		if (this.getReceita().getLucro() >= valorTotal) {
 			this.getReceita().getReceita().setTotal(this.getReceita().getReceita().getTotal() - valorTotal);
 			this.setNumeroAcademia(this.getNumeroAcademia() + 1);
-			GravarArquivoCondominio.gravaConstruirAcademia(numeroEquipamentosPartesSuperiores, numeroEquipamentosTronco, numeroEquipamentosPartesInferiores, valorTotal);
+			
+			try {
+				PrintWriter grava = new PrintWriter("arquivos.txt");
+				
+				grava.println("Academia Construida com Sucesso!");
+				grava.println("Número de equipamentos das partes superiores: " + numeroEquipamentosPartesSuperiores);
+				grava.println("Número de equipamentos das partes tronco: " + numeroEquipamentosTronco);
+				grava.println("Número de equipamentos das partes inferiores: " + numeroEquipamentosPartesInferiores);
+				grava.println("Custo Total: R$ " + valorTotal);
+				
+				grava.close();
+				
+			} catch (IOException erro) {
+				erro.printStackTrace();
+			}
+			
 			LeituraArquivo.lerArquivo();
 		} else {
 			System.out.println("Valor insuficiênte para a construção!");
 		}
+		
+		
 	}
 	
 	public Endereco getEndereco() {
@@ -139,7 +221,7 @@ public class Condominio {
 		this.endereco = endereco;
 	}
 	
-	public static int getTamanho() {
+	public int getTamanho() {
 		return tamanho;
 	}
 	
@@ -151,7 +233,7 @@ public class Condominio {
 		this.tamanho = tamanho;
 	}
 	
-	public static int getNumeroPiscinas() {
+	public int getNumeroPiscinas() {
 		return numeroPiscinas;
 	}
 	
@@ -207,7 +289,7 @@ public class Condominio {
 		this.receita = receita;
 	}
 
-	public static int getNumeroParquinho() {
+	public int getNumeroParquinho() {
 		return numeroParquinho;
 	}
 

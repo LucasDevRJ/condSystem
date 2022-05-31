@@ -1,5 +1,3 @@
-Reforma paga com sucesso!
-A reforma será no:
-Dois Quartos
-Banheiro
-Sala
+Saque Realizado com Sucesso!
+Valor do Saque: R$ 200.0
+Valor do Saldo Bancário: R$ 3220.6

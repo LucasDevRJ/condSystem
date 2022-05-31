@@ -1,10 +1,15 @@
 package com.github.lucasdevrj.condsystem.contabancaria;
 
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+
 import com.github.lucasdevrj.condsystem.contabancaria.Conta;
 import com.github.lucasdevrj.condsystem.funcionario.Colaborador;
 import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoConta;
 import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
-import com.github.lucasdevrj.condsystem.morador.Morador;
 /**
  * Classe que representa uma Conta não especificada
  * @author Lucas Pereira de Lima
@@ -24,7 +29,20 @@ public class Conta {
 	public void depositar(float valor, Colaborador titular) {
 		if (valor <= titular.getProfissao().getSalario()) {
 			this.setSaldo(valor + this.getSaldo());
-			GravarArquivoConta.gravaDeposito(valor, titular);
+			
+			try {
+				PrintWriter grava = new PrintWriter("arquivos.txt");
+				
+				grava.println("Deposito Realizado com Sucesso!");
+				grava.println("Valor do Deposito: R$ " + valor);
+				grava.println("Valor do Saldo Bancário: R$ " + titular.getTitular().getSaldo());
+				
+				grava.close();
+				
+			} catch (IOException erro) {
+				erro.printStackTrace();
+			}
+			
 			LeituraArquivo.lerArquivo();
 		} else {
 			System.out.println("Valor Insuficiênte!");
@@ -34,10 +52,22 @@ public class Conta {
 	 * Método para sacar valor suficiente do Banco.
 	 * @param valor
 	 */
-	public void sacar(float valor, Colaborador titular) {
+	public void sacar(float valor) {
 		if (valor <= this.getSaldo()) {
-			this.setSaldo(valor - this.getSaldo());
-			GravarArquivoConta.gravarSaque(valor, titular);
+			this.setSaldo(this.getSaldo() - valor);
+			try {
+				PrintWriter grava = new PrintWriter("arquivos.txt");
+				
+				grava.println("Saque Realizado com Sucesso!");
+				grava.println("Valor do Saque: R$ " + valor);
+				grava.println("Valor do Saldo Bancário: R$ " + this.getSaldo());
+				
+				grava.close();
+				
+			} catch (IOException erro) {
+				erro.printStackTrace();
+			}
+			
 			LeituraArquivo.lerArquivo();
 		} else {
 			System.out.println("Valor Insuficiênte!");
