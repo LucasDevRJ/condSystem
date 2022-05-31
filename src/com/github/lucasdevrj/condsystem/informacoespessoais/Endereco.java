@@ -22,7 +22,7 @@ public class Endereco {
 	public void setPais(String pais) {
 		pais = pais.trim();
 		
-		pais = pais.replaceAll("[^a-zA-Z íãáàôõüÍÃÁÀÕÔÜ]", "");
+		pais = pais.replaceAll("[^a-zA-Z íãáéôàôõüÍÃÁÀÕÔÜ]", "");
 		
 		if (pais.contains("  ")) {
 			throw new IllegalArgumentException("Não coloque muitos espaços, por favor!");
@@ -42,7 +42,7 @@ public class Endereco {
 	public void setCidade(String cidade) {
 		cidade = cidade.trim();
 		
-		cidade = cidade.replaceAll("[^a-zA-Z íãáàôõüÍÃÁÀÕÔÜ]", "");
+		cidade = cidade.replaceAll("[^a-zA-Z íãáéôàôõüÍÃÁÀÕÔÜ]", "");
 		
 		if (cidade.contains("  ")) {
 			throw new IllegalArgumentException("Não coloque muitos espaços, por favor!");
@@ -62,7 +62,7 @@ public class Endereco {
 	public void setEstado(String estado) {
 		estado = estado.trim();
 		
-		estado = estado.replaceAll("[^a-zA-Z íãáàôõüÍÃÁÀÕÔÜ]", "");
+		estado = estado.replaceAll("[^a-zA-Z íãáéôàôõüÍÃÁÀÕÔÜ]", "");
 		
 		if (estado.contains("  ")) {
 			throw new IllegalArgumentException("Não coloque muitos espaços, por favor!");
@@ -82,7 +82,7 @@ public class Endereco {
 	public void setRua(String rua) {
 		rua = rua.trim();
 		
-		rua = rua.replaceAll("[^a-zA-Z íãáàôõüÍÃÁÀÕÔÜ]", "");
+		rua = rua.replaceAll("[^a-zA-Z íãáéôàôõüÍÃÁÀÕÔÜ]", "");
 		
 		if (rua.contains("  ")) {
 			throw new IllegalArgumentException("Não coloque muitos espaços, por favor!");
