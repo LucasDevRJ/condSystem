@@ -1,14 +1,10 @@
 package com.github.lucasdevrj.condsystem.contabancaria;
 
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
 import com.github.lucasdevrj.condsystem.contabancaria.Conta;
 import com.github.lucasdevrj.condsystem.funcionario.Colaborador;
-import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoConta;
 import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
 /**
  * Classe que representa uma Conta não especificada
@@ -35,7 +31,7 @@ public class Conta {
 				
 				grava.println("Deposito Realizado com Sucesso!");
 				grava.println("Valor do Deposito: R$ " + valor);
-				grava.println("Valor do Saldo Bancário: R$ " + titular.getTitular().getSaldo());
+				grava.println("Valor do Saldo Bancário: R$ " + this.getSaldo());
 				
 				grava.close();
 				
