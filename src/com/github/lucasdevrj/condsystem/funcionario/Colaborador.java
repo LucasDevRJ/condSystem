@@ -5,8 +5,10 @@ import com.github.lucasdevrj.condsystem.informacoespessoais.Endereco;
 import com.github.lucasdevrj.condsystem.informacoespessoais.Profissao;
 import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import com.github.lucasdevrj.condsystem.contabancaria.Conta;
-import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoColaborador;
 /**
  * Classe que representa o Colaborador não especifico
  * @author Lucas Pereira de Lima
@@ -22,9 +24,19 @@ public abstract class Colaborador {
 	/**
 	 * Método para receber salário, pegando a Conta do funcionário e adicionando o salário nela.
 	 */
-	public void receberSalario(Colaborador colaborador) {
-		titular.setSaldo(titular.getSaldo() + profissao.getSalario());
-		GravarArquivoColaborador.gravaRecebimentoSalario(colaborador);
+	public void receberSalario() {
+		try {
+			PrintWriter grava = new PrintWriter("arquivos.txt");
+			
+			grava.println("Salário Depositado com Sucesso!");
+			grava.println("Valor Depositado: R$ " + this.getProfissao().getSalario());
+			grava.println("Saldo Total: R$ " + this.getTitular().getSaldo());
+			
+			grava.close();
+			
+		} catch (IOException erro) {
+			erro.printStackTrace();
+		}
 		LeituraArquivo.lerArquivo();
 	}
 
