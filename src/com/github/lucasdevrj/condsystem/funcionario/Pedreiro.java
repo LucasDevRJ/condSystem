@@ -1,7 +1,11 @@
 package com.github.lucasdevrj.condsystem.funcionario;
 
-import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoEletricista;
-import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoPedreiro;
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+
 import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
 
 /**
@@ -11,36 +15,67 @@ import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
  */
 public class Pedreiro extends Colaborador {
 
-	private static boolean estaConsertado;
-	private static boolean foiConstruido;
+	private boolean estaConsertado;
+	private boolean foiConstruido;
 	/**
 	 * Método para o Pedreiro consertar algo, que possui uma lógica para verificar se o objeto esta consertado ou não.
 	 */
-	public void consertar(Pedreiro pedreiro, String oQue) {
-		GravarArquivoPedreiro.gravaConserto(pedreiro, oQue);
+	public void consertar(String oQue) {
+		try {
+			PrintWriter grava = new PrintWriter("arquivos.txt");
+			
+			if (this.isEstaConsertado() == false) {
+				grava.println("O pedreiro " + super.getInformacoesPessoais().getNome() + " " + super.getInformacoesPessoais().getSobrenome() + " esta consertando o " + oQue + ".");
+				this.setEstaConsertado(true);
+			} else {
+				grava.write("O " + oQue + " já foi consertado!");
+			}
+			
+			grava.close();
+			
+		} catch (IOException erro) {
+			erro.printStackTrace();
+		}
 		LeituraArquivo.lerArquivo();
 	}
 	/**
 	 * Método para o Pedreiro construir algo, que possui uma lógica para verificar se já foi construido ou não.
 	 */
-	public void construir(Pedreiro pedreiro, String oQue) {
-		GravarArquivoPedreiro.gravaConstrucao(pedreiro, oQue);
+	public void construir(String oQue) {
+		try {
+			FileOutputStream fos = new FileOutputStream("arquivos.txt");
+			OutputStreamWriter osw = new OutputStreamWriter(fos);
+			BufferedWriter bw = new BufferedWriter(osw);
+			
+			if (this.isFoiConstruido() == false) {
+				bw.write("O pedreiro " + super.getInformacoesPessoais().getNome() + " " + super.getInformacoesPessoais().getSobrenome() + " esta construindo o " + oQue + ".");
+				this.setFoiConstruido(true);
+			} else {
+				bw.write("O " + oQue + " já foi construido!");
+			}
+			
+			bw.close();
+			
+		} catch (IOException erro) {
+			erro.printStackTrace();
+		}
+		
 		LeituraArquivo.lerArquivo();
 	}
 	
-	public static boolean isEstaConsertado() {
+	public boolean isEstaConsertado() {
 		return estaConsertado;
 	}
 	
-	public static void setEstaConsertado(boolean estaConsertado) {
-		Pedreiro.estaConsertado = estaConsertado;
+	public void setEstaConsertado(boolean estaConsertado) {
+		this.estaConsertado = estaConsertado;
 	}
 	
-	public static boolean isFoiConstruido() {
+	public boolean isFoiConstruido() {
 		return foiConstruido;
 	}
 	
-	public static void setFoiConstruido(boolean foiConstruido) {
-		Pedreiro.foiConstruido = foiConstruido;
+	public void setFoiConstruido(boolean foiConstruido) {
+		this.foiConstruido = foiConstruido;
 	}
 }

@@ -895,9 +895,9 @@ public class Main {
 		listaColaboradores.add(professorAcademia);
 		
 		//Chamadas de métodos
-		pedreiro.consertar(pedreiro, "piso do condomínio");
+		pedreiro.consertar("piso do condomínio");
 		System.out.println();
-		pedreiro.construir(pedreiro, "parquinho");
+		pedreiro.construir("parquinho");
 		System.out.println();
 		porteiro.abrirPorta(porteiro);
 		System.out.println();
@@ -905,11 +905,11 @@ public class Main {
 		System.out.println();
 		seguranca.vigiar(seguranca, "condomínio");
 		System.out.println();
-		eletricista.consertaFiacao(eletricista);
+		eletricista.consertaFiacao();
 		System.out.println();
-		eletricista.trocaFiacao(eletricista);
+		eletricista.trocaFiacao();
 		System.out.println();
-		jardineiro.jardinar(jardineiro);
+		jardineiro.jardinar();
 		System.out.println();
 		professorAcademia.montarSerie(professorAcademia);
 		System.out.println();
@@ -983,7 +983,7 @@ public class Main {
 		System.out.println();
 		eletricista.receberSalario();
 		System.out.println();
-		morador.reformarApartamento(2, morador);
+		morador.reformarApartamento(2);
 		System.out.println();
 		System.out.println(porteiro.getTitular().getSaldo());
 		System.out.println();
