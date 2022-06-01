@@ -1,6 +1,8 @@
 package com.github.lucasdevrj.condsystem.funcionario;
 
-import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoSeguranca;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
 
 /**
@@ -13,7 +15,16 @@ public class Seguranca extends Colaborador {
 	 * Método para o Segurança vigiar algum local, passando informações do Segurança.
 	 */
 	public void vigiar(Seguranca seguranca, String local) {
-		GravarArquivoSeguranca.gravarVigio(seguranca, local);
+		try {
+			PrintWriter grava = new PrintWriter("arquivos.txt");
+			
+			grava.println("O segurança " + super.getInformacoesPessoais().getNome() + " " + super.getInformacoesPessoais().getSobrenome() + " esta vigiando o " + local + ".");
+			
+			grava.close();
+			
+		} catch (IOException erro) {
+			erro.printStackTrace();
+		}
 		LeituraArquivo.lerArquivo();
 	}
 }
