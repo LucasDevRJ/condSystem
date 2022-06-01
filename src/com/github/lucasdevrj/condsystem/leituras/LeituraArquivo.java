@@ -1,24 +1,25 @@
 package com.github.lucasdevrj.condsystem.leituras;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
+import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class LeituraArquivo {
 
 	public static void lerArquivo() {
 		try {
-			FileInputStream fis = new FileInputStream("arquivos.txt");
-			InputStreamReader isr = new InputStreamReader(fis);
-			BufferedReader br = new BufferedReader(isr);
+			File le = new File("arquivos.txt");
+			Scanner scanner = new Scanner(le);
 			
-			String linha = br.readLine();
+			String texto = scanner.nextLine();
 			
-			while (linha != null) {
-				System.out.println(linha);
-				linha = br.readLine();
+			while (scanner.hasNextLine()) {
+				System.out.println(texto);
+				texto = scanner.nextLine();
 			}
+			
+			scanner.close();
+			
 		} catch (IOException erro) {
 			erro.printStackTrace();
 		}

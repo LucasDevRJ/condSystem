@@ -899,9 +899,9 @@ public class Main {
 		System.out.println();
 		pedreiro.construir("parquinho");
 		System.out.println();
-		porteiro.abrirPorta(porteiro);
+		porteiro.abrirPorta();
 		System.out.println();
-		porteiro.abrirPortao(porteiro);
+		porteiro.abrirPortao();
 		System.out.println();
 		seguranca.vigiar(seguranca, "condomínio");
 		System.out.println();
@@ -911,7 +911,7 @@ public class Main {
 		System.out.println();
 		jardineiro.jardinar();
 		System.out.println();
-		professorAcademia.montarSerie(professorAcademia);
+		professorAcademia.montarSerie();
 		System.out.println();
 		
 		ArrayList<Apartamento> listaApartamentos = new ArrayList<Apartamento>();
@@ -942,7 +942,7 @@ public class Main {
 		System.out.println();
 		morador4.comprarApartamento(morador4, receita);
 		System.out.println();
-		professorAcademia.montarSerie(professorAcademia);
+		professorAcademia.montarSerie();
 		System.out.println();
 		morador.pagarAluguelCondominio(morador, receita, condominio);
 		System.out.println();
