@@ -1,6 +1,8 @@
 package com.github.lucasdevrj.condsystem.funcionario;
 
-import com.github.lucasdevrj.condsystem.gravacoes.GravarArquivoProfessorAcademia;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
 
 /**
@@ -10,23 +12,45 @@ import com.github.lucasdevrj.condsystem.leituras.LeituraArquivo;
  */
 public class ProfessorAcademia extends Colaborador {
 
-	private static boolean estaMontandoSerie;
+	private boolean estaMontandoSerie;
 	/**
 	 * Método para o Professor de Academia montar a série, que possui uma lógica para verificar se a série já foi montada ou não.
 	 */
-	public void montarSerie(ProfessorAcademia professor) {
-		GravarArquivoProfessorAcademia.gravacaoMontagemSerie(professor);
+	public void montarSerie() {
+		try {
+			PrintWriter grava = new PrintWriter("arquivos.txt");
+			
+			if (this.isEstaMontandoSerie() == false) {
+				grava.println("Professor de Educação Física " + super.getInformacoesPessoais().getNome() + super.getInformacoesPessoais().getSobrenome() + " esta montando série para o aluno.");
+			} else {
+				grava.println("Professor de Educação Física " + super.getInformacoesPessoais().getNome() + super.getInformacoesPessoais().getSobrenome() + " já montou a série para o aluno.");
+			}
+			
+			grava.close();
+			
+		} catch (IOException erro) {
+			erro.printStackTrace();
+		}
 		LeituraArquivo.lerArquivo();
 	}
 	/**
 	 * Método para o Professor de Academia demonstrar um exercício, com informações do Professor.
 	 */
 	public void demonstrarExercicio(ProfessorAcademia professor) {
-		GravarArquivoProfessorAcademia.gravarDemonstracaoExercicio(professor);
+		try {
+			PrintWriter grava = new PrintWriter("arquivos.txt");
+			
+			grava.println("Professor de Educação Física " + super.getInformacoesPessoais().getNome() + " " + super.getInformacoesPessoais().getSobrenome() + " esta demonstrando o exercício para o aluno.");
+			
+			grava.close();
+			
+		} catch (IOException erro) {
+			erro.printStackTrace();
+		}
 		LeituraArquivo.lerArquivo();
 	}
 
-	public static boolean isEstaMontandoSerie() {
+	public boolean isEstaMontandoSerie() {
 		return estaMontandoSerie;
 	}
 
